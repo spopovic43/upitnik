@@ -1,0 +1,73 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma18 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+    <div class="row-fluid col-md-12">
+        <p class=""><strong>Статус примене стандарда за просторне податке у оквиру ваше организације?</strong></p>
+    </div>
+
+    <!-- Pitanje5_1-->
+    <div class="row-fluid">
+        <table class=" table table-bordered table-hover">
+            <thead class="thead-inverse bg-primary">
+                <tr>
+                    <th></th>
+                    <th>Није од значаја</th>
+                    <th>Делимично значајно</th>
+                    <th>Значајно</th>
+                    <th>Од великог значаја</th>
+                    <th>Изузетно значајно</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="bg-primary">Inspire</th>
+                    <td><input type="radio" name="form18-Inspire" value="Користи се" id="id_form18-Inspire_0" required=""></td>
+                    <td><input type="radio" name="form18-Inspire" value="Делимично" id="id_form18-Inspire_1" required=""></td>
+                    <td><input type="radio" checked name="form18-Inspire" value="Потребно" id="id_form18-Inspire_2" required=""></td>
+                    <td><input type="radio" name="form18-Inspire" value="Не користи се" id="id_form18-Inspire_3" required=""></td>
+                    <td><input type="radio" name="form18-Inspire" value="Нисмо упознати са стандардом" id="id_form18-Inspire_4" required=""></td>
+                </tr>
+                <tr>
+                    <th class="bg-primary">Iso i Cen</th>
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Користи се" id="id_form18-Iso_i_Cen_0" required=""></td>
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Делимично" id="id_form18-Iso_i_Cen_1" required=""></td>
+                    <td><input type="radio" checked name="form18-Iso_i_Cen" value="Потребно" id="id_form18-Iso_i_Cen_2" required=""></td>
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Не користи се" id="id_form18-Iso_i_Cen_3" required=""></td>
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Нисмо упознати са стандардом" id="id_form18-Iso_i_Cen_4" required=""></td>
+                </tr>
+                <tr>
+                    <th class="bg-primary">OGC</th>
+                    <td><input type="radio" name="form18-OGC" value="Користи се" id="id_form18-OGC_0" required=""></td>
+                    <td><input type="radio" name="form18-OGC" value="Делимично" id="id_form18-OGC_1" required=""></td>
+                    <td><input type="radio" checked name="form18-OGC" value="Потребно" id="id_form18-OGC_2" required=""></td>
+                    <td><input type="radio" name="form18-OGC" value="Не користи се" id="id_form18-OGC_3" required=""></td>
+                    <td><input type="radio" name="form18-OGC" value="Нисмо упознати са стандардом" id="id_form18-OGC_4" required=""></td>
+                </tr>
+                <tr>
+                    <th class="bg-primary">W3C</th>
+                    <td><input type="radio" name="form18-W3C" value="Користи се" id="id_form18-W3C_0" required=""></td>
+                    <td><input type="radio" name="form18-W3C" value="Делимично" id="id_form18-W3C_1" required=""></td>
+                    <td><input type="radio" checked name="form18-W3C" value="Потребно" id="id_form18-W3C_2" required=""></td>
+                    <td><input type="radio" name="form18-W3C" value="Не користи се" id="id_form18-W3C_3" required=""> </td>
+                    <td><input type="radio" name="form18-W3C" value="Нисмо упознати са стандардом" id="id_form18-W3C_4" required=""></td>
+                </tr>
+                <tr>
+                    <th class="bg-primary">Стандарди произвођача ГИС софтвера</th>
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Користи се" id="id_form18-Standardi_proizvodjaca_gis_softvera_0" required=""></td>
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Делимично" id="id_form18-Standardi_proizvodjaca_gis_softvera_1" required=""></td>
+                    <td><input type="radio" checked name="form18-Standardi_proizvodjaca_gis_softvera" value="Потребно" id="id_form18-Standardi_proizvodjaca_gis_softvera_2" required=""></td>
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Не користи се" id="id_form18-Standardi_proizvodjaca_gis_softvera_3" required=""></td>
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Нисмо упознати са стандардом" id="id_form18-Standardi_proizvodjaca_gis_softvera_4" required=""></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}
+ 

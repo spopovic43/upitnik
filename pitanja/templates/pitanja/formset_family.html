@@ -1,0 +1,413 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load formset_tags %}
+{% load widget_tweaks %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+    {{ pitanje2_5formset.non_form_errors }}
+	{% if pitanje2_5formset.total_error_count %}
+    <ul class="errorList">
+    {% for dict in pitanje2_5formset.errors %}
+        {% for error in dict.values %}
+        <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+    </ul>
+    {% endif %}
+		
+
+
+
+<div class="container">
+<form method="post" class="form-horizontal">
+    <h2 class="bg-primary">Testiranje Formseta i Validacija</h2>
+    {%csrf_token %}
+    {{kadrovi_forma.as_table}}
+    <div class="bg-danger">
+    {{ pitanje2_5formset.management_form }}
+            <table id="id_forms_table25" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        <th scope="col">Ucestalost Koriscenja</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for form in pitanje2_5formset.forms %}
+                    
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_5">
+                        <h1>{{ form.prefix }} -- {{pitanje2_5formset.prefix}}/{{forloop.counter}}</h1>
+                        <td>
+                            {{form.Program|add_class:"form-control selectpicker "|attr:"name : volunteer_name"}}
+                        </td>
+                        <td >
+                             {{form.Namena|add_class:"form-control selectpicker "}}
+                        </td>
+                        
+                        <td>
+                             {{form.Ucestalost_Koriscenja|add_class:"form-control selectpicker"}}
+                        </td>
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_5"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_5"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+    <div class="bg-primary">
+    {{ pitanje2_6formset.management_form }}
+            <table id="id_forms_table26" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in pitanje2_6formset.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_6">
+                        <td>
+                            {{form.Program|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Namena|add_class:"form-control multiselect"}}
+                        </td>
+                        
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_6"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_6"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+     </div>   
+    <div class="bg-success">
+        {{ pitanje2_8formset.management_form }}
+            <table id="id_forms_table28" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in pitanje2_8formset.forms %}
+                    <tr id="{{ pform.prefix }}-row" class="dynamic-form-pitanje2_8">
+                        <td>
+                            {{form.Program|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Namena|add_class:"form-control multiselect"}}
+                        </td>
+                        
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_8"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_8"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+  <!--  <div class="bg-info">
+        {{ pitanje3_3formset.management_form }}
+            <table id="id_forms_table33" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Proizvod</th>
+                        <th scope="col">Proizvodjac</th>
+                        <th scope="col">Postorni Obuhvat</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in pitanje3_3formset.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje3_3">
+                        <td>
+                            {{form.Proizvod|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Proizvodjac|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Prostorni_Obuhvat|add_class:"form-control"}}
+                        </td>
+                        
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje3_3"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje3_3"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+        <div class="bg-warning">
+        {{ pitanje3_5formset.management_form }}
+            <table id="id_forms_table35" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Proizvod</th>
+                        <th scope="col">Proizvodjac</th>
+                        <th scope="col">Postorni Obuhvat</th>
+                        <th scope="col">Razlog Nedostupnosti</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in pitanje3_5formset.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje3_5">
+                        <td>
+                            {{form.Proizvod|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Proizvodjac|add_class:"form-control"}}
+                        </td>
+                        <td >
+                             {{form.Prostorni_obuhvat|add_class:"form-control"}}
+                        </td>
+                            <td >
+                             {{form.Razlog_nedostupnosti|add_class:"form-control"}}
+                        </td>
+                        
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje3_5"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje3_5"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>-->
+
+      <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div> 
+        
+
+</form>
+</div>
+<!-- Include formset plugin - including jQuery dependency -->
+
+<script>
+    
+/*
+function cloneMore(selector, type) {
+    var newElement = $(selector).clone(true);
+    var total = $('#id_' + type + '-TOTAL_FORMS').val();
+    newElement.find(':input').each(function() {
+        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+        var id = 'id_' + name;
+        $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    });
+    newElement.find('label').each(function() {
+        var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('for', newFor);
+    });
+    total++;
+    $('#id_' + type + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+}
+
+ $('#dodaj_jos').click(function() {
+        cloneMore('div.table:last', 'pitanje2_8formset');
+});*/
+function updateElementIndex(el, prefix, ndx){ 
+    var id_regex = new RegExp('(' + prefix + '-\d+)');
+    var replacement = prefix + '-' + ndx;
+    
+    if ($(el).attr("for"))
+        $(el).attr("for",$(el).attr("for").replace($(el).attr("for"), replacement));
+    
+    if (el.id){
+        prefix_for_new_rows = prefix + '-' + $('#id_' + prefix + '-TOTAL_FORMS').val()
+        d = 'id_' + prefix_for_new_rows + el.id.substring(22,el.id.length)
+        el.id = el.id.replace(el.id, replacement);
+
+    }
+        
+    if (el.name){
+        prefix_for_new_rows = prefix+'-'+$('#id_' + prefix + '-TOTAL_FORMS').val()
+        d = prefix_for_new_rows + el.name.substring(19,el.name.length)
+        el.name = d
+
+    }
+  
+      
+       
+}
+
+    function addForm(btn, prefix,cname) {
+        var formCount = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+        
+        //var row = $('.dynamic-form:first').clone(true).get(0);
+        var row = $('.'+cname+':first').clone(true).get(0);
+        
+        
+        //alert(row)
+       // $(row).removeAttr('id').insertAfter($('.dynamic-form:last')).children('.hidden').removeClass('hidden');
+        $(row).removeAttr('id').insertAfter($('.'+cname+':last')).children('.hidden').removeClass('hidden');
+        
+        $(row).children().not(':last').children().each(function() {
+            
+    	    updateElementIndex(this, prefix, formCount);
+            
+           
+    	    $(this).val('');
+        });
+        //$(row).attr('id',prefix+'-'+formCount+'-row')
+        //alert($(row).id)
+        $(row).find('.delete-row').click(function() {
+    	    deleteForm(this, prefix, cname);
+        });
+        $('#id_' + prefix + '-TOTAL_FORMS').val(formCount + 1);
+        return false;
+    }
+
+    /*function addForm(selector, type) {
+    var newElement = $(selector).prev().clone(true);
+    var total = $('#id_' + type + '-TOTAL_FORMS').val();
+    newElement.find(':input').each(function() {
+        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+        var id = 'id_' + name;
+        $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    });
+    newElement.find('label').each(function() {
+        var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('for', newFor);
+    });
+    total++;
+    
+    $('#id_' + type + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+}*/
+
+    function deleteForm(btn, prefix, cname) {
+        $(btn).parents('.'+cname).remove();
+        var forms = $('.'+cname);
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+        for (var i=0, formCount=forms.length; i<formCount; i++) {
+    	    $(forms.get(i)).children().not(':last').children().each(function() {
+    	        updateElementIndex(this, prefix, i);
+    	    });
+        }
+        return false;
+    } 
+
+
+
+//Pitanje2_8Formset form5 
+$('.add-row_pitanje2_8').click(function() { 
+    	    return addForm(this, 'pitanje2_8formset','dynamic-form-pitanje2_8');
+});
+$('.delete-row_pitanje2_8').click(function() {
+    	    return deleteForm(this, 'pitanje2_8formset','dynamic-form-pitanje2_8' );
+}) 
+
+//Pitanje2_6Formset form4 
+$('.add-row_pitanje2_6').click(function() {
+    	    return addForm(this, 'pitanje2_6formset','dynamic-form-pitanje2_6');
+});
+$('.delete-row_pitanje2_6').click(function() {
+    	    return deleteForm(this, 'pitanje2_6formset','dynamic-form-pitanje2_6');
+})
+
+//Pitanje2_5Formset form3 
+$('.add-row_pitanje2_5').click(function() {
+    	    return addForm(this, 'pitanje2_5formset','dynamic-form-pitanje2_5');
+});
+$('.delete-row_pitanje2_5').click(function() {
+    	    return deleteForm(this, 'pitanje2_5formset','dynamic-form-pitanje2_5');
+}) 
+
+/*
+//Pitanje3_3Formset form12 
+$('.add-row_pitanje3_3').click(function() {
+    	    return addForm(this, 'pitanje3_3formset','dynamic-form-pitanje3_3');
+});
+$('.delete-row_pitanje3_3').click(function() {
+    	    return deleteForm(this, 'pitanje3_3formset','dynamic-form-pitanje3_3');
+})
+
+//Pitanje3_5Formset form14 
+$('.add-row_pitanje3_5').click(function() {
+    	    return addForm(this, 'pitanje3_5formset','dynamic-form-pitanje3_5');
+});
+$('.delete-row_pitanje3_5').click(function() {
+    	    return deleteForm(this, 'pitanje3_3formset','dynamic-form-pitanje3_5');
+})
+*/
+
+
+
+
+
+/****************************************************************************************************/
+$('#ja').multiselect({
+    includeSelectAllOption: true,
+    buttonWidth: '100%',
+    maxHeight: 200,
+    nonSelectedText: 'Nista nije Selektovano',
+    selectAllText: 'Selektuj Sve',
+    buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Nista nije Selektovano ...';
+            }
+            else if (options.length > 0) {
+                return ('Selektovali ste '+options.length+' opcija');
+            }
+                else {
+                var labels = [];
+                options.each(function() {
+                    if ($(this).attr('label') !== undefined) {
+                        labels.push($(this).attr('label'));
+                    }
+                    else {
+                        labels.push($(this).html());
+                    }
+                });
+                return labels.join(', ') + '';
+            }
+        }
+    });
+
+</script>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,119 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma16 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+  <div class="col-md-12">
+        <p class=""><strong>Како видите улогу националног геопортала?</strong></p>
+    </div>
+
+    <!-- Pitanje4_7-->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Није од значаја</th>
+                <th>Делимично значајно</th>
+                <th>Значајно</th>
+                <th>Од великог значаја</th>
+                <th>Изузетно значајноo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Постојање националног геопортала</th>
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Postojanje_nacionalnog_geoportala_0" required=""></td>
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Postojanje_nacionalnog_geoportala_1" required=""></td>
+                <td><input type="radio" checked name="form16-Postojanje_nacionalnog_geoportala" value="Значајно" id="id_form16-Postojanje_nacionalnog_geoportala_2" required=""></td>
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Postojanje_nacionalnog_geoportala_3" required=""></td>
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Postojanje_nacionalnog_geoportala_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Развој националног геопортала</th>
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Razvoj_nacionalnog_geoportala_0" required=""></td>
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Razvoj_nacionalnog_geoportala_1" required=""></td>
+                <td><input type="radio" checked name="form16-Razvoj_nacionalnog_geoportala" value="Значајно" id="id_form16-Razvoj_nacionalnog_geoportala_2" required=""></td>
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Razvoj_nacionalnog_geoportala_3" required=""></td>
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Razvoj_nacionalnog_geoportala_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Размена података преко националног геопортала</th>
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_0" required=""></td>
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_1" required=""></td>
+                <td><input type="radio" checked name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_2" required=""> </td>
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_3" required=""></td>
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Усаглашавање података</th>
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Није од значаја" id="id_form16-Usaglasavanje_podataka_0" required=""></td>
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Делимично значајно" id="id_form16-Usaglasavanje_podataka_1" required=""></td>
+                <td><input type="radio" checked name="form16-Usaglasavanje_podataka" value="Значајно" id="id_form16-Usaglasavanje_podataka_2" required=""></td>
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Од великог значаја" id="id_form16-Usaglasavanje_podataka_3" required=""></td>
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Изузетно значајно" id="id_form16-Usaglasavanje_podataka_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Интероперабилност података</th>
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Није од значаја" id="id_form16-Interoperabilnost_podataka_0" required=""></td>
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Делимично значајно" id="id_form16-Interoperabilnost_podataka_1" required=""></td>
+                <td><input type="radio" checked name="form16-Interoperabilnost_podataka" value="Значајно" id="id_form16-Interoperabilnost_podataka_2" required=""></td>
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Од великог значаја" id="id_form16-Interoperabilnost_podataka_3" required=""></td>
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Изузетно значајно" id="id_form16-Interoperabilnost_podataka_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Јавни увид и јавна доступност</th>
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Није од значаја" id="id_form16-Javni_uvid_i_javna_dostupnost_0" required=""></td>
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Делимично значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_1" required=""></td>
+                <td><input type="radio" checked name="form16-Javni_uvid_i_javna_dostupnost" value="Значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_2" required=""></td>
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Од великог значаја" id="id_form16-Javni_uvid_i_javna_dostupnost_3" required=""></td>
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Изузетно значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Сервис за проналажење</th>
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Није од значаја" id="id_form16-Servis_Za_Pronalazenje_0" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Делимично значајно" id="id_form16-Servis_Za_Pronalazenje_1" required=""></td>
+                <td><input type="radio" checked name="form16-Servis_Za_Pronalazenje" value="Значајно" id="id_form16-Servis_Za_Pronalazenje_2" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Од великог значаја" id="id_form16-Servis_Za_Pronalazenje_3" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Изузетно значајно" id="id_form16-Servis_Za_Pronalazenje_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Сервис за преглед</th>
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Није од значаја" id="id_form16-Servis_Za_Pregled_0" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Делимично значајно" id="id_form16-Servis_Za_Pregled_1" required=""></td>
+                <td><input type="radio" checked name="form16-Servis_Za_Pregled" value="Значајно" id="id_form16-Servis_Za_Pregled_2" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Од великог значаја" id="id_form16-Servis_Za_Pregled_3" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Изузетно значајно" id="id_form16-Servis_Za_Pregled_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Сервис за преузимање</th>
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Није од значаја" id="id_form16-Servis_Za_Preuzimanje_0" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Делимично значајно" id="id_form16-Servis_Za_Preuzimanje_1" required=""></td>
+                <td><input type="radio" checked name="form16-Servis_Za_Preuzimanje" value="Значајно" id="id_form16-Servis_Za_Preuzimanje_2" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Од великог значаја" id="id_form16-Servis_Za_Preuzimanje_3" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Изузетно значајно" id="id_form16-Servis_Za_Preuzimanje_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Сервис за трансформацију</th>
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Није од значаја" id="id_form16-Servis_Za_Transformaciju_0" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Делимично значајно" id="id_form16-Servis_Za_Transformaciju_1" required=""></td>
+                <td><input type="radio" checked name="form16-Servis_Za_Transformaciju" value="Значајно" id="id_form16-Servis_Za_Transformaciju_2" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Од великог значаја" id="id_form16-Servis_Za_Transformaciju_3" required=""></td>
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Изузетно значајно" id="id_form16-Servis_Za_Transformaciju_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Сервис за повезивање мрежних сервиса</th>
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Није од значаја" id="id_form16-Servis_za_povezivanje_mreznih_servisa_0" required=""></td>
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Делимично значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_1" required=""></td>
+                <td><input type="radio" checked name="form16-Servis_za_povezivanje_mreznih_servisa" value="Значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_2" required=""></td>
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Од великог значаја" id="id_form16-Servis_za_povezivanje_mreznih_servisa_3" required=""></td>
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Изузетно значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_4" required=""></td>
+            </tr>
+
+        </tbody>
+    </table>
+</form> 
+</div>
+
+{% endblock content %}

@@ -1,0 +1,179 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma1 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+{% csrf_token %}
+    <div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Основни подаци о организацији </h1>
+    </div>
+    <!-- *************************************************forma1 elementi ************************************-->
+    <!-- Naziv_Organizacije polje -->
+    <div id="div_id_form1-Naziv_organizacije" class="form-group">
+        <label for="id_form1-Naziv_organizacije" class="control-label col-md-6 requiredField">
+                Назив организације: <span class="asteriskField">*</span> 
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form1-Naziv_organizacije" maxlength="40" required="" id="id_form1-Naziv_organizacije" class="textinput textInput form-control">
+        </div>
+    </div>
+
+    <!-- Adresa polje -->
+    <div id="div_id_form1-Adresa" class="form-group">
+        <label for="id_form1-Adresa" class="control-label col-md-6 requiredField">
+            Адреса: <span class="asteriskField">*</span> 
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form1-Adresa" maxlength="50" required="" id="id_form1-Adresa" class="textinput textInput form-control">
+            <p id="hint_id_form1-Adresa" class="help-block">Место, Улица и број</p>
+        </div>
+    </div>
+
+    <!-- Internet_sajt polje-->
+    <div id="div_id_form1-Internet_sajt" class="form-group">
+        <label for="id_form1-Internet_sajt" class="control-label col-md-6 requiredField">
+            Интернет сајт: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="url" name="form1-Internet_sajt" maxlength="200" required="" id="id_form1-Internet_sajt" class="urlinput form-control">
+            <p id="hint_id_form1-Internet_sajt" class="help-block">Линк ка сајту</p>
+        </div>
+    </div>
+
+    <!-- E_mail -->
+    <div id="div_id_form1-E_mail" class="form-group">
+        <label for="id_form1-E_mail" class="control-label col-md-6 requiredField">
+            Е-адреса: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="email" name="form1-E_mail" maxlength="254" required="" id="id_form1-E_mail" class="emailinput form-control">
+        </div>
+    </div>
+
+    <!-- Telefon polje -->
+    <div id="div_id_form1-Telefon" class="form-group">
+        <label for="id_form1-Telefon" class="control-label col-md-6 requiredField">
+            Телефон: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form1-Telefon" maxlength="13" required="" id="id_form1-Telefon" class="textinput textInput form-control">
+            <p id="hint_id_form1-Telefon" class="help-block">У формату: 011/98-76-543</p>
+        </div>
+    </div>
+
+    <!-- Vrsta_organizacije polje -->
+    <div id="div_id_form1-Vrsta_organizacije" class="form-group">
+        <label for="id_form1-Vrsta_organizacije" class="control-label col-md-6 requiredField">
+            Врста организације: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select style="background-color:red;" multiple="multiple" name="form1-Vrsta_organizacije" required="" id="id_form1-Vrsta_organizacije" class="select form-control" >
+                <option value="Орган државне управе (министарство, посебна организација)">Орган државне управе (министарство, посебна организација)</option>
+                <option value="Орган територијалне аутономије">Орган територијалне аутономије</option>
+                <option value="Орган локалне самоуправе (аутоматски попуњава следећа два питања са истим одговором)">Орган локалне самоуправе (аутоматски попуњава следећа два питања са истим одговором)</option>
+                <option value="Јавна агенција">Јавна агенција</option> <option value="Јавно предузеће">Јавно предузеће</option>
+                <option value="Научно-образовна установа">Научно-образовна установа</option>
+                <option value="Пројектантскo-урбанистичка организација">Пројектантскo-урбанистичка организација</option>
+                <option value="Приватна организација">Приватна организација</option>
+                <option value="Остало">Остало</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Glavna_strucna_oblast_vase_organizacije polje -->
+    <div id="div_id_form1-Glavna_strucna_oblast_vase_organizacije" class="form-group">
+        <label for="id_form1-Glavna_strucna_oblast_vase_organizacije" class="control-label col-md-6 requiredField">
+            Главна стручна област Ваше организације: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form1-Glavna_strucna_oblast_vase_organizacije" required="" id="id_form1-Glavna_strucna_oblast_vase_organizacije" class="select form-control">
+                <option value="Орган локалне самоуправе">Орган локалне самоуправе</option>
+                <option value="Управљање земљиштем/непокретностима (катастар непокретности, опорезивање непокретности)">Управљање земљиштем/непокретностима (катастар непокретности, опорезивање непокретности)</option>
+                <option value="Заштита животне средине">Заштита животне средине</option>
+                <option value="Климатске промене">Климатске промене</option>
+                <option value="Метеорологија">Метеорологија</option>
+                <option value="Заштита од елементарних непогода">Заштита од елементарних непогода</option>
+                <option value="Пољопривреда">Пољопривреда</option>
+                <option value="Енергетика">Енергетика</option>
+                <option value="Шумарство">Шумарство</option>
+                <option value="Управљање водним ресурсима">Управљање водним ресурсима</option>
+                <option value="Одбрана и национална безбедност">Одбрана и национална безбедност</option> 
+                <option value="Сеизмологија">Сеизмологија</option>
+                <option value="Геологија">Геологија</option>
+                <option value="Транспорт">Транспорт</option>
+                <option value="Просторно/урбанистичко планирање">Просторно/урбанистичко планирање</option>
+                <option value="Водови (комунална инфраструктура, комуникационе мреже, енергетска мрежа и др. )">Водови (комунална инфраструктура, комуникационе мреже, енергетска мрежа и др. )</option>
+                <option value="Туризам">Туризам</option>
+                <option value="Културна баштина">Културна баштина</option>
+                <option value="Остало">Остало</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost polje -->
+    <div id="div_id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="form-group">
+        <label for="id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="control-label col-md-6 requiredField">
+            На ком територијалном нивоу Ваша организација обавља делатност? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" required="" id="id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="select form-control">
+                <option value="Локалном">Локалном</option>
+                <option value="Националном">Националном</option>
+                <option value="Регионалном">Регионалном</option>
+                <option value="Међународном">Међународном</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Kako_se_vasa_organizacija_finansira polje -->
+    <div id="div_id_form1-Kako_se_vasa_organizacija_finansira" class="form-group">
+        <label for="id_form1-Kako_se_vasa_organizacija_finansira" class="control-label col-md-6 requiredField">
+            Како се ваша организација финансира? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form1-Kako_se_vasa_organizacija_finansira" required="" id="id_form1-Kako_se_vasa_organizacija_finansira" class="select form-control">
+                <option value="Државни буџет">Државни буџет</option>
+                <option value="Буџет аутономне покрајине/локалне самоуправе">Буџет аутономне покрајине/локалне самоуправе</option>
+                <option value="Сопствени приходи">Сопствени приходи</option>
+                <option value="Делимично буџет и делимично сопствени приходи">Делимично буџет и делимично сопствени приходи</option>
+                <option value="Остало">Остало</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Kontakt_osoba polje -->
+    <div id="div_id_form1-Kontakt_osoba" class="form-group">
+        <label for="id_form1-Kontakt_osoba" class="control-label col-md-6 requiredField">
+            Контакт особа: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form1-Kontakt_osoba" maxlength="40" required="" id="id_form1-Kontakt_osoba" class="textinput textInput form-control">
+            <p id="hint_id_form1-Kontakt_osoba" class="help-block">Име и презиме</p>
+        </div>
+    </div>
+
+    <!-- Telefon_kontakt_osobe polje -->
+    <div id="div_id_form1-Telefon_kontakt_osobe" class="form-group">
+        <label for="id_form1-Telefon_kontakt_osobe" class="control-label col-md-6 requiredField">
+            Телефон контакт особе: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form1-Telefon_kontakt_osobe" maxlength="13" required="" id="id_form1-Telefon_kontakt_osobe" class="textinput textInput form-control">
+            <p id="hint_id_form1-Telefon_kontakt_osobe" class="help-block">У формату: 064/12-34-230</p>
+        </div>
+    </div>
+
+    <!-- E_mail_kontakt_osobe polje -->
+    <div id="div_id_form1-E_mail_kontakt_osobe" class="form-group">
+        <label for="id_form1-E_mail_kontakt_osobe" class="control-label col-md-6 requiredField">
+            Е-адреса контакт особе: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="email" name="form1-E_mail_kontakt_osobe" maxlength="254" required="" id="id_form1-E_mail_kontakt_osobe" class="emailinput form-control">
+        </div>
+    </div> 
+</form> 
+</div>
+{% endblock %}

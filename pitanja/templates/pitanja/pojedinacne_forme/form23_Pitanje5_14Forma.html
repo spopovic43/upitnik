@@ -1,0 +1,158 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma23 {% endblock title %}
+{% block content %}
+<div class="container">
+<form> 
+    <div class="col-md-12">
+        <p class=""><strong>Одредите колико се слажете са наведеним тврдњама? </strong></p>
+    </div>
+
+    <!-- Pitanje 5_14 -->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Uopste se ne slazem</th>
+                <th>Ne slazem se</th>
+                <th>Neodlucan</th>
+                <th>Slazem se</th>
+                <th>Potpuno se slazem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети бољем разумевању државне управе</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће омогућити ефикаснију државну админстрацију</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети развоју коришћења просторних и других података</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети бољем разумевању државне упрве</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци могу да се користе у комерцијалне сврхе</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Не слажем се" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Неодлучан" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Слажем се" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Корисници који нису у систему државне управе могу боље да искористе податке него органи државне управе  </th>
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Уопште се не слажем" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Не слажем се" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Неодлучан" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Слажем се" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Потпуно се слажем" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Сви просторни подаци које производе органи државне управе треба да буду у концепту опен дата</th>
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Уопште се не слажем" id="id_form23-Svi_podaci_u_konceptu_open_data_0" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Не слажем се" id="id_form23-Svi_podaci_u_konceptu_open_data_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Svi_podaci_u_konceptu_open_data" value="Неодлучан" id="id_form23-Svi_podaci_u_konceptu_open_data_2" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Слажем се" id="id_form23-Svi_podaci_u_konceptu_open_data_3" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Потпуно се слажем" id="id_form23-Svi_podaci_u_konceptu_open_data_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Постоји пуно разлога због чега не треба сви просторни подаци да буду у концепту опен дата</th>
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Уопште се не слажем" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_0" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Не слажем се" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Неодлучан" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_2" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Слажем се" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_3" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Потпуно се слажем" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети ефикаснијој и бржој размени података</th>
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Уопште се не слажем" id="id_form23-Efikiasnija_i_brza_razmena_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Не слажем се" id="id_form23-Efikiasnija_i_brza_razmena_podataka_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Efikiasnija_i_brza_razmena_podataka" value="Неодлучан" id="id_form23-Efikiasnija_i_brza_razmena_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Слажем се" id="id_form23-Efikiasnija_i_brza_razmena_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Потпуно се слажем" id="id_form23-Efikiasnija_i_brza_razmena_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети ефикаснијој и повољнијој администрацији у оквиру државне управе</th>
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Уопште се не слажем" id="id_form23-Efikasnija_i_povoljinja_administracija_0" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Не слажем се" id="id_form23-Efikasnija_i_povoljinja_administracija_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Efikasnija_i_povoljinja_administracija" value="Неодлучан" id="id_form23-Efikasnija_i_povoljinja_administracija_2" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Слажем се" id="id_form23-Efikasnija_i_povoljinja_administracija_3" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Потпуно се слажем" id="id_form23-Efikasnija_i_povoljinja_administracija_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Отворени подаци ће допринети квалитетнијим извештавањем према државним и Европским институцијама</th>
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Уопште се не слажем" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_0" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Не слажем се" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Неодлучан" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_2" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Слажем се" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_3" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Потпуно се слажем" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Концепт отворених података је вишеструко користан за целокупну друштвену заједницу</th>
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Уопште се не слажем" id="id_form23-Koristan_za_celokupnu_zajednicu_0" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Не слажем се" id="id_form23-Koristan_za_celokupnu_zajednicu_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Koristan_za_celokupnu_zajednicu" value="Неодлучан" id="id_form23-Koristan_za_celokupnu_zajednicu_2" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Слажем се" id="id_form23-Koristan_za_celokupnu_zajednicu_3" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Потпуно се слажем" id="id_form23-Koristan_za_celokupnu_zajednicu_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Концепт отворених података би допринео мањој редудантности података у државном сектору</th>
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Уопште се не слажем" id="id_form23-Manja_redudantnost_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Не слажем се" id="id_form23-Manja_redudantnost_podataka_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Manja_redudantnost_podataka" value="Неодлучан" id="id_form23-Manja_redudantnost_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Слажем се" id="id_form23-Manja_redudantnost_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Потпуно се слажем" id="id_form23-Manja_redudantnost_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Подаци морају бити доступни у погодном облику који је могуће мењати</th>
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Уопште се не слажем" id="id_form23-Dostupni_u_pogodnom_obliku_0" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Не слажем се" id="id_form23-Dostupni_u_pogodnom_obliku_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Dostupni_u_pogodnom_obliku" value="Неодлучан" id="id_form23-Dostupni_u_pogodnom_obliku_2" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Слажем се" id="id_form23-Dostupni_u_pogodnom_obliku_3" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Потпуно се слажем" id="id_form23-Dostupni_u_pogodnom_obliku_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Подаци морају имати дозволу за коришћење изван изворног подручја намене и редистрибуцију укључујући укрштање с другим скуповима података.</th>
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Уопште се не слажем" id="id_form23-Koriscenje_izvan_podrucja_namene_0" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Не слажем се" id="id_form23-Koriscenje_izvan_podrucja_namene_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Koriscenje_izvan_podrucja_namene" value="Неодлучан" id="id_form23-Koriscenje_izvan_podrucja_namene_2" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Слажем се" id="id_form23-Koriscenje_izvan_podrucja_namene_3" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Потпуно се слажем" id="id_form23-Koriscenje_izvan_podrucja_namene_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Потребно је креирати сервис за проналажење доступних података који би омогућио боље коришћење отворених података</th>
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Уопште се не слажем" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Не слажем се" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_1" required=""></td>	
+                <td><input type="radio" checked name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Неодлучан" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Слажем се" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Потпуно се слажем" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_4" required=""></td>	
+            </tr>
+        </tbody>
+    </table>
+</form> 
+</div>
+
+{% endblock content %}

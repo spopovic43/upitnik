@@ -1,0 +1,133 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma2 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>    
+    <div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Кадрови и инфраструктура - постојећи капацитети </h1>
+    </div>
+    <!-- *************************************************forma2 elementi ************************************-->
+    <!-- Broj_zaposlenih polje -->
+    <div id="div_id_form2-Broj_zaposlenih" class="form-group col-md-12">
+        <label for="id_form2-Broj_zaposlenih" class="control-label col-md-12 requiredField">
+            Наведите број запослених који раде на прикупљању, обради или коришћењу просторних података.<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-4">
+            <input type="number" name="form2-Broj_zaposlenih" required="" id="id_form2-Broj_zaposlenih" class="numberinput form-control">
+            <p id="hint_id_form2-Broj_zaposlenih" class="help-block">Унети приближан број запослених.</p>
+        </div>
+    </div>
+
+    <!-- Navesti_organizacionu_jedinicu polje -->
+    <div id="div_id_form2-Navesti_organizacionu_jedinicu" class="form-group col-md-12">
+        <label for="id_form2-Navesti_organizacionu_jedinicu" class="control-label col-md-12 requiredField">
+            Навести организациону јединицу у чијој су надлежности послови у вези са просторним подацима, уколико постоји<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-4">
+            <input type="text" name="form2-Navesti_organizacionu_jedinicu" required="" id="id_form2-Navesti_organizacionu_jedinicu" class="textinput textInput form-control" maxlength="100">
+            <p id="hint_id_form2-Navesti_organizacionu_jedinicu" class="help-block">нпр.Одељење за ГИС</p>
+        </div>
+    </div>
+
+    <!-- Procenite_znacaj_upotrebe_geoinformacija polje -->
+    <div id="div_id_form2-Procenite_znacaj_upotrebe_geoinformacija" class="form-group col-md-12">
+        <label for="id_form2-Procenite_znacaj_upotrebe_geoinformacija_0" class="control-label col-md-12 requiredField">
+            Процените значај геоинформација за пословање ваше организације: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-4">
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_2" value="Суштински">Суштински
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_3" value="Веома Користан">Веома Користан
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_4" value="Користан">Користан
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_5" value="Користан у мањој мери">Користан у мањој мери
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glavne_prepreke_za_koriscenje_geoinformacija -->
+    <div id="div_id_form2-Glavne_prepreke_za_koriscenje_geoinformacija" class="form-group col-md-12">
+        <label for="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_0" class="control-label col-md-12 requiredField">
+            Које су главне препреке за већи степен коришћења геоинформација и ГИС технологија у вашој организацији? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-4">
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_2" value="Недостатак квалификованог особља">Недостатак квалификованог особља
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_3" value="Недостатак ИТ капацитета">Недостатак ИТ капацитета(софтвер, опрема)
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_4" value="Недостатак података">Недостатак података(недоступни подаци, скушпо финансирање)
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_5" value="Остало">Остало
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Serveri_za_prostorne_podatke -->
+    <div id="div_id_form2-Serveri_za_prostorne_podatke" class="form-group col-md-12">
+        <label for="id_form2-Serveri_za_prostorne_podatke_0" class="control-label col-md-12 requiredField">
+            Који се сервери намењени просторним подацима користе у вашој организацији? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-4">
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_2" value="ArcGIS Server (ESRI)">ArcGIS Server (ESRI)
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_3" value="Autodesk Infrastructure Map Server">Autodesk Infrastructure Map Server
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_4" value="GeoServer">GeoServer
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_5" value="MapServer">MapServer
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_6" value="ERDAS APOLLO">ERDAS APOLLO
+                </label>
+            </div>
+            <div class="radio">
+                <label class="">
+                    <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_7" value="Ostalo">Остало
+                </label>
+            </div>
+        </div>
+    </div>
+<form> 
+</div>
+
+{% endblock content %}

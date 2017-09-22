@@ -1,0 +1,185 @@
+{% extends 'pitanja/template.html' %}
+
+{% block title %} Home Page {% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<h1> Ovo je neki Home Page valjda</h1>
+		<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+		<nav id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+				<li class="sidebar-brand">
+					<a href="#top" onclick="$(" menu-close ").click();">НИГП Упитник</a>
+				</li>
+				<li>
+					<a href="#about" onclick="$(" menu-close ").click();">О Упитнику</a>
+				</li>
+				<li>
+					<a href="#contact" onclick="$(" menu-close ").click();">Контакт</a>
+				</li>
+			</ul>
+		</nav>
+		<header id="top" class="header">
+			<div class="text-vertical-center ">
+				<h1>НАЦИОНАЛНА ИНФТАСТРУКТУРА ГЕОПРОСТОРНИХ ПОДАТАКА</h1>
+				<h3 style="font-size:50px">УПИТНИК 2017.</h3>
+				<br>
+				<a href="#about" class="btn btn-dark btn-lg" style="font-size:30px">Сазнајте више</a>
+			</div>
+		</header>
+		<section id="about" class="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<p class="lead" style="text-align:justify; font-size:20px ">Подаци о простору све више представљају кључни елемент у процесу доношења одлука, за оптимално управљање ресурсима, размену података, комуникацију и одржив развој. Развој технологије доприноси да просторни подаци постану обавезни елемент
+							савременог друштва. Технологија ће достићи пун потенцијал када јавна управа одлучи да повећа приступ ка географским информацијама кроз инфраструктуру просторних података.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="service" class="services bg-primary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<p class="lead" style="text-align:justify; font-size:20px ">Национална инфраструктира геопросторних података – НИГП, (енг. National Spatial Data Infrastructure – NSDI), представља интегрисани систем геопросторних података, који омогућава корисницима да идентификују и приступе просторним информацијама
+							добијеним из различитих извора, од локалног, преко националног до глобалног нивоа, на свеобухватан начин.</p>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row text-center">
+				</div>
+			</div>
+		</section>
+		<aside class="callout">
+			<div class="text-vertical-center">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<br>
+							<p class="lead" style="text-align:justify; font-size:20px;">Кроз успостављање НИГП-а решавају се питања приступа и размене дигиталних хармонизованих геопросторних података из различитих извора на националном нивоу. Интегрисана инфраструктура треба да омогући јавним институцијама и другим
+								учесницима да креирају ефикасне јавне сервисе, што ће побољшати доступност квалитетних геоинформација за кориснике путем Интернета.</p>
+							<p class="lead" style="text-align:justify; font-size:20px;">Ради сагледавања тренутног стања и потреба за даљи развој у геосектору израђен је упитник као инструмент за прикупљене информација од субјеката НИГП-а и других учесника. Информације прикупљене кроз упитник ће се користити за анализу
+								постојећих скупова просторних података, расположивих капацитета за њихову производњу, хармонизацију и одржавање, облика сарадње између субјеката НИГП-а, примене стандарда, као и сагледавање потреба за даље унапређење просторних
+								података и сервиса. Прикупљени подаци ће се користити искључиво у наведене сврхе.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<aside class="call-to-action bg-primary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h3>Упитник садржи <strong style="color:red">44</strong> питања груписаних по темама. Одговор се може изоставити уколико не можете да одговорите на поједина питања.</h3>
+						<a href="{% url 'pitanja:raw_upitnik' %}" class="btn btn-lg btn-light" style="font-size:22px">Започни упитник!</a>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<footer id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1 text-center">
+						<h4> <strong style="font-size:20px">Mолимо вас да се за додатна питања у вези упитника обратите Републичком геодетском заводу, <br>Сектору за информатику и комуникације</strong></h4>
+						<ul class="list-unstyled">
+							<li style="font-size:22px">
+								<i class="fa fa-phone fa-fw"></i> (011) 2 650 538
+							</li>
+							<li style="font-size:22px">
+								<i class="fa fa-envelope-o fa-fw"></i>
+								<a href="mailto:nsdi@rgz.gov.rs">nsdi@rgz.gov.rs</a>
+							</li>
+						</ul>
+						<br>
+						<hr class="small">
+						<p class="text-muted" style="font-size:22px">РГЗ © 2017 Сва права задржана</p>
+					</div>
+				</div>
+			</div>
+			<a id="to-top" href="#top" class="btn btn-dark btn-lg"><i class="fa fa-chevron-up fa-fw fa-1x"></i></a>
+		</footer>
+		<aside class="call-to-action bg-primary">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-center">
+						<h3>Више информација о НИГП-у и INSPIRE директиви можете наћи на линковима:</h3>
+					</div>
+					<div class="col-lg-12 text-center">
+						<h4><a href="http://www.geosrbija.rs/" style="color:white;">Геосрбија - геопортал</a></h4>
+					</div>
+					<div class="col-lg-12 text-center">
+						<h4><a href="http://inspire.jrc.ec.europa.eu" style="color:white;">	 Директива за успостављање инфраструктуре просторних података у Европској унији – INSPIRE</a></h4>
+					</div>
+				</div>
+			</div>
+		</aside>
+		<section id="contact" class="map">
+			<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.8269690222937!2d20.438386027850136!3d44.79533225192011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQ3JzQzLjIiTiAyMMKwMjYnMjIuOSJF!5e1!3m2!1sen!2srs!4v1501829553041">></iframe>
+			<br />
+			<small><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1848.8269690222937!2d20.438386027850136!3d44.79533225192011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDQ3JzQzLjIiTiAyMMKwMjYnMjIuOSJF!5e1!3m2!1sen!2srs!4v1501829553041"></a></small>
+		</section>
+		
+		<script>
+			$("#menu-close").click(function(e) {
+				e.preventDefault();
+				$("#sidebar-wrapper").toggleClass("active");
+			});
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#sidebar-wrapper").toggleClass("active");
+			});
+			$(function() {
+				$('a[href*=#]:not([href=#],[data-toggle],[data-target],[data-slide])').click(function() {
+					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+						var target = $(this.hash);
+						target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+						if (target.length) {
+							$('html,body').animate({
+								scrollTop: target.offset().top
+							}, 1000);
+							return false;
+						}
+					}
+				});
+			});
+			var fixed = false;
+			$(document).scroll(function() {
+				if ($(this).scrollTop() > 250) {
+					if (!fixed) {
+						fixed = true;
+						$('#to-top').show("slow", function() {
+							$('#to-top').css({
+								position: 'fixed',
+								display: 'block'
+							});
+						});
+					}
+				} else {
+					if (fixed) {
+						fixed = false;
+						$('#to-top').hide("slow", function() {
+							$('#to-top').css({
+								display: 'none'
+							});
+						});
+					}
+				}
+			});
+			var onMapMouseleaveHandler = function(event) {
+				var that = $(this);
+				that.on('click', onMapClickHandler);
+				that.off('mouseleave', onMapMouseleaveHandler);
+				that.find('iframe').css("pointer-events", "none");
+			}
+			var onMapClickHandler = function(event) {
+				var that = $(this);
+				that.off('click', onMapClickHandler);
+				that.find('iframe').css("pointer-events", "auto");
+				that.on('mouseleave', onMapMouseleaveHandler);
+			}
+			$('.map').on('click', onMapClickHandler);
+		</script>
+	</div>
+{% endblock content %}

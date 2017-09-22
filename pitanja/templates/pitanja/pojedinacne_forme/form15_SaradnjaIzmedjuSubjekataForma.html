@@ -1,0 +1,156 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma15 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+<div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Сарадња између субјеката НИГП-а </h1>
+    </div>
+
+    <!-- Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe -->
+    <div id="div_id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" class="form-group">
+        <label for="id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" class="control-label col-md-12 requiredField">
+            На који начин обезбеђујете просторне податке за ваше потребе? <span class="asteriskField">*</span>
+    </label>
+        <div class="controls col-md-6">
+            <select name="form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" id="id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" required="" class="select form-control">
+            <option value="Сопствена производња података">Сопствена производња података</option>
+            <option value="Набавка кроз пројекте">Набавка кроз пројекте</option>
+            <option value="Преузимањем од других државних органа без накнаде">Преузимањем од других државних органа без накнаде</option>
+            <option value="Куповина">Куповина</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni -->
+    <div id="div_id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" class="form-group">
+        <label for="id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" class="control-label col-md-12 requiredField">
+            На који начин сарађујете са другим организацијама при размени геоподатака? <span class="asteriskField">*</span>
+    </label>
+        <div class="controls col-md-6">
+            <select name="form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" id="id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" required="" class="select form-control">
+            <option value="По захтеву">По захтеву</option>
+            <option value="На основу уговора/споразума">На основу уговора/споразума</option>
+            <option value="На основу закона">На основу закона</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Ko_su_korisnici_vasih_proizvoda -->
+    <div id="div_id_form15-Ko_su_korisnici_vasih_proizvoda" class="form-group">
+        <label for="id_form15-Ko_su_korisnici_vasih_proizvoda" class="control-label col-md-12 requiredField">
+            Ко су корисници Ваших производа? <span class="asteriskField">*</span>
+    </label>
+        <div class="controls col-md-6">
+            <select name="form15-Ko_su_korisnici_vasih_proizvoda" id="id_form15-Ko_su_korisnici_vasih_proizvoda" required="" class="select form-control">
+            <option value="Сопствене потребе">Сопствене потребе</option>
+            <option value="Органи државне управе">Органи државне управе</option>
+            <option value="Органи територијалне аутономије">Органи територијалне аутономије</option>
+            <option value="Органи локалне самоуправе">Органи локалне самоуправе</option>
+            <option value="Јавне агенције">Јавне агенције</option>
+            <option value="Јавна предузећа">Јавна предузећа</option>
+            <option value="Научно-образовне установе">Научно-образовне установе</option>
+            <option value="Пројектантскo-урбанистичке организације">Пројектантскo-урбанистичке организације</option>
+            <option value="Приватне организације">Приватне организације</option>
+            <option value="Европске и друге међународне институције">Европске и друге међународне институције</option>
+            <option value="Грађани">Грађани</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Koja_je_cenovna_politika_za_geopodatke -->
+    <div id="div_id_form15-Koja_je_cenovna_politika_za_geopodatke" class="form-group">
+        <label for="id_form15-Koja_je_cenovna_politika_za_geopodatke" class="control-label col-md-12 requiredField">
+            Која је ценовна политика за ваше геоподатке/услуге? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Koja_je_cenovna_politika_za_geopodatke" id="id_form15-Koja_je_cenovna_politika_za_geopodatke" required="" class="select form-control">
+            <option value="Цена се одређује подзаконским актима или сопственим одлукама">Цена се одређује подзаконским актима или сопственим одлукама</option>
+            <option value="Подаци/услуге су бесплатни ">Подаци/услуге су бесплатни </option>
+            <option value="Комбиновани модел ">Комбиновани модел </option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Model_odredjivanja_cene -->
+    <div id="div_id_form15-Model_odredjivanja_cene" class="form-group">
+        <label for="id_form15-Model_odredjivanja_cene" class="control-label col-md-12 requiredField">
+            Који је модел одређивања цене просторних производа/услуга? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Model_odredjivanja_cene" id="id_form15-Model_odredjivanja_cene" required="" class="select form-control">
+            <option value="Покривање трошкова производње">Покривање трошкова производње</option>
+            <option value="Тржишна цена">Тржишна цена</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Kojem_modelu_finansiranja_NGIPA_treba_teziti -->
+    <div id="div_id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" class="form-group">
+        <label for="id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" class="control-label col-md-12 requiredField">
+            Којем моделу финансирања НИГП-а треба тежити? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" id="id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" required="" class="select form-control">
+            <option value="Покривање трошкова производње из буџета">Покривање трошкова производње из буџета за кључне геоподатке, уз размену без накнаде између субјеката НИГП-а</option>
+            <option value="Накнада за коришћење геоподатака према договореним условима">Накнада за коришћење геоподатака према договореним условима</option>
+            <option value="Тржишни услови">Тржишни услови</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje popraviti -->
+    <div class="form-group">
+        <div class="controls  col-md-12">
+            <div id="div_id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="checkbox">
+                <label for="id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="">
+                <input type="checkbox" name="form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" id="id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="checkboxinput">
+                    Да ли подржавате размену/дистрибуцију просторних података преко web портала уз могућност е-плаћања?
+            </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje -->
+    <div id="div_id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" class="form-group">
+        <label for="id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" class="control-label col-md-12 requiredField">
+            Да ли постоје препреке за размену/дистрибуцију просторних података преко web портала уз могућност е-плаћања? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <textarea name="form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" id="id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" required="" cols="40" rows="10" class="textarea form-control"></textarea>
+        </div>
+    </div>
+
+    <!-- Problemi_prilikom_nabavke_geopodataka -->
+    <div id="div_id_form15-Problemi_prilikom_nabavke_geopodataka" class="form-group">
+        <label for="id_form15-Problemi_prilikom_nabavke_geopodataka" class="control-label col-md-12 requiredField">
+            Који су проблеми присутни приликом набавке геоподатака од других организација за вашу организацију? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Problemi_prilikom_nabavke_geopodataka" id="id_form15-Problemi_prilikom_nabavke_geopodataka" required="" class="select form-control">
+            <option value="Непостојање геоподатака у дигиталној форми ">Непостојање геоподатака у дигиталној форми </option>
+            <option value="Слабо доступне информације о надлежној организацији за одређене геоподатке">Слабо доступне информације о надлежној организацији за одређене геоподатке</option>
+            <option value="Стари/неажурни подаци">Стари/неажурни подаци</option>
+            <option value="Некомплетни подаци">Некомплетни подаци (просторни обухват и атрибути)</option>
+            <option value="Неодговарајући квалитет података">Неодговарајући квалитет података</option>
+            <option value="Високе цене">Високе цене</option>
+            <option value="Некомпатибилни формати података">Некомпатибилни формати података</option>
+            <option value="Сложене и нејасне процедуре">Сложене и нејасне процедуре</option>
+            <option value="Кашњење у испоруци">Кашњење у испоруци</option>
+            <option value="Неодговарајућа корисничка подршка">Неодговарајућа корисничка подршка</option>
+            <option value="Ограничена права приступа ">Ограничена права приступа </option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}

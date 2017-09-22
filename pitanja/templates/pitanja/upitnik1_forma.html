@@ -1,0 +1,355 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<div class="col-md-12">
+			<h1 class="bg-primary" class="naslovi" id="naslovNSDI"> NSDI Upitnik </h1>
+		</div>
+		{% if form1.errors %}
+			<p><strong>{{ form1.errors }}</strong.</p>
+		{% endif %}
+		{% if form2.errors %}
+			<p><strong>{{ form2.errors }}</strong.</p>
+		{% endif %}
+		{% if form3.errors %}
+			<p><strong>{{ form3.errors }}</strong.</p>
+		{% endif %}
+		{% if form4.errors %}
+			<p><strong>{{ form4.errors }}</strong.</p>
+		{% endif %}
+		{% if form5.errors %}
+			<p><strong>{{ form5.errors }}</strong.</p>
+		{% endif %}
+		{% if form6.errors %}
+			<p><strong>{{ form6.errors }}</strong.</p>
+		{% endif %}
+		{% if form7.errors %}
+			<p><strong>{{ form7.errors }}</strong.</p>
+		{% endif %}
+		
+		{% if form111.errors %}
+			<p><strong>{{ form111.errors }}</strong.</p>
+		{% endif %}
+		{% if form12.errors %}
+			<p><strong>{{ form12.errors }}</strong.</p>
+		{% endif %}
+		{% if form13.errors %}
+			<p><strong>{{ form13.errors }}</strong.</p>
+		{% endif %}
+		{% if form14.errors %}
+			<p><strong>{{ form14.errors }}</strong.</p>
+		{% endif %}
+		
+		<form method="POST" action=" ">
+			{% csrf_token %}
+			<div class="col-md-12">
+				<h1 class="bg-primary naslovi"> Prva Sekcija </h1>
+			</div>
+				
+				{% crispy form1 %}
+				
+			
+			<div class="col-md-12">
+				<h1 class="bg-primary naslovi"> Druga Sekcija </h1>
+			</div>
+			{% crispy form2 %}
+
+			<div class="col-md-12">
+				<p class=""><strong>Koje aplikacije su u upotrebi u organizaciji?</strong></p>
+			</div>
+			
+			{% crispy form3 %}
+			
+
+			<div class="col-md-12">
+				<p class=""><strong>Koji sistemi za u pravljanje bazama postoje u Vasoj organizaciji?</strong></p>
+			</div>
+				{% crispy form4 %}
+				
+
+
+			<div class="col-md-12">
+				<p class=""><strong>Kojie se mobilne GIS aplikacije koriste?</strong></p>
+			</div>
+				{% crispy form5 %}
+				
+
+			<div class="col-md-12">
+				<h1 class="bg-primary naslovi"> Treca Sekcija </h1>
+			</div>
+			{% crispy form6 %}
+			<div class="col-md-12">
+				<p class=""><strong>Za koji od navedenih INSPIRE tema proizvodite podatke u vaasoj organizacji?</strong></p>
+			</div>
+			<!--{% crispy form7 %}-->
+
+			<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th>Izbor</th>
+							<th>Label</th>
+							
+						</tr>
+					</thead>
+						{% for field in form7 %} 
+							
+						
+							
+							{% for choice in field %}
+								<tr><td> {{ choice.tag }} </td><td> {{ choice.data.value }} </td></tr>	
+							{% endfor %}
+
+						
+						{% endfor%}
+					
+				</table>
+
+
+
+
+			<div class="col-md-12">
+				<p class=""><strong>Uneti podatke o skupu prostornih podfataka koje vasa 
+					organizacija proizvodi, aodnose se na INSPIRE teme?</strong></p>
+			</div>
+			{% crispy form11 %}
+			<div class="col-md-12">
+				<p class=""><strong>Koje prostorne podatke nabavljate od drugih organizacija
+					za redovne aktivnosti, i od koga?</strong></p>
+			</div>
+			{% crispy form12 %}
+		
+			<div class="col-md-12">
+				<p class=""><strong>Vaznost podataka koje su potrebne od drugioh organizacija za 
+					redovne aktivnosti?</strong></p>
+			</div>
+			<form action="" method="post">
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th>INSPIRE TEME</th>
+							<th>Nije od znacaja</th>
+							<th>Delimicno znacajno</th>
+							<th>Znacajno</th>
+							<th>Od velikog znacaja</th>
+							<th>Izuzetno znacajno</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form13 %} 
+							
+						<tr>
+							<th class="bg-primary">{{ field.label }}<th>
+							{% for choice in field %}
+								<td> {{ choice.tag }} </td>	
+							{% endfor %}
+
+						</tr>
+						{% endfor%}
+						{{form13.Jedinstveni}}dasdasad
+					</tbody>
+				</table>
+			
+				
+			<div class="col-md-12">
+				<p class=""><strong>Za kojim prostornim podacima imate potrebu a nisu dostupni na trzistu?</strong></p>
+			</div>
+			{% crispy form14 %}
+			<div class="col-md-12">
+				<h1 class="bg-primary naslovi"> CetvrtaSekcija </h1>
+			</div>
+			{% crispy form15 %}
+			<div class="col-md-12">
+				<p class=""><strong>Kako vidite ulogu nacionalnog geoportala?</strong></p>
+			</div>
+			
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th></th>
+							<th>Nije od znacaja</th>
+							<th>Delimicno znacajno</th>
+							<th>Znacajno</th>
+							<th>Od velikog znacaja</th>
+							<th>Izuzetno znacajno</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form16 %} 
+							
+						<tr>
+							<th class="bg-primary">{{ field.label }}<th>
+							{% for choice in field %}
+								<td> {{ choice.tag }} </td>	
+							{% endfor %}
+
+						</tr>
+						{% endfor%}
+					</tbody>
+				</table>
+			
+			<div class="col-md-12">
+				<h1 class="bg-primary naslovi"> PetaSekcija </h1>
+			</div>
+			{% crispy form17 %}
+
+			<div class="col-md-12">
+				<p class=""><strong>Status primene standarda za prostorne podatke u okviru vase organizacije?</strong></p>
+			</div>
+			
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th></th>
+							<th>Nije od znacaja</th>
+							<th>Delimicno znacajno</th>
+							<th>Znacajno</th>
+							<th>Od velikog znacaja</th>
+							<th>Izuzetno znacajno</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form18 %} 
+							
+						<tr>
+							<th class="bg-primary">{{ field.label }}<th>
+							{% for choice in field %}
+								<td> {{ choice.tag }} </td>	
+							{% endfor %}
+
+						</tr>
+						{% endfor%}
+					</tbody>
+				</table>
+			
+			<div class="col-md-12">
+				<p class=""><strong>Koje standarde iz oblasti geoinformacija koristite?</strong></p>
+			</div>
+			
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th>Standard</th>
+							<th>Upotreba</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form19 %} 
+						<tr>
+							
+							<td >{{ field }}<td>
+							
+								
+						</tr>
+						{% endfor%}
+					</tbody>
+				</table>
+			
+			<div class="col-md-12">
+				<p class=""><strong>Da li su prava koriscenja i zastite uredjeni posebnim propisima?</strong></p>
+			</div>	
+			{% crispy form20 %}
+			<div class="col-md-12">
+				<p class=""><strong>Tri najvaznije prepreke za uspostavljanje koncepta otvorenih podataka?</strong></p>
+			</div>
+			{% crispy form21 %}
+		
+			<div class="col-md-12">
+				<p class=""><strong> Za svaku od prepreka odrediti vaznost?</strong></p>
+			</div>
+			
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th></th>
+							<th>Nije od znacaja</th>
+							<th>Delimicno znacajno</th>
+							<th>Znacajno</th>
+							<th>Od velikog znacaja</th>
+							<th>Izuzetno znacajno</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form22 %} 
+							
+						<tr>
+							<th class="bg-primary">{{ field.label }}<th>
+							{% for choice in field %}
+								<td> {{ choice.tag }} </td>	
+							{% endfor %}
+
+						</tr>
+						{% endfor%}
+					</tbody>
+				</table>
+			
+				<div class="col-md-12">
+					<p class=""><strong> Koliko se slazete sa navedenim tvrdnjama?</strong></p>
+				</div>
+			
+				<table class=" table table-bordered table-hover">
+					<thead class="thead-inverse bg-primary">
+						<tr>
+							<th></th>
+							<th>Uopste se ne slazem</th>
+							<th>Ne slazem se</th>
+							<th>Neodlucan</th>
+							<th>Slazem se</th>
+							<th>Potpuno se slazem</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for field in form23 %} 
+							
+						<tr>
+							<th class="bg-primary">{{ field.label }}<th>
+							{% for choice in field %}
+								<td> {{ choice.tag }} </td>	
+							{% endfor %}
+
+						</tr>
+						{% endfor%}
+					</tbody>
+				</table>
+			
+			<input type="submit" value="Submit">
+			{% crispy form24 %}
+		</form>
+		
+		
+		
+	</div>
+<script>
+    $('.pitanje2_5-formset').formset({
+        addText: 'add link',
+        deleteText: 'remove',
+        addCssClass: 'btn btn-success',
+      
+        
+    });
+    $('.pitanje2_6-formset').formset({
+        addText: 'dodaj',
+        deleteText: 'ukloni', 
+        animateForms: true
+    });
+    $('.pitanje2_8-formset').formset({
+        addText: 'ad',
+        deleteText: 'rm', 
+        animateForms: true
+    });
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

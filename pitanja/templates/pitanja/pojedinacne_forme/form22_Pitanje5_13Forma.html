@@ -1,0 +1,54 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma22 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+    <div class="col-md-12">
+        <p class=""><strong>За сваку од препрека одредите важност: </strong></p>
+    </div>
+
+    <!-- Pitanje5_13 -->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Није од значаја</th>
+                <th>Делимично значајно</th>
+                <th>Значајно</th>
+                <th>Од великог значаја</th>
+                <th>Изузетно значајно</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Препрека 1</th>
+                <td><input type="radio" name="form22-Prepreka1" value="Није од значаја" id="id_form22-Prepreka1_0" required=""></td>
+                <td><input type="radio" name="form22-Prepreka1" value="Делимично значајно" id="id_form22-Prepreka1_1" required=""></td>
+                <td><input type="radio" checked name="form22-Prepreka1" value="Значајно" id="id_form22-Prepreka1_2" required=""></td>
+                <td><input type="radio" name="form22-Prepreka1" value="Од великог значаја" id="id_form22-Prepreka1_3" required=""></td>
+                <td><input type="radio" name="form22-Prepreka1" value="Изузетно значајно" id="id_form22-Prepreka1_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Препрека 2</th>
+                <td><input type="radio" name="form22-Prepreka2" value="Није од значаја" id="id_form22-Prepreka2_0" required=""></td>
+                <td><input type="radio" name="form22-Prepreka2" value="Делимично значајно" id="id_form22-Prepreka2_1" required=""></td>
+                <td><input type="radio" checked name="form22-Prepreka2" value="Значајно" id="id_form22-Prepreka2_2" required=""></td>
+                <td><input type="radio" name="form22-Prepreka2" value="Од великог значаја" id="id_form22-Prepreka2_3" required=""></td>
+                <td><input type="radio" name="form22-Prepreka2" value="Изузетно значајно" id="id_form22-Prepreka2_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Препрека 3</th>
+                <td><input type="radio" name="form22-Prepreka3" value="Није од значаја" id="id_form22-Prepreka3_0" required=""> </td>
+                <td><input type="radio" name="form22-Prepreka3" value="Делимично значајно" id="id_form22-Prepreka3_1" required=""> </td>
+                <td><input type="radio" checked name="form22-Prepreka3" value="Значајно" id="id_form22-Prepreka3_2" required=""> </td>
+                <td><input type="radio" name="form22-Prepreka3" value="Од великог значаја" id="id_form22-Prepreka3_3" required=""> </td>
+                <td><input type="radio" name="form22-Prepreka3" value="Изузетно значајно" id="id_form22-Prepreka3_4" required=""> </td>
+            </tr>
+        </tbody>
+    </table>
+</form>
+</div>
+
+{% endblock content %}

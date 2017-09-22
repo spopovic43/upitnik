@@ -1,0 +1,48 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma21 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+    <div class="col-md-12">
+        <p class=""><strong>Напишите три најважније препреке за успостављање концепта отворених података: </strong></p>
+    </div>
+
+    <!-- Pitanje5_12 -->
+    <div class="row-fluid">
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka1" class="form-group">
+                <label for="id_form21-Prepreka1" class="control-label col-md-4 requiredField">
+                Препрека 1<span class="asteriskField">*</span>
+            </label>
+                <div class="controls col-md-6">
+                    <textarea name="form21-Prepreka1" id="id_form21-Prepreka1" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka2" class="form-group">
+                <label for="id_form21-Prepreka2" class="control-label col-md-4 requiredField">
+                Препрека 2<span class="asteriskField">*</span>
+            </label>
+                <div class="controls col-md-6">
+                    <textarea name="form21-Prepreka2" id="id_form21-Prepreka2" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka3" class="form-group">
+                <label for="id_form21-Prepreka3" class="control-label col-md-4 requiredField">
+                    Препрека 3<span class="asteriskField">*</span>
+            </label>
+                <div class="controls col-md-12">
+                    <textarea name="form21-Prepreka3" id="id_form21-Prepreka3" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}

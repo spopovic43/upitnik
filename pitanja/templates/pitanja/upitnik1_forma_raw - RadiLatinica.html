@@ -1,0 +1,2582 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+<div class="container">
+		<div class="col-md-12">
+			<h1 class="bg-primary" class="naslovi" id="naslovNSDI"> NSDI Upitnik </h1>
+		</div>
+		{% if form1.errors %}
+			<p><strong>{{ form1.errors }}</strong></p>
+		{% endif %}
+		{% if form2.errors %}
+			<p><strong>{{ form2.errors }}</strong></p>
+		{% endif %}
+		{% if form3.errors %}
+			<p><strong>{{ form3.errors }}</strong></p>
+		{% endif %}
+		{% if form4.errors %}
+			<p><strong>{{ form4.errors }}</strong></p>
+		{% endif %}
+		{% if form5.errors %}
+			<p><strong>{{ form5.errors }}</strong></p>
+		{% endif %}
+		{% if form6.errors %}
+			<p><strong>{{ form6.errors }}</strong></p>
+		{% endif %}
+		{% if form7.errors %}
+			<p><strong>{{ form7.errors }}</strong></p>
+		{% endif %}
+		
+		{% if form111.errors %}
+			<p><strong>{{ form111.errors }}</strong></p>
+		{% endif %}
+		{% if form12.errors %}
+			<p><strong>{{ form12.errors }}</strong></p>
+		{% endif %}
+		{% if form13.errors %}
+			<p><strong>{{ form13.errors }}</strong></p>
+		{% endif %}
+		{% if form14.errors %}
+			<p><strong>{{ form14.errors }}</strong></p>
+		{% endif %}
+		
+<form method="POST" action=" ">
+    {% csrf_token %}
+    <div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Prva Sekcija </h1>
+    </div> 
+    <!-- *************************************************forma1 elementi ************************************-->
+        <!-- Naziv_Organizacije polje -->
+        <div id="div_id_form1-Naziv_organizacije" class="form-group"> 
+            <label for="id_form1-Naziv_organizacije" class="control-label col-md-6 requiredField">
+                    Назив организације<span class="asteriskField">*</span> 
+            </label> 
+            <div class="controls col-md-6">
+                <input type="text" name="form1-Naziv_organizacije" maxlength="40" required="" id="id_form1-Naziv_organizacije" class="textinput textInput form-control">
+            </div> 
+        </div>
+        
+        <!-- Adresa polje -->
+        <div id="div_id_form1-Adresa" class="form-group"> 
+            <label for="id_form1-Adresa" class="control-label col-md-6 requiredField">
+                Адреса<span class="asteriskField">*</span> 
+            </label> 
+            <div class="controls col-md-6">
+                <input type="text" name="form1-Adresa" maxlength="50" required="" id="id_form1-Adresa" class="textinput textInput form-control">
+                <p id="hint_id_form1-Adresa" class="help-block">Место, Улица и број</p>
+            </div> 
+        </div>
+
+        <!-- Internet_sajt polje--> 
+        <div id="div_id_form1-Internet_sajt" class="form-group">
+            <label for="id_form1-Internet_sajt" class="control-label col-md-6 requiredField">
+                Интернет сајт<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="url" name="form1-Internet_sajt" maxlength="200" required="" id="id_form1-Internet_sajt" class="urlinput form-control">
+                <p id="hint_id_form1-Internet_sajt" class="help-block">Линк ка сајту</p>
+            </div>
+        </div> 
+
+        <!-- E_mail -->
+        <div id="div_id_form1-E_mail" class="form-group">
+            <label for="id_form1-E_mail" class="control-label col-md-6 requiredField">
+                Е-адреса<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="email" name="form1-E_mail" maxlength="254" required="" id="id_form1-E_mail" class="emailinput form-control">
+            </div>
+        </div>
+
+        <!-- Telefon polje -->
+        <div id="div_id_form1-Telefon" class="form-group">
+            <label for="id_form1-Telefon" class="control-label col-md-6 requiredField">
+                Телефон<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="text" name="form1-Telefon" maxlength="13" required="" id="id_form1-Telefon" class="textinput textInput form-control">
+                <p id="hint_id_form1-Telefon" class="help-block">У формату: 011/98-76-543</p>
+            </div>
+        </div> 
+
+        <!-- Vrsta_organizacije polje -->
+        <div id="div_id_form1-Vrsta_organizacije" class="form-group">
+            <label for="id_form1-Vrsta_organizacije" class="control-label col-md-6 requiredField">
+                Врста организације<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select multiple="multiple" name="form1-Vrsta_organizacije" id="id_form1-Vrsta_organizacije" class="select form-control" required>
+                    <option value="Орган државне управе (министарство, посебна организација)">Орган државне управе (министарство, посебна организација)</option>
+                    <option value="Орган територијалне аутономије">Орган територијалне аутономије</option>
+                    <option value="Орган локалне самоуправе (аутоматски попуњава следећа два питања са истим одговором)">Орган локалне самоуправе (аутоматски попуњава следећа два питања са истим одговором)</option>
+                    <option value="Јавна агенција">Јавна агенција</option> <option value="Јавно предузеће">Јавно предузеће</option>
+                    <option value="Научно-образовна установа">Научно-образовна установа</option>
+                    <option value="Пројектантскo-урбанистичка организација">Пројектантскo-урбанистичка организација</option>
+                    <option value="Приватна организација">Приватна организација</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Glavna_strucna_oblast_vase_organizacije polje -->
+        <div id="div_id_form1-Glavna_strucna_oblast_vase_organizacije" class="form-group">
+            <label for="id_form1-Glavna_strucna_oblast_vase_organizacije" class="control-label col-md-6 requiredField">
+                Главна стручна област Ваше организације<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form1-Glavna_strucna_oblast_vase_organizacije" required="" id="id_form1-Glavna_strucna_oblast_vase_organizacije" class="select form-control">
+                    <option value="Орган локалне самоуправе">Орган локалне самоуправе</option>
+                    <option value="Управљање земљиштем/непокретностима (катастар непокретности, опорезивање непокретности)">Управљање земљиштем/непокретностима (катастар непокретности, опорезивање непокретности)</option>
+                    <option value="Заштита животне средине">Заштита животне средине</option>
+                    <option value="Климатске промене">Климатске промене</option>
+                    <option value="Метеорологија">Метеорологија</option>
+                    <option value="Заштита од елементарних непогода">Заштита од елементарних непогода</option>
+                    <option value="Пољопривреда">Пољопривреда</option> <option value="Енергетика">Енергетика</option>
+                    <option value="Шумарство">Шумарство</option>
+                    <option value="Управљање водним ресурсима">Управљање водним ресурсима</option>
+                    <option value="Одбрана и национална безбедност">Одбрана и национална безбедност</option> 
+                    <option value="Сеизмологија">Сеизмологија</option>
+                    <option value="Геологија">Геологија</option>
+                    <option value="Транспорт">Транспорт</option>
+                    <option value="Просторно/урбанистичко планирање">Просторно/урбанистичко планирање</option>
+                    <option value="Водови (комунална инфраструктура, комуникационе мреже, енергетска мрежа и др. )">Водови (комунална инфраструктура, комуникационе мреже, енергетска мрежа и др. )</option>
+                    <option value="Туризам">Туризам</option>
+                    <option value="Културна баштина">Културна баштина</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost polje -->
+        <div id="div_id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="form-group">
+            <label for="id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="control-label col-md-6 requiredField">
+                На ком територијалном нивоу Ваша организација обавља делатност<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" required="" id="id_form1-Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost" class="select form-control">
+                    <option value="Локалном">Локалном</option>
+                    <option value="Националном">Националном</option>
+                    <option value="Регионалном">Регионалном</option>
+                    <option value="Међународном">Међународном</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Kako_se_vasa_organizacija_finansira polje -->
+        <div id="div_id_form1-Kako_se_vasa_organizacija_finansira" class="form-group">
+            <label for="id_form1-Kako_se_vasa_organizacija_finansira" class="control-label col-md-6 requiredField">
+                Како се ваша организација финансира<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form1-Kako_se_vasa_organizacija_finansira" required="" id="id_form1-Kako_se_vasa_organizacija_finansira" class="select form-control">
+                    <option value="Државни буџет">Државни буџет</option>
+                    <option value="Буџет аутономне покрајине/локалне самоуправе">Буџет аутономне покрајине/локалне самоуправе</option>
+                    <option value="Сопствени приходи">Сопствени приходи</option>
+                    <option value="Делимично буџет и делимично сопствени приходи">Делимично буџет и делимично сопствени приходи</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Kontakt_osoba polje -->
+        <div id="div_id_form1-Kontakt_osoba" class="form-group">
+            <label for="id_form1-Kontakt_osoba" class="control-label col-md-6 requiredField">
+                Контакт особа<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="text" name="form1-Kontakt_osoba" maxlength="40" required="" id="id_form1-Kontakt_osoba" class="textinput textInput form-control">
+                <p id="hint_id_form1-Kontakt_osoba" class="help-block">Име и презиме</p>
+            </div>
+        </div>
+
+        <!-- Telefon_kontakt_osobe polje -->
+        <div id="div_id_form1-Telefon_kontakt_osobe" class="form-group">
+            <label for="id_form1-Telefon_kontakt_osobe" class="control-label col-md-6 requiredField">
+                Телефон контакт особе<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="text" name="form1-Telefon_kontakt_osobe" maxlength="13" required="" id="id_form1-Telefon_kontakt_osobe" class="textinput textInput form-control">
+                <p id="hint_id_form1-Telefon_kontakt_osobe" class="help-block">У формату: 064/12-34-230</p>
+            </div>
+        </div> 
+
+         <!-- E_mail_kontakt_osobe polje -->
+         <div id="div_id_form1-E_mail_kontakt_osobe" class="form-group">
+             <label for="id_form1-E_mail_kontakt_osobe" class="control-label col-md-6 requiredField">
+                Е-адреса<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <input type="email" name="form1-E_mail_kontakt_osobe" maxlength="254" required="" id="id_form1-E_mail_kontakt_osobe" class="emailinput form-control">
+            </div>
+        </div>
+<!--###################################################################################################################################################333 -->
+     <div class="col-md-12">
+		<h1 class="bg-primary naslovi"> Druga Sekcija </h1>
+	</div>   
+    <!-- *************************************************forma2 elementi ************************************-->
+       <!-- Broj_zaposlenih polje --> 
+        <div id="div_id_form2-Broj_zaposlenih" class="form-group col-md-12">
+            <label for="id_form2-Broj_zaposlenih" class="control-label col-md-12 requiredField">
+                Наведите број запослених који раде на прикупљању, обради или коришћењу просторних података.<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-4">
+                <input type="number" name="form2-Broj_zaposlenih" required="" id="id_form2-Broj_zaposlenih" class="numberinput form-control">
+                <p id="hint_id_form2-Broj_zaposlenih" class="help-block">Унети приближан број запослених</p>
+            </div>
+        </div>
+
+        <!-- Navesti_organizacionu_jedinicu polje --> 
+        <div id="div_id_form2-Navesti_organizacionu_jedinicu" class="form-group col-md-12">
+            <label for="id_form2-Navesti_organizacionu_jedinicu" class="control-label col-md-12 requiredField">
+                Навести организациону јединицу у чијој су надлежности послови у вези са просторним подацима уколико постоји<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-4">
+                <input type="text" name="form2-Navesti_organizacionu_jedinicu" required="" id="id_form2-Navesti_organizacionu_jedinicu" class="textinput textInput form-control" maxlength="100">
+                <p id="hint_id_form2-Navesti_organizacionu_jedinicu" class="help-block">нпр.Одељење за ГИС</p>
+            </div>
+        </div>
+
+        <!-- Procenite_znacaj_upotrebe_geoinformacija polje --> 
+        <div id="div_id_form2-Procenite_znacaj_upotrebe_geoinformacija" class="form-group col-md-12">
+            <label for="id_form2-Procenite_znacaj_upotrebe_geoinformacija_0" class="control-label col-md-12 requiredField">
+                Процените значај геоинформација за пословање ваше организације<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-4">
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_2" value="Суштински">Суштински
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_3" value="Веома Користан">Веома Користан
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_4" value="Користан">Користан
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Procenite_znacaj_upotrebe_geoinformacija" id="id_form2-Procenite_znacaj_upotrebe_geoinformacija_5" value="Користан у мањој мери">Користан у мањој мери
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Glavne_prepreke_za_koriscenje_geoinformacija -->
+        <div id="div_id_form2-Glavne_prepreke_za_koriscenje_geoinformacija" class="form-group col-md-12">
+            <label for="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_0" class="control-label col-md-12 requiredField">
+                Glavne prepreke za koriscenje geoinformacija<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-4">
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_2" value="Недостатак квалификованог особља">Недостатак квалификованог особља
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_3" value="Недостатак ИТ капацитета">Недостатак ИТ капацитета(софтвер, опрема)
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_4" value="Недостатак података">Недостатак података(недоступни подаци, скушпо финансирање)
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Glavne_prepreke_za_koriscenje_geoinformacija" id="id_form2-Glavne_prepreke_za_koriscenje_geoinformacija_5" value="Остало">Остало
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Serveri_za_prostorne_podatke -->
+        <div id="div_id_form2-Serveri_za_prostorne_podatke" class="form-group col-md-12">
+            <label for="id_form2-Serveri_za_prostorne_podatke_0" class="control-label col-md-12 requiredField">
+                Serveri za prostorne podatke<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-4">
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_2" value="ArcGIS Server (ESRI)">ArcGIS Server (ESRI)
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_3" value="Autodesk Infrastructure Map Server">Autodesk Infrastructure Map Server
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_4" value="GeoServer">GeoServer
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_5" value="MapServer">MapServer
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_6" value="ERDAS APOLLO">ERDAS APOLLO
+                    </label>
+                </div>
+                <div class="radio">
+                    <label class="">
+                        <input type="radio" name="form2-Serveri_za_prostorne_podatke" id="id_form2-Serveri_za_prostorne_podatke_7" value="Ostalo">Ostalo
+                    </label> 
+                </div>
+            </div>
+        </div>
+<!--******************************************************************************************************************************************************************************************************************* -->
+    <!-- ###################################################### forma 3 elementi #####################################################33-->
+        <!-- Pitanje2_5 -->
+        <div class="col-md-12">
+            <p class=""><strong>Koje aplikacije su u upotrebi u organizaciji?</strong></p>
+        </div>
+        <div class="row-fluid">
+        
+           <!-- <div class="formColumn col-md-4">
+                <div id="div_id_form3-Program" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form3-Program" required="" id="id_form3-Program" class="select form-control multiselect">
+                            <option value="ArcGIS Desktop (ESRI)">ArcGIS Desktop (ESRI)</option>
+                            <option value="Q GIS">Q GIS</option>
+                            <option value="MapInfo">ArcGIS Desktop (ESRI)</option>
+                            <option value="GeoMedia">GeoMedia</option>
+                            <option value="MapSoft">MapSoft</option>
+                            <option value="AutoCAD">AutoCAD</option>
+                            <option value="Bently MicroStation">Bently MicroStation</option>
+                            <option value="ERDAS IMAGINE">ERDAS IMAGINE</option>
+                            <option value="Leica Photogrametry Suite">Leica Photogrametry Suite</option>
+                            <option value="eCognition Trimble">eCognition Trimble</option>
+                            <option value="Интерно креиране апликације">Интерно креиране апликације</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="formColumn col-md-4">
+                <div id="div_id_form3-Namena" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form3-Namena" required="" id="id_form3-Namena" class="select form-control multiselect">
+                            <option value="Израда планова и карата">Израда планова и карата</option>
+                            <option value="Пројектовање">Пројектовање</option>
+                            <option value="Извештавање">Извештавање</option>
+                            <option value="Управљање и планирање коришћења земљишта">Управљање и планирање коришћења земљишта</option>
+                            <option value="Урбанизам и грађевински послови">Урбанизам и грађевински послови</option>
+                            <option value="Праћење промена и просторне анализе">Праћење промена и просторне анализе</option>
+                            <option value="Креирање и анализа ДМТ">Креирање и анализа ДМТ</option>
+                            <option value="Геореференцирање и обрада растерских података">Геореференцирање и обрада растерских података</option>
+                            <option value="Даљинска детекција">Даљинска детекција</option>
+                            <option value="Обрада података добијених ласерским скенирањем">Обрада података добијених ласерским скенирањем</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="formColumn col-md-4">
+                <div id="div_id_form3-Ucestalost_Koriscenja" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form3-Ucestalost_Koriscenja" required="" id="id_form3-Ucestalost_Koriscenja" class="select form-control multiselect">
+                            <option value="Свакодневно">Свакодневно</option>
+                            <option value="Често за обимније анализе">Често за обимније анализе</option>
+                            <option value="Понекад за посебне анализе и извештаје">Понекад за посебне анализе и извештаје</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        
+       
+            <!--<div class="col-md-12"> 
+                {{ form3.management_form }}
+                {% for pitanje2_5form in form3 %}
+            
+                    <div class="pitanje2_5-formset">
+                        
+                        {{ pitanje2_5form.Program|add_class:"col-md-4" }}
+                        {{ pitanje2_5form.Namena|add_class:"col-md-4" }}
+                        {{ pitanje2_5form.Ucestalost_Koriscenja|add_class:"col-md-3" }}
+                    </div>
+                
+                {% endfor %}
+            </div>
+        </div>  -->
+        {{ form3.management_form }}
+            <table id="id_forms_table_pitanje2_5" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        <th scope="col">Ucestalost Koriscenja</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in form3.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_5">
+                        <td>
+                            <select name="pitanje2_5formset-0-Program" class="select form-control" id="id_pitanje2_5formset-0-Program ">
+                                <option value="ArcGIS Desktop (ESRI)">ArcGIS Desktop (ESRI)</option>
+                                <option value="Q GIS">Q GIS</option>
+                                <option value="MapInfo">ArcGIS Desktop (ESRI)</option>
+                                <option value="GeoMedia">GeoMedia</option>
+                                <option value="MapSoft">MapSoft</option>
+                                <option value="AutoCAD">AutoCAD</option>
+                                <option value="Bently MicroStation">Bently MicroStation</option>
+                                <option value="ERDAS IMAGINE">ERDAS IMAGINE</option>
+                                <option value="Leica Photogrametry Suite">Leica Photogrametry Suite</option>
+                                <option value="eCognition Trimble">eCognition Trimble</option>
+                                <option value="Интерно креиране апликације">Интерно креиране апликације</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        <td >
+                            <select name="pitanje2_5formset-0-Namena" class="select form-control" id="id_pitanje2_5formset-0-Namena">
+                                <option value="Израда планова и карата">Израда планова и карата</option>
+                                <option value="Пројектовање">Пројектовање</option>
+                                <option value="Извештавање">Извештавање</option>
+                                <option value="Управљање и планирање коришћења земљишта">Управљање и планирање коришћења земљишта</option>
+                                <option value="Урбанизам и грађевински послови">Урбанизам и грађевински послови</option>
+                                <option value="Праћење промена и просторне анализе">Праћење промена и просторне анализе</option>
+                                <option value="Креирање и анализа ДМТ">Креирање и анализа ДМТ</option>
+                                <option value="Геореференцирање и обрада растерских података">Геореференцирање и обрада растерских података</option>
+                                <option value="Даљинска детекција">Даљинска детекција</option>
+                                <option value="Обрада података добијених ласерским скенирањем">Обрада података добијених ласерским скенирањем</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        
+                        <td>
+                            <select name="pitanje2_5formset-0-Ucestalost_Koriscenja" class="select form-control" id="id_pitanje2_5formset-0-Ucestalost_Koriscenja">
+                                <option value="Свакодневно">Свакодневно</option>
+                                <option value="Често за обимније анализе">Често за обимније анализе</option>
+                                <option value="Понекад за посебне анализе и извештаје">Понекад за посебне анализе и извештаје</option>
+                            </select>
+                        </td>
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_5"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_5"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+
+    
+
+                                 
+
+ <!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 4 elementi #####################################################33-->
+        <!-- Pitanje2_6 --> 
+        <div class="col-md-12">
+			<p class=""><strong>Koji sistemi za u pravljanje bazama postoje u Vasoj organizaciji?</strong></p>
+		</div>
+        <div class="row-fluid">
+            <!--<div class="formColumn col-md-6">
+                <div id="div_id_form4-Program" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form4-Program" required="" id="id_form4-Program" class="select form-control multiselect">
+                            <option value="MS Access">MS Access</option>
+                            <option value="Oracle ">Oracle </option>
+                            <option value="PostgreSQL">PostgreSQL</option>
+                            <option value="MicrosoftSQL">MicrosoftSQL</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="formColumn col-md-6">
+                <div id="div_id_form4-Namena" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form4-Namena" required="" id="id_form4-Namena" class="select form-control multiselect">
+                            <option value="Складиштење просторних података">Складиштење просторних података</option>
+                            <option value="Складиштење алфанумеричких података">Складиштење алфанумеричких података</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div> -->
+            <!--<div class="col-md-12">
+                {{ form4.management_form }}
+                {% for pitanje2_6form in form4 %}
+            
+                <div class="pitanje2_6-formset">
+                    {{ pitanje2_6form.Program|add_class:"col-md-5" }}
+                    {{ pitanje2_6form.Namena|add_class:"col-md-5" }}
+                </div>
+            
+                {% endfor %}
+            </div>-->
+            <!-- Form Pitanje2_6-->
+            {{ form4.management_form }}
+            <table id="id_forms_table" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in form4.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_6">
+                        <td>
+                            <select name="pitanje2_6formset-0-Program" id="id_pitanje2_6formset-0-Program" class="form-control">
+                                <option value="MS Access">MS Access</option>
+                                <option value="Oracle ">Oracle </option>
+                                <option value="PostgreSQL">PostgreSQL</option>
+                                <option value="MicrosoftSQL">MicrosoftSQL</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        <td >
+                            <select name="pitanje2_6formset-0-Namena" id="id_pitanje2_6formset-0-Namena" class="form-control">
+                                <option value="Складиштење просторних података">Складиштење просторних података</option>
+                                <option value="Складиштење алфанумеричких података">Складиштење алфанумеричких података</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_6"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_6"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> 
+
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 5 elementi #####################################################33-->
+        <!-- Pitanje2_8 --> 
+        <div class="col-md-12">
+			<p class=""><strong>Kojie se mobilne GIS aplikacije koriste?</strong></p>
+		</div>
+        <div class="row-fluid">
+            <!--<div class="formColumn col-md-6">
+                <div id="div_id_form5-Program" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form5-Program" required="" id="id_form5-Program" class="select form-control multiselect">
+                            <option value="ArcPAD">ArcPAD</option>
+                            <option value="Leica Zeno">Leica Zeno</option>
+                            <option value="Интерно креиране апликације">Интерно креиране апликације</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="formColumn col-md-6">
+                <div id="div_id_form5-Namena" class="form-group">
+                    <div class="controls col-md-12">
+                        <select name="form5-Namena" required="" id="id_form5-Namena" class="select form-control multiselect">
+                            <option value="Прикупљање података са терена">Прикупљање података са терена</option>
+                            <option value="Праћење возила">Праћење возила</option>
+                            <option value="Остало">Остало</option>
+                        </select>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div class="col-md-12">
+                {{ form5.management_form }}
+                {% for pitanje2_8form in form5 %}
+       
+                    <div class="pitanje2_8-formset">
+                        {{ pitanje2_8form.Program|add_class:"col-md-5" }}
+                        {{ pitanje2_8form.Namena|add_class:"col-md-5" }}
+                    </div>
+        
+                {% endfor %}
+            </div>-->
+            <!-- Form Pitanje2_8-->
+            {{ form5.management_form }}
+            <table id="id_forms_table_pitanje2_8" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Program</th>
+                        <th scope="col">Namena</th>
+                        <th scope="col">Treca</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for form in form5.forms %}
+                    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_8">
+                        <td>
+                            <select name="pitanje2_8formset-0-Program" id="id_pitanje2_8formset-0-Program" class="form-control">
+                                <option value="ArcPAD">ArcPAD</option>
+                                <option value="Leica Zeno">Leica Zeno</option>
+                                <option value="Интерно креиране апликације">Интерно креиране апликације</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        <td >
+                            <select name="pitanje2_8formset-0-Namena" id="id_pitanje2_8formset-0-Namena" class="form-control">
+                                <option value="Прикупљање података са терена">Прикупљање података са терена</option>
+                                <option value="Праћење возила">Праћење возила</option>
+                                <option value="Остало">Остало</option>
+                            </select>
+                        </td>
+                        
+                        <td  {% if forloop.first %} class="hidden"{% endif %}>
+                            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_8"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_8"><span class="glyphicon glyphicon-plus"></span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 6 elementi #####################################################33-->
+        <div class="col-md-12">
+			<h1 class="bg-primary naslovi"> Treca Sekcija </h1>
+		</div> 
+
+        <!-- Da_li_imate_potrebu_za_razmenm_prostornih_podataka -->
+        <div id="div_id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="form-group">
+            <label for="id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="control-label col-md-12 requiredField">
+                Da li imate potrebu za razmenm prostornih podataka<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" required="" id="id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="select form-control">
+                    <option value="Немамо искуства и потребе">Немамо искуства и потребе</option>
+                    <option value="Немамо искуства, имамо потребе">Немамо искуства, имамо потребе</option>
+                    <option value="Имамо искуства и потребе">Имамо искуства и потребе</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Da_li_imate_kapaciteta_za_izradu_servisa -->
+        <div id="div_id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="form-group">
+            <label for="id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="control-label col-md-12 requiredField">
+                Da li imate kapaciteta za izradu servisa<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form6-Da_li_imate_kapaciteta_za_izradu_servisa" required="" id="id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="select form-control">
+                    <option value="Немамо капацитета, није у плану изградња капацитета">Немамо капацитета, није у плану изградња капацитета</option>
+                    <option value="Немамо капацитета, у плану је изградња капацитета">Немамо капацитета, у плану је изградња капацитета</option>
+                    <option value="Имамо капацитета, још увек не постоје креирани сервиси">Имамо капацитета, још увек не постоје креирани сервиси</option>
+                    <option value="Имамо капацитета, постоје креирани сервиси">Имамо капацитета, постоје креирани сервиси</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Dodatno_obrazovanje_u_okviru_organizacije -->
+        <div id="div_id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="form-group">
+            <label for="id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="control-label col-md-12 requiredField">
+                Dodatno obrazovanje u okviru organizacije<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form6-Dodatno_obrazovanje_u_okviru_organizacije" required="" id="id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="select form-control">
+                    <option value="Стандардизација геопроизвода и сервиса">Стандардизација геопроизвода и сервиса</option>
+                    <option value="Дефинисање техничке спецификације за геоподатке">Дефинисање техничке спецификације за геоподатке</option>
+                    <option value="Метаподаци">Метаподаци (креирање, стандардизације, израда каталога и сервиса)</option>
+                    <option value="Израда web сервиса за геоподатке">Израда web сервиса за геоподатке</option>
+                    <option value="Развој техничке инфраструктуре">Развој техничке инфраструктуре</option>
+                    <option value="Креирања тематских речника">Креирања тематских речника</option>
+                    <option value="Дефинисање политике размене, приступа и безбедности података">Дефинисање политике размене, приступа и безбедности података</option>
+                    <option value="Друго">Друго</option>
+                </select>
+            </div> 
+        </div>
+
+        <!-- Nacin_razmene_podataka_sa_drugima -->
+        <div id="div_id_form6-Nacin_razmene_podataka_sa_drugima" class="form-group">
+            <label for="id_form6-Nacin_razmene_podataka_sa_drugima" class="control-label col-md-12 requiredField">
+                Nacin razmene podataka sa drugima<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <select name="form6-Nacin_razmene_podataka_sa_drugima" required="" id="id_form6-Nacin_razmene_podataka_sa_drugima" class="select form-control">
+                    <option value="Директно преузимање">Директно преузимање (дигитални медиј, папир)</option>
+                    <option value="Преузимање преко интернета">Преузимање преко интернета (download: HTTP и FTP )</option>
+                    <option value="Web сервиси">Web сервиси</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Stav_o_razmeni_podataka -->
+        <div id="div_id_form6-Stav_o_razmeni_podataka" class="form-group">
+            <label for="id_form6-Stav_o_razmeni_podataka" class="control-label col-md-12 requiredField">
+                Stav o razmeni podataka<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-6">
+                <textarea name="form6-Stav_o_razmeni_podataka" rows="10" cols="40" id="id_form6-Stav_o_razmeni_podataka" required="" class="textarea form-control"></textarea>
+            </div>
+        </div>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 7 elementi #####################################################33-->
+        <div class="col-md-12">
+			<p class=""><strong>Za koji od navedenih INSPIRE tema proizvodite podatke u vaasoj organizacji?</strong></p>
+        </div>
+        
+        <!-- Pitanje3_1 -->
+        <table class="table table-bordered ">
+            <thead class="thead-inverse bg-primary">
+                <tr>
+                    <th>Izbor</th>
+                    <th>Label</th>
+                    <th>Izbor</th>
+                    <th>Label</th>
+                    
+                </tr>
+            </thead>
+			<tbody>
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Координатни референтни системи" id="id_form7-Aneks1_polje_1"></td>
+                    <td> Координатни референтни системи <span class="glyphicon glyphicon-info-sign" data-trigger="hover" data-toggle="popover" title="Координатни референтни системи" data-content="Системи за јединствено одређивање просторних информација у простору као скупа координата (x, y, z) и/или географске ширине и географске дужине и висине, на основу геодетског хоризонталног и вертикалног датума." data-placement="right"></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Коришћење земљишта" id="id_form7-Aneks1_polje_2"></td>
+                    <td> Коришћење земљишта <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Коришћење земљишта" data-content="Територија описана у складу с постојећом и будућом планираном функционалном димензијом или друштвено-економском намена (нпр. стамбена, индустријска. комерцијална, пољопривредна, шумска, рекреативна)"></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Географски мрежни системи" id="id_form7-Aneks1_polje_3"></td>
+                    <td> Географски мрежни системи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Географски мрежни системи" data-content="Хармонизована мрежа вишеструке резолуције са заједничком почетном тачком и стандардизованом локацијом и величином мрежних ћелија."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Здравље људи и безбедност" id="id_form7-Aneks1_polje_4"></td>
+                    <td> Здравље људи и безбедност <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Здравље људи и безбедност" data-content="Информације о географској дистрибуцији доминантних патологија (алергије, канцери, болести дисајних органа итд.), које указују на утицај на здравље (биомаркери, смањење плодности, епидемије) или добробит људи (замор, стрес итд.) у директној (загађивање ваздуха, хемикалије, смањење озонског омотача, бука итд.) или индиректној вези (храна, генетски модификовани организми итд.) с квалитетом животне средине."></span></td>
+                </tr>	
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Географска имена" id="id_form7-Aneks1_polje_5"></td>
+                    <td> Географска имена <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Географска имена" data-content="Имена подручја, региона, локалитета, градова, предграђа, градова или насеља, или било који географски или топографски објекат од јавног или историјског интереса."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Водови и јавни сервиси" id="id_form7-Aneks1_polje_6"></td>
+                    <td>Водови и јавни сервиси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" data-trigger="hover" title="Водови и јавни сервиси " data-content="Подразумева водове као што су канализација, управљање отпадом, снабдевање енергијом и водом, административне и државне социјалне службе као што су државна администрација, локације цивилне заштите, школе и болнице."></span></td>
+                </tr>	
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Административне јединице" id="id_form7-Aneks1_polje_7"></td>
+                    <td> Административне јединице <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Административне јединице" data-content="Административне јединице, које раздвајају подручја на којима државе чланице имају и/или остварују права у вези са надлежношћу, за локалну, регионалну и националну управу, и која су одвојена административним границама."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Системи за праћење квалитета животне средине" id="id_form7-Aneks1_polje_8"></td>
+                    <td> Системи за праћење квалитета животне средине <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Системи за праћење квалитета животне средине" data-content="Локација и функцијасистема за праћење животне средине укључујући посматрање и мерење емисије загађујућих материја, стања животне средине и других параметара екосистема (биодиверзитета, еколошких услова вегетације итд.) од стране или у име органа јавне власти."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Адресе" id="id_form7-Aneks1_polje_9"></td>
+                    <td> Адресе <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Адресе" data-content="Локација непокретности на основу адресних идентификатора, обично имена улице, кућног броја, поштанског броја."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Производни и индустријски системи" id="id_form7-Aneks1_polje_10"></td>
+                    <td> Производни и индустријски системи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Производни и индустријски системи" data-content="Локације индустријске производње, укључујући инсталације за спречавање и контролу загађења, црпна постројења за воду, руднике, складишта и сл."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Катастарске парцеле" id="id_form7-Aneks1_polje_11"></td>
+                    <td> Катастарске парцеле <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Катастарске парцеле" data-content="Подручја одређена катастарским регистрима или њиховим еквивалентима."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Системи за пољопривреду и аквакултуру" id="id_form7-Aneks1_polje_12"></td>
+                    <td> Системи за пољопривреду и аквакултуру <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Системи за пољопривреду и аквакултуру" data-content="Пољопривредна опрема и објекти за производњу (укључујући системе за наводњавање, стакленици и штале)."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Транспортне мреже" id="id_form7-Aneks1_polje_13"></td>
+                    <td> Транспортне мреже <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Транспортне мреже" data-content="Друмске, железничке, ваздушне и водне транспортне мреже и припадајућа."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Распрострањеност становништва – демографија" id="id_form7-Aneks1_polje_14"></td>
+                    <td> Распрострањеност становништва – демографија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Распрострањеност становништва – демографија" data-content="Географска распрострањеност људи, укључујући инфраструктура, и карактеристике становништва и нивое активности, разврстаних по мрежи, региону, административној јединици или другој аналитичкој јединици."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Хидрографија" id="id_form7-Aneks1_polje_15"></td>
+                    <td> Хидрографија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Хидрографија" data-content="Хидрографски елементи, укључујући морска подручја и сва друга водена тела и припадајуће делове, укључујући речне сливове и подсливове."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Област управљања" id="id_form7-Aneks1_polje_16"></td>
+                    <td> Област управљања <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Област управљања" data-content="Области којима се управља, које се регулишу или користе за извештавање на међународном, европском, националном, регионалном и локалном нивоу. Укључује депоније, рестриктивне зоне око изворишта пијаће воде, зоне осетљиве на нитрате, уређене пловне путеве на мору или великим унутрашњим водама, области за одлагање отпада, зоне где се ограничава ниво буке, области за које је потребна дозвола за истраживање или рударство, области речних сливова, релевантне јединице извештавања и област управљања обалском зоном."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Заштићена подручја" id="id_form7-Aneks1_polje_17"></td>
+                    <td> Заштићена подручја <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Заштићена подручја" data-content="Област која је одређена или којом се управља у оквиру међународног законодавства, законодавства Заједнице и држава чланица, са циљем постизања посебних циљева очувања."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks1_polje" value="Зоне природног ризика" id="id_form7-Aneks1_polje_18"></td>
+                    <td> Зоне природног ризика <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Зоне природног ризика" data-content="Осетљива подручја која се описују према природним хазардима (све атмосферске, хидролошке, сеизмичке, вулканске појаве и пожари, а који, због своје локације, озбиљности и учесталости имају потенцијал да озбиљно угрозе друштво), нпр. поплаве, одрони и улегнућа, лавине, шумски пожари, земљотреси, вулканске ерупције."></span></td>
+                </tr>	
+                      
+                <tr>
+                    <!-- Aneks 2 -->
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Атмосферски услови" id="id_form7-Aneks2_polje_1"></td>
+                    <td> Атмосферски услови <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Атмосферски услови" data-content="Укључују просторне податке засноване на мерењима, моделима или њиховој комбинацији и укључују локације за мерење."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Висине" id="id_form7-Aneks2_polje_2"></td>
+                    <td>Висине <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Висине" data-content="Дигитални  модели висина за површину копна, леда и океана. Укључује висину терена, батиметрију и линију обале."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Метеоролошко-географске карактеристике" id="id_form7-Aneks2_polje_3"></td>
+                    <td> Метеоролошко-географске карактеристике <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Метеоролошко-географске карактеристике" data-content="Временски услови и њихове мерења; падавине, температура, испаравање, брзина и смер ветра."></span></td>
+               
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Земљишни покривач" id="id_form7-Aneks2_polje_4"></td>
+                    <td> Земљишни покривач <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Земљишни покривач" data-content="Физичка и биолошка покривеност земљине површине укључујући вештачке површине, пољопривредне области, шуме, (полу)природне области, влажна земљишта, водна тела."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Биогеографски региони" id="id_form7-Aneks2_polje_5"></td>
+                    <td> Биогеографски региони <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Биогеографски региони" data-content="Области релативно хомогених еколошких услова са заједничким карактеристикама."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Ортофото" id="id_form7-Aneks2_polje_6"></td>
+                    <td> Ортофото <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Ортофото" data-content="Геореференцирани снимци Земљине површине, прикупљени сателитским или аеро сензорима."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Станишта и биотопи" id="id_form7-Aneks2_polje_7"></td>
+                    <td>Станишта и биотопи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Станишта и биотопи" data-content="Географске области које карактеришу специфични еколошки услови, процеси, структура и функције (за одржавање живота) које физички омогућавају организмима да ту живе. Укључује копнене и водене површине које се разликују својим географским, абиотским и биотским карактеристикама, потпуно природним или полуприродним."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks2_polje" value="Геологија" id="id_form7-Aneks2_polje_8"></td>
+                    <td>Геологија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Геологија" data-content="Геологија описана према саставу и структури. Укључује стеновито тло, водоносне слојеве и геоморфологију."></span></td>
+                </tr>	
+                        <!-- Aneks 3-->
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Распрострањеност врста" id="id_form7-Aneks3_polje_1"></td>
+                    <td>Распрострањеност врста <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Распрострањеност врста" data-content="Географска распрострањеност животињских и биљних врста, разврстаних по мрежи, региону, административној јединици или другој аналитичкој јединици."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Статистичке јединице" id="id_form7-Aneks3_polje_2"></td>
+                    <td>Статистичке јединице <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Статистичке јединице" data-content="Јединице за дистрибуцију или коришћење статистичких података."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Енергетски ресурси" id="id_form7-Aneks3_polje_3"></td>
+                    <td>Енергетски ресурси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Енергетски ресурси" data-content="Енергетски ресурси укључујући угљоводонике, енергију воде, биоенергију, соларну енергију, енергију ветра итд. а по потреби и информације о дубини/висини које се односе на величину ресурса."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Зграде" id="id_form7-Aneks3_polje_4"></td>
+                    <td>Зграде <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Зграде" data-content="Географска локација зграда."></span></td>
+                </tr>	
+            
+                <tr>
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Минерални ресурси" id="id_form7-Aneks3_polje_5"></td>
+                    <td>Минерални ресурси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Минерални ресурси " data-content="Минерални ресурси укључују руде метала, индустријске минерале итд. а по потреби и информације о дубини/висини  које се односе на величину ресурса."></span></td>
+                
+                    <td><input type="checkbox" name="form7-Aneks3_polje" value="Тло" id="id_form7-Aneks3_polje_6">
+                    </td><td>Тло <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Тло" data-content="Тло и слојеви тла испод површине описани према дубини, текстури, структури и садржају честица и органског материјала, каменитости, ерозији, а по потреби просечног нагиба и предвиђени капацитет за чување воде."></span></td>
+                </tr>	
+            </tbody>
+        </table>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 11 elementi #####################################################33-->
+        <div class="col-md-12">
+			<p class=""><strong>Uneti podatke o skupu prostornih podfataka koje vasa organizacija proizvodi, aodnose se na INSPIRE teme??</strong></p>
+        </div>
+        <!-- Naziv_Proizvoda -->
+        <div id="div_id_form11-Naziv_Proizvoda" class="form-group">
+            <label for="id_form11-Naziv_Proizvoda" class="control-label col-md-4 requiredField">
+                Naziv Proizvoda<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input type="text" name="form11-Naziv_Proizvoda" maxlength="100" class="textinput textInput form-control" id="id_form11-Naziv_Proizvoda" required="">
+            </div>
+        </div>
+
+        <!-- Opis_Proizvoda -->
+        <div id="div_id_form11-Opis_Proizvoda" class="form-group">
+            <label for="id_form11-Opis_Proizvoda" class="control-label col-md-4 requiredField">
+                Opis Proizvoda<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input type="text" name="form11-Opis_Proizvoda" maxlength="100" class="textinput textInput form-control" id="id_form11-Opis_Proizvoda" required="">
+            </div>
+        </div>
+
+        <!-- Digitalni_Format Uraditi POnovo, nije dobrio resenje-->
+        <div class="form-group">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Digitalni_Format" class="checkbox">
+                    <label for="id_form11-Digitalni_Format" class="">
+                        <input type="checkbox" name="form11-Digitalni_Format" class="checkboxinput" id="id_form11-Digitalni_Format">
+                    Digitalni Format
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nacin_skladistenja -->
+        <div id="div_id_form11-Nacin_skladistenja" class="form-group">
+            <label for="id_form11-Nacin_skladistenja" class="control-label col-md-4 requiredField">
+                Nacin skladistenja<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Nacin_skladistenja" class="select form-control" id="id_form11-Nacin_skladistenja" required="">
+                    <option value="gdb">ESRI file geodatabase (*.gdb)</option>
+                    <option value="mdb">ESRI personal geodatabase (*.mdb)</option>
+                    <option value="MS Access">MS Access</option>
+                    <option value="Oracle ">Oracle</option>
+                    <option value="PostgreSQL">PostgreSQL</option>
+                    <option value="MicrosoftSQL">MicrosoftSQL</option>
+                    <option value="Фолдерска структура на серверима">Фолдерска структура на серверима</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+         <!-- Format_Distribucije -->
+         <div id="div_id_form11-Format_Distribucije" class="form-group">
+            <label for="id_form11-Format_Distribucije" class="control-label col-md-4 requiredField">
+                Format Distribucije<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Format_Distribucije" class="select form-control" id="id_form11-Format_Distribucije" required="">
+                    <option value="Adobe PDF">Adobe PDF (*.pdf)</option>
+                    <option value="ASCII gridded">ASCII gridded data format (*.xyz)</option>
+                    <option value="GeoTIFF">GeoTIFF (*.tif)</option>
+                    <option value="TIFF">TIFF (*.tif)</option>
+                    <option value="CorelDraw">CorelDraw file format (*.cdr)</option>
+                    <option value="TIFF">TIFF (*.tif), TFW (*.tfw)</option>
+                    <option value="ECW">ECW Image file format (*.ecw)</option>
+                    <option value="MrSID">MrSID file format (*.sid)</option>
+                    <option value="ESRI">ESRI shapefile (*.shp)</option>
+                    <option value="MapInfo ">MapInfo TAB format (*.tab)</option>
+                    <option value="KML">KML file format (*.kml, *.kmz)</option>
+                    <option value="IMG ">IMG file format (*.img)</option>
+                    <option value="NTF">NTF Image file format (*.ntf)</option>
+                    <option value="AutoCAD DXF">AutoCAD DXF (*.dxf)</option>
+                    <option value="ESRI file">ESRI file geodatabase (*.gdb)</option>
+                    <option value="ESRI personal">ESRI personal geodatabase (*.mdb)</option>
+                    <option value="JPG">JPG file format (*.jpg)</option>
+                    <option value="Microsoft Excel">Microsoft Excel file format (*.xls)</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Nacin_Distribucije -->
+        <div id="div_id_form11-Nacin_Distribucije" class="form-group">
+            <label for="id_form11-Nacin_Distribucije" class="control-label col-md-4 requiredField">
+                Nacin Distribucije<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Nacin_Distribucije" class="select form-control" id="id_form11-Nacin_Distribucije" required="">
+                    <option value="Поштом">Поштом</option>
+                    <option value="Преко имејла">Преко имејла</option>
+                    <option value="Директно преузимање ">Директно преузимање (дигитални медиј, папир)</option>
+                    <option value="Преузимање преко интернета">Преузимање преко интернета (download: HTTP и FTP )</option>
+                    <option value="Web сервиси">Web сервиси</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Tacnost -->
+        <div id="div_id_form11-Tacnost" class="form-group">
+            <label for="id_form11-Tacnost" class="control-label col-md-4 requiredField">
+                Tacnost<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input type="text" name="form11-Tacnost" maxlength="100" class="textinput textInput form-control" id="id_form11-Tacnost" required="">
+            </div>
+        </div>
+
+        <!-- Koordinatni_Sistem -->
+        <div id="div_id_form11-Koordinatni_Sistem" class="form-group">
+            <label for="id_form11-Koordinatni_Sistem" class="control-label col-md-4 requiredField">
+                Koordinatni Sistem<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Koordinatni_Sistem" class="select form-control" id="id_form11-Koordinatni_Sistem" required="">
+                    <option value="Гаус-Кригер">Гаус-Кригер</option>
+                    <option value="ETRS89/UTM">ETRS89/UTM</option>
+                    <option value="Географски координатни систем">Географски координатни систем</option>
+                    <option value="Подаци нису просторно одређени">Подаци нису просторно одређени - геореференцирани</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Obuhvaceno_Podrucje -->
+        <div id="div_id_form11-Obuhvaceno_Podrucje" class="form-group">
+            <label for="id_form11-Obuhvaceno_Podrucje" class="control-label col-md-4 requiredField">
+                Obuhvaceno Podrucje<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input type="text" name="form11-Obuhvaceno_Podrucje" maxlength="100" class="textinput textInput form-control" id="id_form11-Obuhvaceno_Podrucje" required="">
+            </div>
+        </div>
+
+        <!-- Period_Azuriranja nije dobro ponovo uradi-->
+        <div id="div_id_form11-Period_Azuriranja" class="form-group">
+            <label for="id_form11-Period_Azuriranja" class="control-label col-md-4 requiredField">
+                Period Azuriranja<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Period_Azuriranja" class="select form-control" id="id_form11-Period_Azuriranja" required="">
+                    <option value="У континуитету">У континуитету</option>
+                    <option value="По потреби">По потреби</option>
+                    <option value="Периодично">Периодично – на сваких XXX дана</option>
+                    <option value="Према прописима">Према прописима</option>
+                    <option value="Преиспитивање плана">Преиспитивање плана</option>
+                    <option value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Metapodaci-->
+        <div class="form-group">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Metapodaci" class="checkbox">
+                    <label for="id_form11-Metapodaci" class="">
+                        <input type="checkbox" name="form11-Metapodaci" class="checkboxinput" id="id_form11-Metapodaci">
+                        Metapodaci
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dostupnost -->
+        <div id="div_id_form11-Dostupnost" class="form-group">
+            <label for="id_form11-Dostupnost" class="control-label col-md-4 requiredField">
+                Dostupnost<span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Dostupnost" class="select form-control" id="id_form11-Dostupnost" required="">
+                    <option value="интерно">интерно</option>
+                    <option value="доступно свима">доступно свима</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Web_Servis -->
+        <div id="div_id_form11-Web_Servis" class="form-group">
+            <label for="id_form11-Web_Servis" class="control-label col-md-4 requiredField">
+                Web Servis<span class="asteriskField">*</span>
+            </label> <div class="controls col-md-8">
+                <select name="form11-Web_Servis" class="select form-control" id="id_form11-Web_Servis" required="">
+                    <option value="интерно">интерно</option>
+                    <option value="доступно свима">доступно свима</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Prava_Pristupa  -->
+        <div id="div_id_form11-Prava_Pristupa" class="form-group">
+            <label for="id_form11-Prava_Pristupa" class="control-label col-md-4 requiredField">
+                Prava Pristupa<span class="asteriskField">*</span>
+            </label> <div class="controls col-md-8">
+                <select name="form11-Prava_Pristupa" class="select form-control" id="id_form11-Prava_Pristupa" required="">
+                    <option value="интерно">интерно</option>
+                    <option value="доступно свима">доступно свима</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Naknada uradi ponovo -->
+        <div class="form-group">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Naknada" class="checkbox">
+                    <label for="id_form11-Naknada" class="">
+                        <input type="checkbox" name="form11-Naknada" class="checkboxinput" id="id_form11-Naknada">
+                        Naknada
+                    </label>
+                </div>
+            </div>
+        </div>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 12 elementi #####################################################33-->
+    <div class="col-md-12">
+		<p class=""><strong>Koje prostorne podatke nabavljate od drugih organizacijaza redovne aktivnosti, i od koga?</strong></p>
+    </div>
+    
+    <!--Pitanje3_3 -->
+   <div class="row-fluid">
+        <!--<div class="formColumn col-md-4">
+            <div id="div_id_form12-Proizvod" class="form-group">
+                <div class="controls col-md-12">
+                    <select name="form12-Proizvod" class="select form-control multiselect" id="id_form12-Proizvod" required="">
+                        <option value="Катастарске парцеле и објекти">Катастарске парцеле и објекти</option>
+                        <option value="Подаци катастра непокретности">Подаци катастра непокретности</option>
+                        <option value="Ортофото">Ортофото</option> <option value="Адресе">Адресе</option>
+                        <option value="Топографске карте">Топографске карте (1:20 000 и ситније размере)</option>
+                        <option value="Основна државна карта">Основна државна карта (1:5000; 1:10 000)</option>
+                        <option value="Просторни планови">Просторни планови</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form12-Proizvodjac" class="form-group">
+                <div class="controls col-md-12">
+                    <select name="form12-Proizvodjac" class="select form-control multiselect" id="id_form12-Proizvodjac" required="">
+                        <option value="РГЗ">Републички геодетски завод</option>
+                        <option value="ВГИ">Војногеографски институт</option>
+                        <option value="Завод за заштиту природе Србије">Завод за заштиту природе Србије</option>
+                        <option value="Републички завод за статистику">Републички завод за статистику</option>
+                        <option value="Републичка дирекција за воде">Републичка дирекција за воде</option>
+                        <option value="Републички хидрометролошки завод">Републички хидрометролошки завод</option>
+                        <option value="Завод за заштиту споменика културе">Завод за заштиту споменика културе</option>
+                        <option value="ЈП Пошта Србије">ЈП Пошта Србије</option>
+                        <option value="ЈП Путеви Србије">ЈП Путеви Србије</option>
+                        <option value="European Environment Agency">European Environment Agency (EEA)</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form12-Prostorni_Obuhvat" class="form-group">
+                <div class="controls col-md-12">
+                    <select name="form12-Prostorni_Obuhvat" class="select form-control multiselect" id="id_form12-Prostorni_Obuhvat" required="">
+                        <option value="Територија Републике Србије">Територија Републике Србије</option>
+                        <option value="Територија административне надлежности организације">Територија административне надлежности организације</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>-->
+        {{ form12.management_form }}
+        <table id="id_forms_table" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+        <thead>
+    	    <tr>
+    	        <th scope="col">Proizvod</th>
+    	        <th scope="col">Proizvodjac</th>
+    	        <th scope="col">Prostorni Obuhvat</th>
+    	        <th scope="col">Treca</th>
+    	        
+    	    </tr>
+        </thead>
+        <tbody>
+            {% for form in form12.forms %}
+    	    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje3_3">
+    	        
+    	        <td >
+                    <select name="pitanje3_3formset-0-Proizvod" id="id_pitanje3_3formset-0-Proizvod" class="form-control">
+                        <option value="Катастарске парцеле и објекти">Катастарске парцеле и објекти</option>
+                        <option value="Подаци катастра непокретности">Подаци катастра непокретности</option>
+                        <option value="Ортофото">Ортофото</option>
+                        <option value="Адресе">Адресе</option>
+                        <option value="Топографске карте">Топографске карте (1:20 000 и ситније размере)</option>
+                        <option value="Основна државна карта">Основна државна карта (1:5000; 1:10 000)</option>
+                        <option value="Просторни планови">Просторни планови</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+
+                <td >
+                    <select name="pitanje3_3formset-0-Proizvodjac" id="id_pitanje3_3formset-0-Proizvodjac" class="form-control">
+                        <option value="РГЗ">Републички геодетски завод</option>
+                        <option value="ВГИ">Војногеографски институт</option>
+                        <option value="Завод за заштиту природе Србије">Завод за заштиту природе Србије</option>
+                        <option value="Републички завод за статистику">Републички завод за статистику</option>
+                        <option value="Републичка дирекција за воде">Републичка дирекција за воде</option>
+                        <option value="Републички хидрометролошки завод">Републички хидрометролошки завод</option>
+                        <option value="Завод за заштиту споменика културе">Завод за заштиту споменика културе</option>
+                        <option value="ЈП Пошта Србије">ЈП Пошта Србије</option>
+                        <option value="ЈП Путеви Србије">ЈП Путеви Србије</option>
+                        <option value="European Environment Agency">European Environment Agency (EEA)</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+
+    	        <td>
+                    <select name="pitanje3_3formset-0-Prostorni_Obuhvat" id="id_pitanje3_3formset-0-Prostorni_Obuhvat" class="form-control">
+                        <option value="Територија Републике Србије">Територија Републике Србије</option>
+                        <option value="Територија административне надлежности организације">Територија административне надлежности организације</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+    	        <td  {% if forloop.first %} class="hidden"{% endif %}>
+    	            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje3_3"><span class="glyphicon glyphicon-trash"></span></a>
+    	        </td>
+            </tr>
+    	    {% endfor %}
+            <tr>
+    	        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje3_3"><span class="glyphicon glyphicon-plus"></span></a></td>
+    	    </tr>
+        </tbody>
+    </table>
+    </div>
+
+        
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 13 elementi #####################################################33-->
+    <div class="col-md-12">
+		<p class=""><strong>Vaznost podataka koje su potrebne od drugioh organizacija za redovne aktivnosti?</strong></p>
+    </div>
+    <!-- Pitanje3_4-->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th>INSPIRE TEME</th>
+                <th>Nije od znacaja</th>
+                <th>Delimicno znacajno</th>
+                <th>Znacajno</th>
+                <th>Od velikog znacaja</th>
+                <th>Izuzetno znacajno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Koordinatni referentni sistemi</th>
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Није од значаја" id="id_form13-Koordinatni_referentni_sistemi_0" required=""></td>	
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Делимично значајно" id="id_form13-Koordinatni_referentni_sistemi_1" required=""></td>	
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Значајно" id="id_form13-Koordinatni_referentni_sistemi_2" required=""></td>	
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Од великог значаја" id="id_form13-Koordinatni_referentni_sistemi_3" required=""></td>	
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Изузетно значајно" id="id_form13-Koordinatni_referentni_sistemi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Geografski mrezni sistemi</th>
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Није од значаја" id="id_form13-Geografski_mrezni_sistemi_0" required=""></td>	
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Делимично значајно" id="id_form13-Geografski_mrezni_sistemi_1" required=""></td>	
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Значајно" id="id_form13-Geografski_mrezni_sistemi_2" required=""></td>	
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Од великог значаја" id="id_form13-Geografski_mrezni_sistemi_3" required=""></td>	
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Изузетно значајно" id="id_form13-Geografski_mrezni_sistemi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Geografska imena</th>
+                <td><input type="radio" name="form13-Geografska_imena" value="Није од значаја" id="id_form13-Geografska_imena_0" required=""></td>	
+                <td><input type="radio" name="form13-Geografska_imena" value="Делимично значајно" id="id_form13-Geografska_imena_1" required=""></td>	
+                <td><input type="radio" name="form13-Geografska_imena" value="Значајно" id="id_form13-Geografska_imena_2" required=""></td>	
+                <td><input type="radio" name="form13-Geografska_imena" value="Од великог значаја" id="id_form13-Geografska_imena_3" required=""></td>	
+                <td><input type="radio" name="form13-Geografska_imena" value="Изузетно значајно" id="id_form13-Geografska_imena_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Administrativne jedinice</th>
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Није од значаја" id="id_form13-Administrativne_jedinice_0" required=""></td>	
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Делимично значајно" id="id_form13-Administrativne_jedinice_1" required=""></td>	
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Значајно" id="id_form13-Administrativne_jedinice_2" required=""></td>	
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Од великог значаја" id="id_form13-Administrativne_jedinice_3" required=""></td>	
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Изузетно значајно" id="id_form13-Administrativne_jedinice_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Adrese</th>
+                <td><input type="radio" name="form13-Adrese" value="Није од значаја" id="id_form13-Adrese_0" required=""></td>	
+                <td><input type="radio" name="form13-Adrese" value="Делимично значајно" id="id_form13-Adrese_1" required=""></td>	
+                <td><input type="radio" name="form13-Adrese" value="Значајно" id="id_form13-Adrese_2" required=""></td>	
+                <td><input type="radio" name="form13-Adrese" value="Од великог значаја" id="id_form13-Adrese_3" required=""></td>	
+                <td><input type="radio" name="form13-Adrese" value="Изузетно значајно" id="id_form13-Adrese_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Katastarske parcele</th>
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Није од значаја" id="id_form13-Katastarske_parcele_0" required=""></td>	
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Делимично значајно" id="id_form13-Katastarske_parcele_1" required=""></td>	
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Значајно" id="id_form13-Katastarske_parcele_2" required=""></td>	
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Од великог значаја" id="id_form13-Katastarske_parcele_3" required=""></td>	
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Изузетно значајно" id="id_form13-Katastarske_parcele_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Transportne mreze</th>
+                <td><input type="radio" name="form13-Transportne_mreze" value="Није од значаја" id="id_form13-Transportne_mreze_0" required=""></td>	
+                <td><input type="radio" name="form13-Transportne_mreze" value="Делимично значајно" id="id_form13-Transportne_mreze_1" required=""></td>	
+                <td><input type="radio" name="form13-Transportne_mreze" value="Значајно" id="id_form13-Transportne_mreze_2" required=""></td>	
+                <td><input type="radio" name="form13-Transportne_mreze" value="Од великог значаја" id="id_form13-Transportne_mreze_3" required=""></td>	
+                <td><input type="radio" name="form13-Transportne_mreze" value="Изузетно значајно" id="id_form13-Transportne_mreze_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Hidrografija</th>
+                <td><input type="radio" name="form13-Hidrografija" value="Није од значаја" id="id_form13-Hidrografija_0" required=""></td>	
+                <td><input type="radio" name="form13-Hidrografija" value="Делимично значајно" id="id_form13-Hidrografija_1" required=""></td>	
+                <td><input type="radio" name="form13-Hidrografija" value="Значајно" id="id_form13-Hidrografija_2" required=""></td>	
+                <td><input type="radio" name="form13-Hidrografija" value="Од великог значаја" id="id_form13-Hidrografija_3" required=""></td>	
+                <td><input type="radio" name="form13-Hidrografija" value="Изузетно значајно" id="id_form13-Hidrografija_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Zasticena podrucja</th>
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Није од значаја" id="id_form13-Zasticena_podrucja_0" required=""></td>	
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Делимично значајно" id="id_form13-Zasticena_podrucja_1" required=""></td>	
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Значајно" id="id_form13-Zasticena_podrucja_2" required=""></td>	
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Од великог значаја" id="id_form13-Zasticena_podrucja_3" required=""></td>	
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Изузетно значајно" id="id_form13-Zasticena_podrucja_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Visine</th>
+                <td><input type="radio" name="form13-Visine" value="Није од значаја" id="id_form13-Visine_0" required=""></td>	
+                <td><input type="radio" name="form13-Visine" value="Делимично значајно" id="id_form13-Visine_1" required=""></td>	
+                <td><input type="radio" name="form13-Visine" value="Значајно" id="id_form13-Visine_2" required=""></td>	
+                <td><input type="radio" name="form13-Visine" value="Од великог значаја" id="id_form13-Visine_3" required=""></td>	
+                <td><input type="radio" name="form13-Visine" value="Изузетно значајно" id="id_form13-Visine_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Zemljisni pokrivac</th>
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Није од значаја" id="id_form13-Zemljisni_pokrivac_0" required=""></td>	
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Делимично значајно" id="id_form13-Zemljisni_pokrivac_1" required=""></td>	
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Значајно" id="id_form13-Zemljisni_pokrivac_2" required=""></td>	
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Од великог значаја" id="id_form13-Zemljisni_pokrivac_3" required=""></td>	
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Изузетно значајно" id="id_form13-Zemljisni_pokrivac_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Ortofoto</th>
+                <td><input type="radio" name="form13-Ortofoto" value="Није од значаја" id="id_form13-Ortofoto_0" required=""></td>	
+                <td><input type="radio" name="form13-Ortofoto" value="Делимично значајно" id="id_form13-Ortofoto_1" required=""></td>	
+                <td><input type="radio" name="form13-Ortofoto" value="Значајно" id="id_form13-Ortofoto_2" required=""></td>	
+                <td><input type="radio" name="form13-Ortofoto" value="Од великог значаја" id="id_form13-Ortofoto_3" required=""></td>	
+                <td><input type="radio" name="form13-Ortofoto" value="Изузетно значајно" id="id_form13-Ortofoto_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Geologija</th>
+                <td><input type="radio" name="form13-Geologija" value="Није од значаја" id="id_form13-Geologija_0" required=""></td>	
+                <td><input type="radio" name="form13-Geologija" value="Делимично значајно" id="id_form13-Geologija_1" required=""></td>	
+                <td><input type="radio" name="form13-Geologija" value="Значајно" id="id_form13-Geologija_2" required=""></td>	
+                <td><input type="radio" name="form13-Geologija" value="Од великог значаја" id="id_form13-Geologija_3" required=""></td>	
+                <td><input type="radio" name="form13-Geologija" value="Изузетно значајно" id="id_form13-Geologija_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Statisticke jedinice</th>
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Није од значаја" id="id_form13-Statisticke_jedinice_0" required=""></td>	
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Делимично значајно" id="id_form13-Statisticke_jedinice_1" required=""></td>	
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Значајно" id="id_form13-Statisticke_jedinice_2" required=""></td>	
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Од великог значаја" id="id_form13-Statisticke_jedinice_3" required=""></td>	
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Изузетно значајно" id="id_form13-Statisticke_jedinice_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Zgrade</th>
+                <td><input type="radio" name="form13-Zgrade" value="Није од значаја" id="id_form13-Zgrade_0" required=""></td>	
+                <td><input type="radio" name="form13-Zgrade" value="Делимично значајно" id="id_form13-Zgrade_1" required=""></td>	
+                <td><input type="radio" name="form13-Zgrade" value="Значајно" id="id_form13-Zgrade_2" required=""></td>	
+                <td><input type="radio" name="form13-Zgrade" value="Од великог значаја" id="id_form13-Zgrade_3" required=""></td>	
+                <td><input type="radio" name="form13-Zgrade" value="Изузетно значајно" id="id_form13-Zgrade_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Tlo</th>
+                <td><input type="radio" name="form13-Tlo" value="Није од значаја" id="id_form13-Tlo_0" required=""></td>	
+                <td><input type="radio" name="form13-Tlo" value="Делимично значајно" id="id_form13-Tlo_1" required=""></td>	
+                <td><input type="radio" name="form13-Tlo" value="Значајно" id="id_form13-Tlo_2" required=""></td>	
+                <td><input type="radio" name="form13-Tlo" value="Од великог значаја" id="id_form13-Tlo_3" required=""></td>	
+                <td><input type="radio" name="form13-Tlo" value="Изузетно значајно" id="id_form13-Tlo_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Koriscenje zemljista</th>
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Није од значаја" id="id_form13-Koriscenje_zemljista_0" required=""></td>	
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Делимично значајно" id="id_form13-Koriscenje_zemljista_1" required=""></td>	
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Значајно" id="id_form13-Koriscenje_zemljista_2" required=""></td>	
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Од великог значаја" id="id_form13-Koriscenje_zemljista_3" required=""></td>	
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Изузетно значајно" id="id_form13-Koriscenje_zemljista_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Zdravlje ljudi I bezbednost</th>
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Није од значаја" id="id_form13-Zdravlje_ljudi_I_bezbednost_0" required=""></td>	
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Делимично значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_1" required=""></td>	
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_2" required=""></td>	
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Од великог значаја" id="id_form13-Zdravlje_ljudi_I_bezbednost_3" required=""></td>	
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Изузетно значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Vodovi i javni servisi</th>
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Није од значаја" id="id_form13-Vodovi_i_javni_servisi_0" required=""></td>	
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Делимично значајно" id="id_form13-Vodovi_i_javni_servisi_1" required=""></td>	
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Значајно" id="id_form13-Vodovi_i_javni_servisi_2" required=""></td>	
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Од великог значаја" id="id_form13-Vodovi_i_javni_servisi_3" required=""></td>	
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Изузетно значајно" id="id_form13-Vodovi_i_javni_servisi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Sistemi za pracenje kvaliteta zivotne sredine</th>
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Није од значаја" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_0" required=""></td>	
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Делимично значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_1" required=""></td>	
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_2" required=""></td>	
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Од великог значаја" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_3" required=""></td>	
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Изузетно значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Proizvodni i industrijski sistemi</th>
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Није од значаја" id="id_form13-Proizvodni_i_industrijski_sistemi_0" required=""></td>	
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Делимично значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_1" required=""></td>	
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_2" required=""></td>	
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Од великог значаја" id="id_form13-Proizvodni_i_industrijski_sistemi_3" required=""></td>	
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Изузетно значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_4" required=""></td>	
+            </tr>
+                <tr>
+                <th class="bg-primary">Sistemi za poljoprivredu i akvakulturu</th>
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Није од значаја" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_0" required=""></td>	
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Делимично значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_1" required=""></td>	
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_2" required=""></td>	
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Од великог значаја" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_3" required=""></td>	
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Изузетно значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Rasprostranjenost stanovnistva demografija</th>
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Није од значаја" id="id_form13-Rasprostranjenost_stanovnistva_demografija_0" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Делимично значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_1" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_2" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Од великог значаја" id="id_form13-Rasprostranjenost_stanovnistva_demografija_3" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Изузетно значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Oblast upravljanja</th>
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Није од значаја" id="id_form13-Oblast_upravljanja_0" required=""></td>	
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Делимично значајно" id="id_form13-Oblast_upravljanja_1" required=""></td>	
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Значајно" id="id_form13-Oblast_upravljanja_2" required=""></td>	
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Од великог значаја" id="id_form13-Oblast_upravljanja_3" required=""></td>	
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Изузетно значајно" id="id_form13-Oblast_upravljanja_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Zone prirodnog rizika</th>
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Није од значаја" id="id_form13-Zone_prirodnog_rizika_0" required=""></td>	
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Делимично значајно" id="id_form13-Zone_prirodnog_rizika_1" required=""></td>	
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Значајно" id="id_form13-Zone_prirodnog_rizika_2" required=""></td>	
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Од великог значаја" id="id_form13-Zone_prirodnog_rizika_3" required=""></td>	
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Изузетно значајно" id="id_form13-Zone_prirodnog_rizika_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Atmosferski uslovi</th>
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Није од значаја" id="id_form13-Atmosferski_uslovi_0" required=""></td>	
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Делимично значајно" id="id_form13-Atmosferski_uslovi_1" required=""></td>	
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Значајно" id="id_form13-Atmosferski_uslovi_2" required=""></td>	
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Од великог значаја" id="id_form13-Atmosferski_uslovi_3" required=""></td>	
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Изузетно значајно" id="id_form13-Atmosferski_uslovi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Meteorolosko geografske karakteristike</th>
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Није од значаја" id="id_form13-Meteorolosko_geografske_karakteristike_0" required=""></td>	
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Делимично значајно" id="id_form13-Meteorolosko_geografske_karakteristike_1" required=""></td>	
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Значајно" id="id_form13-Meteorolosko_geografske_karakteristike_2" required=""></td>	
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Од великог значаја" id="id_form13-Meteorolosko_geografske_karakteristike_3" required=""></td>	
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Изузетно значајно" id="id_form13-Meteorolosko_geografske_karakteristike_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Biogeografski Regioni</th>
+                
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Није од значаја" id="id_form13-Biogeografski_Regioni_0" required=""></td>	
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Делимично значајно" id="id_form13-Biogeografski_Regioni_1" required=""></td>	
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Значајно" id="id_form13-Biogeografski_Regioni_2" required=""></td>	
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Од великог значаја" id="id_form13-Biogeografski_Regioni_3" required=""></td>	
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Изузетно значајно" id="id_form13-Biogeografski_Regioni_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Stanista i biotopi</th>
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Није од значаја" id="id_form13-Stanista_i_biotopi_0" required=""></td>	
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Делимично значајно" id="id_form13-Stanista_i_biotopi_1" required=""></td>	
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Значајно" id="id_form13-Stanista_i_biotopi_2" required=""></td>	
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Од великог значаја" id="id_form13-Stanista_i_biotopi_3" required=""></td>	
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Изузетно значајно" id="id_form13-Stanista_i_biotopi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Rasprostranjenost vrsta</th>
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Није од значаја" id="id_form13-Rasprostranjenost_vrsta_0" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Делимично значајно" id="id_form13-Rasprostranjenost_vrsta_1" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Значајно" id="id_form13-Rasprostranjenost_vrsta_2" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Од великог значаја" id="id_form13-Rasprostranjenost_vrsta_3" required=""></td>	
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Изузетно значајно" id="id_form13-Rasprostranjenost_vrsta_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Energetski resursi</th>
+                <td><input type="radio" name="form13-Energetski_resursi" value="Није од значаја" id="id_form13-Energetski_resursi_0" required=""></td>	
+                <td><input type="radio" name="form13-Energetski_resursi" value="Делимично значајно" id="id_form13-Energetski_resursi_1" required=""></td>	
+                <td><input type="radio" name="form13-Energetski_resursi" value="Значајно" id="id_form13-Energetski_resursi_2" required=""></td>	
+                <td><input type="radio" name="form13-Energetski_resursi" value="Од великог значаја" id="id_form13-Energetski_resursi_3" required=""></td>	
+                <td><input type="radio" name="form13-Energetski_resursi" value="Изузетно значајно" id="id_form13-Energetski_resursi_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Mineralni resursi</th>
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Није од значаја" id="id_form13-Mineralni_resursi_0" required=""></td>	
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Делимично значајно" id="id_form13-Mineralni_resursi_1" required=""></td>	
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Значајно" id="id_form13-Mineralni_resursi_2" required=""></td>	
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Од великог значаја" id="id_form13-Mineralni_resursi_3" required=""></td>	
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Изузетно значајно" id="id_form13-Mineralni_resursi_4" required=""></td>	
+            </tr>
+            
+        </tbody>
+    </table>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 14 elementi #####################################################33-->  
+    <div class="col-md-12">
+		<p class=""><strong>Za kojim prostornim podacima imate potrebu a nisu dostupni na trzistu?</strong></p>
+    </div>
+    
+    <!-- Pitanje3_5-->
+    <div class="row-fluid">
+        <!--<div class="formColumn col-md-3">
+            <div id="div_id_form14-Proizvod" class="form-group">
+                <label for="id_form14-Proizvod" class="control-label col-md-12 requiredField">
+                    Proizvod<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-12">
+                    <select name="form14-Proizvod" id="id_form14-Proizvod" required="" class="select form-control multiselect">
+                        <option value="Катастарске парцеле и објекти">Катастарске парцеле и објекти</option>
+                        <option value="Подаци катастра непокретности">Подаци катастра непокретности</option>
+                        <option value="Ортофото">Ортофото</option> <option value="Адресе">Адресе</option>
+                        <option value="Топографске карте ">Топографске карте (1:20 000 и ситније размере)</option>
+                        <option value="Основна државна карта">Основна државна карта (1:5000; 1:10 000)</option>
+                        <option value="Просторни планови">Просторни планови</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-3">
+            <div id="div_id_form14-Proizvodjac" class="form-group">
+                <label for="id_form14-Proizvodjac" class="control-label col-md-12 requiredField">
+                    Proizvodjac<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-12">
+                    <select name="form14-Proizvodjac" id="id_form14-Proizvodjac" required="" class="select form-control multiselect">
+                        <option value="РГЗ">Републички геодетски завод</option>
+                        <option value="ВГИ">Војногеографски институт</option>
+                        <option value="Завод за заштиту природе Србије">Завод за заштиту природе Србије</option>
+                        <option value="Републички завод за статистику">Републички завод за статистику</option>
+                        <option value="Републичка дирекција за воде">Републичка дирекција за воде</option>
+                        <option value="Републички хидрометролошки завод">Републички хидрометролошки завод</option>
+                        <option value="Завод за заштиту споменика културе">Завод за заштиту споменика културе</option>
+                        <option value="ЈП Пошта Србије">ЈП Пошта Србије</option> <option value="ЈП Путеви Србије">ЈП Путеви Србије</option>
+                        <option value="European Environment Agency">European Environment Agency (EEA)</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-3">
+            <div id="div_id_form14-Prostorni_obuhvat" class="form-group">
+                <label for="id_form14-Prostorni_obuhvat" class="control-label col-md-12 requiredField">
+                    Prostorni obuhvat<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-12">
+                    <select name="form14-Prostorni_obuhvat" id="id_form14-Prostorni_obuhvat" required="" class="select form-control multiselect">
+                        <option value="Територија Републике Србије">Територија Републике Србије</option>
+                        <option value="Територија административне надлежности организације">Територија административне надлежности организације</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-3">
+            <div id="div_id_form14-Razlog_nedostupnosti" class="form-group">
+                <label for="id_form14-Razlog_nedostupnosti" class="control-label col-md-12 requiredField">
+                    Razlog nedostupnosti<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-12">
+                    <select name="form14-Razlog_nedostupnosti" id="id_form14-Razlog_nedostupnosti" required="" class="select form-control multiselect">
+                        <option value="Цена">Цена</option>
+                        <option value="Непостојање">Непостојање</option>
+                        <option value="Неажурност">Неажурност</option>
+                        <option value="Недоступност на интернету">Недоступност на интернету</option>
+                        <option value="Начин преузимања">Начин преузимања</option>
+                        <option value="Непокривеност">Непокривеност</option>
+                        <option value="Непостојање дигиталне форме">Непостојање дигиталне форме</option>
+                        <option value="Лоша садрадња са надлежном организацијом">Лоша садрадња са надлежном организацијом</option>
+                        <option value="Тајност података">Тајност података</option> <option value="Друго">Друго</option>
+                    </select>
+                </div>
+            </div>
+        </div>-->
+        {{ form14.management_form }}
+        <table id="id_forms_table" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+        <thead>
+    	    <tr>
+    	        <th scope="col">Proizvod</th>
+    	        <th scope="col">Proizvodjac</th>
+                <th scope="col">Prostorni Obuhvat</th>
+                <th scope="col">Razlog Nedostupnosti</th>
+    	        <th scope="col">Treca</th>
+    	        
+    	    </tr>
+        </thead>
+        <tbody>
+            {% for form in form14.forms %}
+    	    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje3_5">
+    	        
+    	        <td >
+                    <select name="pitanje3_5formset-0-Proizvod" id="id_pitanje3_5formset-0-Proizvod" class="form-control">
+                        <option value="Катастарске парцеле и објекти">Катастарске парцеле и објекти</option>
+                        <option value="Подаци катастра непокретности">Подаци катастра непокретности</option>
+                        <option value="Ортофото">Ортофото</option>
+                        <option value="Адресе">Адресе</option>
+                        <option value="Топографске карте ">Топографске карте (1:20 000 и ситније размере)</option>
+                        <option value="Основна државна карта">Основна државна карта (1:5000; 1:10 000)</option>
+                        <option value="Просторни планови">Просторни планови</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+
+                <td >
+                    <select name="pitanje3_5formset-0-Proizvodjac" id="id_pitanje3_5formset-0-Proizvodjac" class="form-control">
+                        <option value="РГЗ">Републички геодетски завод</option>
+                        <option value="ВГИ">Војногеографски институт</option>
+                        <option value="Завод за заштиту природе Србије">Завод за заштиту природе Србије</option>
+                        <option value="Републички завод за статистику">Републички завод за статистику</option>
+                        <option value="Републичка дирекција за воде">Републичка дирекција за воде</option>
+                        <option value="Републички хидрометролошки завод">Републички хидрометролошки завод</option>
+                        <option value="Завод за заштиту споменика културе">Завод за заштиту споменика културе</option>
+                        <option value="ЈП Пошта Србије">ЈП Пошта Србије</option>
+                        <option value="ЈП Путеви Србије">ЈП Путеви Србије</option>
+                        <option value="European Environment Agency">European Environment Agency (EEA)</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+
+    	        <td>
+                    <select name="pitanje3_5formset-0-Prostorni_obuhvat" id="id_pitanje3_5formset-0-Prostorni_obuhvat" class="form-control">
+                        <option value="Територија Републике Србије">Територија Републике Србије</option>
+                        <option value="Територија административне надлежности организације">Територија административне надлежности организације</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+                 <td>
+                    <select name="pitanje3_5formset-0-Razlog_nedostupnosti" id="id_pitanje3_5formset-0-Razlog_nedostupnosti" class="form-control">
+                        <option value="Цена">Цена</option>
+                        <option value="Непостојање">Непостојање</option>
+                        <option value="Неажурност">Неажурност</option>
+                        <option value="Недоступност на интернету">Недоступност на интернету</option>
+                        <option value="Начин преузимања">Начин преузимања</option>
+                        <option value="Непокривеност">Непокривеност</option>
+                        <option value="Непостојање дигиталне форме">Непостојање дигиталне форме</option>
+                        <option value="Лоша садрадња са надлежном организацијом">Лоша садрадња са надлежном организацијом</option>
+                        <option value="Тајност података">Тајност података</option>
+                        <option value="Друго">Друго</option>
+                    </select>
+                </td>
+    	        <td  {% if forloop.first %} class="hidden"{% endif %}>
+    	            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje3_5"><span class="glyphicon glyphicon-trash"></span></a>
+    	        </td>
+            </tr>
+    	    {% endfor %}
+            <tr>
+    	        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje3_5"><span class="glyphicon glyphicon-plus"></span></a></td>
+    	    </tr>
+        </tbody>
+    </table>
+    </div> 
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 15 elementi #####################################################33-->  
+    <div class="col-md-12">
+		<h1 class="bg-primary naslovi"> CetvrtaSekcija </h1>
+    </div> 
+
+    <!-- Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe --> 
+    <div id="div_id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" class="form-group">
+        <label for="id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" class="control-label col-md-12 requiredField">
+                Na koji nacin obezbedjujete podatke za svoje potrebe<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" id="id_form15-Na_koji_nacin_obezbedjujete_podatke_za_svoje_potrebe" required="" class="select form-control">
+                <option value="Сопствена производња података">Сопствена производња података</option>
+                <option value="Набавка кроз пројекте">Набавка кроз пројекте</option>
+                <option value="Преузимањем од других државних органа без накнаде">Преузимањем од других државних органа без накнаде</option>
+                <option value="Куповина">Куповина</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni --> 
+    <div id="div_id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" class="form-group">
+        <label for="id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" class="control-label col-md-12 requiredField">
+                Na koji nacin saradjujete sa drugim organizacijama pri razmeni<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" id="id_form15-Na_koji_nacin_saradjujete_sa_drugim_organizacijama_pri_razmeni" required="" class="select form-control">
+                <option value="По захтеву">По захтеву</option>
+                <option value="На основу уговора/споразума">На основу уговора/споразума</option>
+                <option value="На основу закона">На основу закона</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Ko_su_korisnici_vasih_proizvoda --> 
+    <div id="div_id_form15-Ko_su_korisnici_vasih_proizvoda" class="form-group">
+        <label for="id_form15-Ko_su_korisnici_vasih_proizvoda" class="control-label col-md-12 requiredField">
+                Ko su korisnici vasih proizvoda<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Ko_su_korisnici_vasih_proizvoda" id="id_form15-Ko_su_korisnici_vasih_proizvoda" required="" class="select form-control">
+                <option value="Сопствене потребе">Сопствене потребе</option>
+                <option value="Органи државне управе">Органи државне управе</option>
+                <option value="Органи територијалне аутономије">Органи територијалне аутономије</option>
+                <option value="Органи локалне самоуправе">Органи локалне самоуправе</option>
+                <option value="Јавне агенције">Јавне агенције</option>
+                <option value="Јавна предузећа">Јавна предузећа</option>
+                <option value="Научно-образовне установе">Научно-образовне установе</option>
+                <option value="Пројектантскo-урбанистичке организације">Пројектантскo-урбанистичке организације</option>
+                <option value="Приватне организације">Приватне организације</option>
+                <option value="Европске и друге међународне институције">Европске и друге међународне институције</option>
+                <option value="Грађани">Грађани</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Koja_je_cenovna_politika_za_geopodatke --> 
+    <div id="div_id_form15-Koja_je_cenovna_politika_za_geopodatke" class="form-group">
+        <label for="id_form15-Koja_je_cenovna_politika_za_geopodatke" class="control-label col-md-12 requiredField">
+                Koja je cenovna politika za geopodatke<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Koja_je_cenovna_politika_za_geopodatke" id="id_form15-Koja_je_cenovna_politika_za_geopodatke" required="" class="select form-control">
+                <option value="Цена се одређује подзаконским актима или сопственим одлукама">Цена се одређује подзаконским актима или сопственим одлукама</option>
+                <option value="Подаци/услуге су бесплатни ">Подаци/услуге су бесплатни </option>
+                <option value="Комбиновани модел ">Комбиновани модел </option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Model_odredjivanja_cene --> 
+    <div id="div_id_form15-Model_odredjivanja_cene" class="form-group">
+        <label for="id_form15-Model_odredjivanja_cene" class="control-label col-md-12 requiredField">
+                Model odredjivanja cene<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Model_odredjivanja_cene" id="id_form15-Model_odredjivanja_cene" required="" class="select form-control">
+                <option value="Покривање трошкова производње">Покривање трошкова производње</option>
+                <option value="Тржишна цена">Тржишна цена</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Kojem_modelu_finansiranja_NGIPA_treba_teziti --> 
+    <div id="div_id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" class="form-group">
+        <label for="id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" class="control-label col-md-12 requiredField">
+                Kojem modelu finansiranja NGIPA treba teziti<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" id="id_form15-Kojem_modelu_finansiranja_NGIPA_treba_teziti" required="" class="select form-control">
+                <option value="Покривање трошкова производње из буџета">Покривање трошкова производње из буџета за кључне геоподатке, уз размену без накнаде између субјеката НИГП-а</option>
+                <option value="Накнада за коришћење геоподатака према договореним условима">Накнада за коришћење геоподатака према договореним условима</option>
+                <option value="Тржишни услови">Тржишни услови</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje popraviti --> 
+    <div class="form-group">
+        <div class="controls  col-md-12">
+            <div id="div_id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="checkbox">
+                <label for="id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="">
+                    <input type="checkbox" name="form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" id="id_form15-Da_li_Podrzavate_razmenu_podataka_preko_portala_e_placanje" class="checkboxinput">
+                        Da li Podrzavate razmenu podataka preko portala e placanje
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje --> 
+    <div id="div_id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" class="form-group">
+        <label for="id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" class="control-label col-md-12 requiredField">
+                Da li postoji prepreka razmeni preko portala e placanje<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <textarea name="form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" id="id_form15-Da_li_postoji_prepreka_razmeni_preko_portala_e_placanje" required="" cols="40" rows="10" class="textarea form-control"></textarea>
+        </div>
+    </div> 
+
+    <!-- Problemi_prilikom_nabavke_geopodataka -->
+    <div id="div_id_form15-Problemi_prilikom_nabavke_geopodataka" class="form-group">
+        <label for="id_form15-Problemi_prilikom_nabavke_geopodataka" class="control-label col-md-12 requiredField">
+                Problemi prilikom nabavke geopodataka<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form15-Problemi_prilikom_nabavke_geopodataka" id="id_form15-Problemi_prilikom_nabavke_geopodataka" required="" class="select form-control">
+                <option value="Непостојање геоподатака у дигиталној форми ">Непостојање геоподатака у дигиталној форми </option>
+                <option value="Слабо доступне информације о надлежној организацији за одређене геоподатке">Слабо доступне информације о надлежној организацији за одређене геоподатке</option>
+                <option value="Стари/неажурни подаци">Стари/неажурни подаци</option>
+                <option value="Некомплетни подаци">Некомплетни подаци (просторни обухват и атрибути)</option>
+                <option value="Неодговарајући квалитет података">Неодговарајући квалитет података</option>
+                <option value="Високе цене">Високе цене</option>
+                <option value="Некомпатибилни формати података">Некомпатибилни формати података</option>
+                <option value="Сложене и нејасне процедуре">Сложене и нејасне процедуре</option>
+                <option value="Кашњење у испоруци">Кашњење у испоруци</option>
+                <option value="Неодговарајућа корисничка подршка">Неодговарајућа корисничка подршка</option>
+                <option value="Ограничена права приступа ">Ограничена права приступа </option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 16 elementi #####################################################33-->  
+    <div class="col-md-12">
+		<p class=""><strong>Kako vidite ulogu nacionalnog geoportala?</strong></p>
+    </div>
+    
+    <!-- Pitanje4_7-->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Nije od znacaja</th>
+                <th>Delimicno znacajno</th>
+                <th>Znacajno</th>
+                <th>Od velikog znacaja</th>
+                <th>Izuzetno znacajno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Postojanje nacionalnog geoportala</th>
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Postojanje_nacionalnog_geoportala_0" required=""></td>	
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Postojanje_nacionalnog_geoportala_1" required=""></td>	
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Значајно" id="id_form16-Postojanje_nacionalnog_geoportala_2" required=""></td>	
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Postojanje_nacionalnog_geoportala_3" required=""></td>	
+                <td><input type="radio" name="form16-Postojanje_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Postojanje_nacionalnog_geoportala_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Razvoj nacionalnog geoportala</th>
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Razvoj_nacionalnog_geoportala_0" required=""></td>	
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Razvoj_nacionalnog_geoportala_1" required=""></td>	
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Значајно" id="id_form16-Razvoj_nacionalnog_geoportala_2" required=""></td>	
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Razvoj_nacionalnog_geoportala_3" required=""></td>	
+                <td><input type="radio" name="form16-Razvoj_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Razvoj_nacionalnog_geoportala_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Razmena podataka preko nacionalnog geoportala</th>
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Није од значаја" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_0" required=""></td>	
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Делимично значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_1" required=""></td>	
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_2" required=""> </td>	
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Од великог значаја" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_3" required=""></td>	
+                <td><input type="radio" name="form16-Razmena_podataka_preko_nacionalnog_geoportala" value="Изузетно значајно" id="id_form16-Razmena_podataka_preko_nacionalnog_geoportala_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Usaglasavanje podataka</th>
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Није од значаја" id="id_form16-Usaglasavanje_podataka_0" required=""></td>	
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Делимично значајно" id="id_form16-Usaglasavanje_podataka_1" required=""></td>	
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Значајно" id="id_form16-Usaglasavanje_podataka_2" required=""></td>	
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Од великог значаја" id="id_form16-Usaglasavanje_podataka_3" required=""></td>	
+                <td><input type="radio" name="form16-Usaglasavanje_podataka" value="Изузетно значајно" id="id_form16-Usaglasavanje_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Interoperabilnost podataka</th>
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Није од значаја" id="id_form16-Interoperabilnost_podataka_0" required=""></td>	
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Делимично значајно" id="id_form16-Interoperabilnost_podataka_1" required=""></td>	
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Значајно" id="id_form16-Interoperabilnost_podataka_2" required=""></td>	
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Од великог значаја" id="id_form16-Interoperabilnost_podataka_3" required=""></td>	
+                <td><input type="radio" name="form16-Interoperabilnost_podataka" value="Изузетно значајно" id="id_form16-Interoperabilnost_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Javni uvid i javna dostupnost</th>
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Није од значаја" id="id_form16-Javni_uvid_i_javna_dostupnost_0" required=""></td>	
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Делимично значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_1" required=""></td>	
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_2" required=""></td>	
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Од великог значаја" id="id_form16-Javni_uvid_i_javna_dostupnost_3" required=""></td>	
+                <td><input type="radio" name="form16-Javni_uvid_i_javna_dostupnost" value="Изузетно значајно" id="id_form16-Javni_uvid_i_javna_dostupnost_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Servis Za Pronalazenje</th>
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Није од значаја" id="id_form16-Servis_Za_Pronalazenje_0" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Делимично значајно" id="id_form16-Servis_Za_Pronalazenje_1" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Значајно" id="id_form16-Servis_Za_Pronalazenje_2" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Од великог значаја" id="id_form16-Servis_Za_Pronalazenje_3" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pronalazenje" value="Изузетно значајно" id="id_form16-Servis_Za_Pronalazenje_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Servis Za Pregled</th>
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Није од значаја" id="id_form16-Servis_Za_Pregled_0" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Делимично значајно" id="id_form16-Servis_Za_Pregled_1" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Значајно" id="id_form16-Servis_Za_Pregled_2" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Од великог значаја" id="id_form16-Servis_Za_Pregled_3" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Pregled" value="Изузетно значајно" id="id_form16-Servis_Za_Pregled_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Servis Za Preuzimanje</th>
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Није од значаја" id="id_form16-Servis_Za_Preuzimanje_0" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Делимично значајно" id="id_form16-Servis_Za_Preuzimanje_1" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Значајно" id="id_form16-Servis_Za_Preuzimanje_2" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Од великог значаја" id="id_form16-Servis_Za_Preuzimanje_3" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Preuzimanje" value="Изузетно значајно" id="id_form16-Servis_Za_Preuzimanje_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Servis Za Transformaciju</th>
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Није од значаја" id="id_form16-Servis_Za_Transformaciju_0" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Делимично значајно" id="id_form16-Servis_Za_Transformaciju_1" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Значајно" id="id_form16-Servis_Za_Transformaciju_2" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Од великог значаја" id="id_form16-Servis_Za_Transformaciju_3" required=""></td>	
+                <td><input type="radio" name="form16-Servis_Za_Transformaciju" value="Изузетно значајно" id="id_form16-Servis_Za_Transformaciju_4" required=""></td>	
+            </tr>
+                <tr>
+                <th class="bg-primary">Servis za povezivanje mreznih servisa</th>
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Није од значаја" id="id_form16-Servis_za_povezivanje_mreznih_servisa_0" required=""></td>	
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Делимично значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_1" required=""></td>	
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_2" required=""></td>	
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Од великог значаја" id="id_form16-Servis_za_povezivanje_mreznih_servisa_3" required=""></td>	
+                <td><input type="radio" name="form16-Servis_za_povezivanje_mreznih_servisa" value="Изузетно значајно" id="id_form16-Servis_za_povezivanje_mreznih_servisa_4" required=""></td>	
+            </tr>
+            
+        </tbody>
+    </table>
+  <!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 17 elementi #####################################################33-->    
+    <div class="col-md-12">
+		<h1 class="bg-primary naslovi"> PetaSekcija </h1>
+    </div> 
+    
+    <!-- Metode_koriscenja_i_zastite -->
+    <div id="div_id_form17-Metode_koriscenja_i_zastite" class="form-group">
+        <label for="id_form17-Metode_koriscenja_i_zastite" class="control-label col-md-12 requiredField">
+                Metode koriscenja i zastite<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Metode_koriscenja_i_zastite" id="id_form17-Metode_koriscenja_i_zastite" required="" class="select form-control">
+                <option value="copyright">copyright</option>
+                <option value="ауторизација приступа">ауторизација приступа</option>
+                <option value="бекап">бекап</option>
+                <option value="ограничена права приступа ">ограничена права приступа </option>
+                <option value="GеоDRM">GеоDRM – Digital Right Management</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka -->
+    <div id="div_id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" class="form-group">
+        <label for="id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" class="control-label col-md-12 requiredField">
+                Da li podrzavate prikupljanje geopodataka prema konceptu otvorenih podataka<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" id="id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" required="" class="select form-control">
+                <option value="Да ">Да </option>
+                <option value="Не">Не</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Da_li_ste_upoznati_sa_nekim_od_postojecih_portala -->
+    <div id="div_id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" class="form-group">
+        <label for="id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" class="control-label col-md-12 requiredField">
+                Da li ste upoznati sa nekim od postojecih portala<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" id="id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" required="" class="select form-control">
+                <option value="data.gov.rs">Национални OpenData портал (data.gov.rs) </option>
+                <option value="data.poverenik.rs">Портал отворених података Повереника за информације од јавног значаја и заштиту података о личности (data.poverenik.rs)</option>
+                <option value="SHARE">Платформа SHARE фондације</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Da_li_ste_koristili_besplatne_setove_podataka -->
+    <div id="div_id_form17-Da_li_ste_koristili_besplatne_setove_podataka" class="form-group">
+        <label for="id_form17-Da_li_ste_koristili_besplatne_setove_podataka" class="control-label col-md-12 requiredField">
+                Da li ste koristili besplatne setove podataka<span class="asteriskField">*</span>
+            </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_ste_koristili_besplatne_setove_podataka" id="id_form17-Da_li_ste_koristili_besplatne_setove_podataka" required="" class="select form-control">
+                <option value="OpenData ">Користили смо, преузимањем са националног OpenData портала </option>
+                <option value="Преуѕимање са других портала">Користили смо, преузимањем са других постојећих портала</option>
+                <option value="Стандардни начин">Користили смо, преузимањем на стандардан начин (дигитални медиј, папир, поштом, преко имејла, и сл.)</option>
+                <option value="Нисмо користили">Нисмо користили, планирамо интензивније коришћење отворених података у будућности</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Za_koje_poslove_ste_koristili_podatke -->
+    <div id="div_id_form17-Za_koje_poslove_ste_koristili_podatke" class="form-group">
+        <label for="id_form17-Za_koje_poslove_ste_koristili_podatke" class="control-label col-md-12 requiredField">
+                Za koje poslove ste koristili podatke<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Za_koje_poslove_ste_koristili_podatke" id="id_form17-Za_koje_poslove_ste_koristili_podatke" required="" class="select form-control">
+                <option value="Креирање web сајта или мобилне апликације ">Креирање web сајта или мобилне апликације </option>
+                <option value="Креирање web сервиса">Креирање web сервиса</option>
+                <option value="Извештаји, радови или презентације">Извештаји, радови или презентације</option>
+                <option value="Интеграција са већ постојећим web сајтовима или мобилним апликацијама">Интеграција са већ постојећим web сајтовима или мобилним апликацијама</option>
+                <option value="Креирање тематских карата или сличних визуелизација отворених података">Креирање тематских карата или сличних визуелизација отворених података</option>
+                <option value="Статистичке анализе">Статистичке анализе</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Format_podataka -->
+    <div id="div_id_form17-Format_podataka" class="form-group">
+        <label for="id_form17-Format_podataka" class="control-label col-md-12 requiredField">
+                Format podataka<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Format_podataka" id="id_form17-Format_podataka" required="" class="select form-control">
+                <option value="CSV">Comma Separated Values file format (*.csv) </option>
+                <option value="XLS">Microsoft Excel file format (*.xls)</option>
+                <option value="PDF">Adobe PDF (*.pdf)</option>
+                <option value="TIFF">Tagged Image File Format (*.tif)</option>
+                <option value="CDR">CorelDraw file format (*.cdr)</option>
+                <option value="SHP">ESRI shapefile (*.shp)</option>
+                <option value="XML">Extensible Markup Language (*.xml)</option>
+                <option value="KML">Keyhole Markup Language (*.kml, *.kmz)</option>
+                <option value="DXF">AutoCAD file format (*.dxf)</option>
+                <option value="JSON">JavaScript Object Notation (*.json)</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Koju_vrstu_podataka_ste_koristili -->
+    <div id="div_id_form17-Koju_vrstu_podataka_ste_koristili" class="form-group">
+        <label for="id_form17-Koju_vrstu_podataka_ste_koristili" class="control-label col-md-12 requiredField">
+                Koju vrstu podataka ste koristili<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Koju_vrstu_podataka_ste_koristili" id="id_form17-Koju_vrstu_podataka_ste_koristili" required="" class="select form-control">
+                <option value="Геоподаци ">Геоподаци </option>
+                <option value="Финансијски подаци">Финансијски подаци</option>
+                <option value="Статистички подаци">Статистички подаци</option>
+                <option value="Научни подаци">Научни подаци</option>
+                <option value="Подаци о времену">Подаци о времену</option>
+                <option value="Подаци о култури">Подаци о култури</option>
+                <option value="Подаци о животној средини">Подаци о животној средини</option>
+                <option value="Подаци јавног сектора">Подаци јавног сектора</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Opis_projekta_sa_prostornim_podacima -->
+    <div id="div_id_form17-Opis_projekta_sa_prostornim_podacima" class="form-group">
+        <label for="id_form17-Opis_projekta_sa_prostornim_podacima" class="control-label col-md-12 requiredField">
+                Opis projekta sa prostornim podacima<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <textarea name="form17-Opis_projekta_sa_prostornim_podacima" id="id_form17-Opis_projekta_sa_prostornim_podacima" required="" cols="40" rows="10" class="textarea form-control"></textarea>
+        </div>
+    </div>
+
+    <!-- Sufinansiranje_podataka -->
+    <div id="div_id_form17-Sufinansiranje_podataka" class="form-group">
+        <label for="id_form17-Sufinansiranje_podataka" class="control-label col-md-12 requiredField">
+                Sufinansiranje podataka<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Sufinansiranje_podataka" id="id_form17-Sufinansiranje_podataka" required="" class="select form-control">
+                <option value="Да">Да, заинтересовани смо да учествујемо у суфинансирању</option>
+                <option value="Не">Не, нисмо заинтересовани да учествујемо у суфинансирању</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 18 elementi #####################################################33-->  
+    <div class="row-fluid col-md-12">
+		<p class=""><strong>Status primene standarda za prostorne podatke u okviru vase organizacije?</strong></p>
+    </div> 
+    
+    <!-- Pitanje5_1-->
+    <div class="row-fluid">
+        <table class=" table table-bordered table-hover">
+            <thead class="thead-inverse bg-primary">
+                <tr>
+                    <th></th>
+                    <th>Nije od znacaja</th>
+                    <th>Delimicno znacajno</th>
+                    <th>Znacajno</th>
+                    <th>Od velikog znacaja</th>
+                    <th>Izuzetno znacajno</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="bg-primary">Inspire</th>
+                    <td><input type="radio" name="form18-Inspire" value="Користи се" id="id_form18-Inspire_0" required=""></td>	
+                    <td><input type="radio" name="form18-Inspire" value="Делимично" id="id_form18-Inspire_1" required=""></td>	
+                    <td><input type="radio" name="form18-Inspire" value="Потребно" id="id_form18-Inspire_2" required=""></td>	
+                    <td><input type="radio" name="form18-Inspire" value="Не користи се" id="id_form18-Inspire_3" required=""></td>	
+                    <td><input type="radio" name="form18-Inspire" value="Нисмо упознати са стандардом" id="id_form18-Inspire_4" required=""></td>	
+                </tr>
+                <tr>
+                    <th class="bg-primary">Iso i Cen</th>
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Користи се" id="id_form18-Iso_i_Cen_0" required=""></td>	
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Делимично" id="id_form18-Iso_i_Cen_1" required=""></td>	
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Потребно" id="id_form18-Iso_i_Cen_2" required=""></td>	
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Не користи се" id="id_form18-Iso_i_Cen_3" required=""></td>	
+                    <td><input type="radio" name="form18-Iso_i_Cen" value="Нисмо упознати са стандардом" id="id_form18-Iso_i_Cen_4" required=""></td>	
+                </tr>
+                <tr>
+                    <th class="bg-primary">OGC</th>
+                    <td><input type="radio" name="form18-OGC" value="Користи се" id="id_form18-OGC_0" required=""></td>	
+                    <td><input type="radio" name="form18-OGC" value="Делимично" id="id_form18-OGC_1" required=""></td>	
+                    <td><input type="radio" name="form18-OGC" value="Потребно" id="id_form18-OGC_2" required=""></td>	
+                    <td><input type="radio" name="form18-OGC" value="Не користи се" id="id_form18-OGC_3" required=""></td>	
+                    <td><input type="radio" name="form18-OGC" value="Нисмо упознати са стандардом" id="id_form18-OGC_4" required=""></td>	
+                </tr>
+                <tr>
+                    <th class="bg-primary">W3C</th>
+                    <td><input type="radio" name="form18-W3C" value="Користи се" id="id_form18-W3C_0" required=""></td>	
+                    <td><input type="radio" name="form18-W3C" value="Делимично" id="id_form18-W3C_1" required=""></td>	
+                    <td><input type="radio" name="form18-W3C" value="Потребно" id="id_form18-W3C_2" required=""></td>	
+                    <td><input type="radio" name="form18-W3C" value="Не користи се" id="id_form18-W3C_3" required=""> </td>	
+                    <td><input type="radio" name="form18-W3C" value="Нисмо упознати са стандардом" id="id_form18-W3C_4" required=""></td>	
+                </tr>
+                <tr>
+                    <th class="bg-primary">Standardi proizvodjaca gis softvera</th>
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Користи се" id="id_form18-Standardi_proizvodjaca_gis_softvera_0" required=""></td>	
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Делимично" id="id_form18-Standardi_proizvodjaca_gis_softvera_1" required=""></td>	
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Потребно" id="id_form18-Standardi_proizvodjaca_gis_softvera_2" required=""></td>	
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Не користи се" id="id_form18-Standardi_proizvodjaca_gis_softvera_3" required=""></td>	
+                    <td><input type="radio" name="form18-Standardi_proizvodjaca_gis_softvera" value="Нисмо упознати са стандардом" id="id_form18-Standardi_proizvodjaca_gis_softvera_4" required=""></td>	
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 19 elementi #####################################################33-->  
+    <div class="row-fluid">
+		<p class=""><strong>Koje standarde iz oblasti geoinformacija koristite?</strong></p>
+    </div> 
+    
+    <!-- Pitanje5_2 Ubaciti formsete i srediti da lici na nesto-->
+    <!--<table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th>Standard</th>
+                <th>Upotreba</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" name="form19-Standard" id="id_form19-Standard" required="" maxlength="100"></td>
+                <td><textarea name="form19-Upotreba" id="id_form19-Upotreba" required="" cols="40" rows="10"></textarea></td>
+                
+            </tr>
+        </tbody>
+    </table>--> 
+    <div class="row-fluid">
+         {{ form19.management_form }}
+        <table id="id_forms_table" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+        <thead>
+    	    <tr>
+    	        <th scope="col">Standard</th>
+                <th scope="col">Upotreba</th>
+                <th scope="col">Treci</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for form in form19.forms %}
+    	    <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje5_2">
+    	        
+    	        <td>
+                  <input type="text" name="pitanje5_2formset-0-Standard" maxlength="100" id="id_pitanje5_2formset-0-Standard" class="form-control">
+                </td>
+
+                <td>
+                    <textarea name="pitanje5_2formset-0-Upotreba" rows="5" id="id_pitanje5_2formset-0-Upotreba" cols="40" class="form-control"></textarea>
+                </td>
+    	        <td  {% if forloop.first %} class="hidden"{% endif %}>
+    	            <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje5_2"><span class="glyphicon glyphicon-trash"></span></a>
+    	        </td>
+            </tr>
+    	    {% endfor %}
+            <tr>
+    	        <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje5_2"><span class="glyphicon glyphicon-plus"></span></a></td>
+    	    </tr>
+        </tbody>
+    </table>
+    </div>
+
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 20 elementi #####################################################33-->  
+    <!-- Pitanje5_4 -->
+    <div class="col-md-12">
+	    <p class=""><strong>Da li su prava koriscenja i zastite uredjeni posebnim propisima?</strong></p>
+    </div>
+    
+    <!-- Da_ne-->
+    <div id="div_id_form20-Da_ne" class="form-group">
+        <label for="id_form20-Da_ne" class="control-label col-md-4">
+                Da ne
+        </label>
+        <div class="controls col-md-6">
+            <select name="form20-Da_ne" id="id_form20-Da_ne" class="select form-control multiselect">
+                <option value="Da">Da</option>
+                <option value="Ne">Ne</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Naziv_akta -->
+    <div id="div_id_form20-Naziv_akta" class="form-group">
+        <label for="id_form20-Naziv_akta" class="control-label col-md-4 requiredField">
+                Naziv akta<span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form20-Naziv_akta" id="id_form20-Naziv_akta" required="" maxlength="100" class="textinput textInput form-control">
+        </div>
+    </div>
+
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 21 elementi #####################################################33-->  
+   
+    <div class="col-md-12">
+		<p class=""><strong>Tri najvaznije prepreke za uspostavljanje koncepta otvorenih podataka?</strong></p>
+    </div> 
+    
+    <!-- Pitanje5_12 -->
+    <div class="row-fluid">
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka1" class="form-group">
+                <label for="id_form21-Prepreka1" class="control-label col-md-4 requiredField">
+                    Prepreka1<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-6">
+                    <textarea name="form21-Prepreka1" id="id_form21-Prepreka1" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka2" class="form-group">
+                <label for="id_form21-Prepreka2" class="control-label col-md-4 requiredField">
+                    Prepreka2<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-6">
+                    <textarea name="form21-Prepreka2" id="id_form21-Prepreka2" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="formColumn col-md-4">
+            <div id="div_id_form21-Prepreka3" class="form-group">
+                <label for="id_form21-Prepreka3" class="control-label col-md- requiredField">
+                    Prepreka3<span class="asteriskField">*</span>
+                </label>
+                <div class="controls col-md-12">
+                    <textarea name="form21-Prepreka3" id="id_form21-Prepreka3" rows="10" class="textarea form-control" cols="40" required=""></textarea>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 22 elementi #####################################################33-->  
+   <div class="col-md-12">
+		<p class=""><strong> Za svaku od prepreka odrediti vaznost?</strong></p>
+    </div>
+    
+    <!-- Pitanje5_13 -->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Nije od znacaja</th>
+                <th>Delimicno znacajno</th>
+                <th>Znacajno</th>
+                <th>Od velikog znacaja</th>
+                <th>Izuzetno znacajno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Prepreka1</th>
+                <td><input type="radio" name="form22-Prepreka1" value="Није од значаја" id="id_form22-Prepreka1_0" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka1" value="Делимично значајно" id="id_form22-Prepreka1_1" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka1" value="Значајно" id="id_form22-Prepreka1_2" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka1" value="Од великог значаја" id="id_form22-Prepreka1_3" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka1" value="Изузетно значајно" id="id_form22-Prepreka1_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Prepreka2</th>
+                <td><input type="radio" name="form22-Prepreka2" value="Није од значаја" id="id_form22-Prepreka2_0" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka2" value="Делимично значајно" id="id_form22-Prepreka2_1" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka2" value="Значајно" id="id_form22-Prepreka2_2" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka2" value="Од великог значаја" id="id_form22-Prepreka2_3" required=""></td>	
+                <td><input type="radio" name="form22-Prepreka2" value="Изузетно значајно" id="id_form22-Prepreka2_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Prepreka3</th>
+                <td><input type="radio" name="form22-Prepreka3" value="Није од значаја" id="id_form22-Prepreka3_0" required=""> </td>	
+                <td><input type="radio" name="form22-Prepreka3" value="Делимично значајно" id="id_form22-Prepreka3_1" required=""> </td>	
+                <td><input type="radio" name="form22-Prepreka3" value="Значајно" id="id_form22-Prepreka3_2" required=""> </td>	
+                <td><input type="radio" name="form22-Prepreka3" value="Од великог значаја" id="id_form22-Prepreka3_3" required=""> </td>	
+                <td><input type="radio" name="form22-Prepreka3" value="Изузетно значајно" id="id_form22-Prepreka3_4" required=""> </td>	
+            </tr>
+        </tbody>
+    </table>
+<!--******************************************************************************************************************************** -->       
+    <!-- ###################################################### forma 23 elementi #####################################################33-->  
+   <div class="col-md-12">
+	    <p class=""><strong> Koliko se slazete sa navedenim tvrdnjama?</strong></p>
+    </div>
+    
+    <!-- Pitanje 5_14 -->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th></th>
+                <th>Uopste se ne slazem</th>
+                <th>Ne slazem se</th>
+                <th>Neodlucan</th>
+                <th>Slazem se</th>
+                <th>Potpuno se slazem</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Otvoreni podaci ce dobrineti razvoju lokalnih samouprave</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_1" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_lokalnih_samouprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Otvoreni podaci ce omoguciti efikasniju drzavnu administraciju</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_1" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_omoguciti_efikasniju_drzavnu_administraciju_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Otvoreni podaci ce dobrineti razvoju koriscenja podataka</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_1" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_razvoju_koriscenja_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Otvoreni podaci ce dobrineti boljem razumevanju drzavne uprave</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Не слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_1" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Неодлучан" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Слажем се" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_ce_dobrineti_boljem_razumevanju_drzavne_uprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Otvoreni podaci mogu da se koriste u druge svrhe</th>
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Уопште се не слажем" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_0" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Не слажем се" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_1" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Неодлучан" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_2" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Слажем се" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_3" required=""></td>	
+                <td><input type="radio" name="form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe" value="Потпуно се слажем" id="id_form23-Otvoreni_podaci_mogu_da_se_koriste_u_druge_svrhe_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Korisnici koji nisu u boljem razumevanju drzavne uprave</th>
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Уопште се не слажем" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_0" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Не слажем се" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_1" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Неодлучан" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_2" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Слажем се" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_3" required=""></td>	
+                <td><input type="radio" name="form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave" value="Потпуно се слажем" id="id_form23-Korisnici_koji_nisu_u_boljem_razumevanju_drzavne_uprave_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Svi podaci u konceptu open data</th>
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Уопште се не слажем" id="id_form23-Svi_podaci_u_konceptu_open_data_0" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Не слажем се" id="id_form23-Svi_podaci_u_konceptu_open_data_1" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Неодлучан" id="id_form23-Svi_podaci_u_konceptu_open_data_2" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Слажем се" id="id_form23-Svi_podaci_u_konceptu_open_data_3" required=""></td>	
+                <td><input type="radio" name="form23-Svi_podaci_u_konceptu_open_data" value="Потпуно се слажем" id="id_form23-Svi_podaci_u_konceptu_open_data_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Postoji puno razloga da podaci ne budu opendata</th>
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Уопште се не слажем" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_0" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Не слажем се" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_1" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Неодлучан" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_2" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Слажем се" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_3" required=""></td>	
+                <td><input type="radio" name="form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata" value="Потпуно се слажем" id="id_form23-Postoji_puno_razloga_da_podaci_ne_budu_opendata_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Efikiasnija i brza razmena podataka</th>
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Уопште се не слажем" id="id_form23-Efikiasnija_i_brza_razmena_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Не слажем се" id="id_form23-Efikiasnija_i_brza_razmena_podataka_1" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Неодлучан" id="id_form23-Efikiasnija_i_brza_razmena_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Слажем се" id="id_form23-Efikiasnija_i_brza_razmena_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Efikiasnija_i_brza_razmena_podataka" value="Потпуно се слажем" id="id_form23-Efikiasnija_i_brza_razmena_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Efikasnija i povoljinja administracija</th>
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Уопште се не слажем" id="id_form23-Efikasnija_i_povoljinja_administracija_0" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Не слажем се" id="id_form23-Efikasnija_i_povoljinja_administracija_1" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Неодлучан" id="id_form23-Efikasnija_i_povoljinja_administracija_2" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Слажем се" id="id_form23-Efikasnija_i_povoljinja_administracija_3" required=""></td>	
+                <td><input type="radio" name="form23-Efikasnija_i_povoljinja_administracija" value="Потпуно се слажем" id="id_form23-Efikasnija_i_povoljinja_administracija_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Kvalitetnije izvestavanje ka evropskim institucijama</th>
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Уопште се не слажем" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_0" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Не слажем се" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_1" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Неодлучан" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_2" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Слажем се" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_3" required=""></td>	
+                <td><input type="radio" name="form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama" value="Потпуно се слажем" id="id_form23-Kvalitetnije_izvestavanje_ka_evropskim_institucijama_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Koristan za celokupnu zajednicu</th>
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Уопште се не слажем" id="id_form23-Koristan_za_celokupnu_zajednicu_0" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Не слажем се" id="id_form23-Koristan_za_celokupnu_zajednicu_1" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Неодлучан" id="id_form23-Koristan_za_celokupnu_zajednicu_2" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Слажем се" id="id_form23-Koristan_za_celokupnu_zajednicu_3" required=""></td>	
+                <td><input type="radio" name="form23-Koristan_za_celokupnu_zajednicu" value="Потпуно се слажем" id="id_form23-Koristan_za_celokupnu_zajednicu_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Manja redudantnost podataka</th>
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Уопште се не слажем" id="id_form23-Manja_redudantnost_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Не слажем се" id="id_form23-Manja_redudantnost_podataka_1" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Неодлучан" id="id_form23-Manja_redudantnost_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Слажем се" id="id_form23-Manja_redudantnost_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Manja_redudantnost_podataka" value="Потпуно се слажем" id="id_form23-Manja_redudantnost_podataka_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Dostupni u pogodnom obliku</th>
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Уопште се не слажем" id="id_form23-Dostupni_u_pogodnom_obliku_0" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Не слажем се" id="id_form23-Dostupni_u_pogodnom_obliku_1" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Неодлучан" id="id_form23-Dostupni_u_pogodnom_obliku_2" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Слажем се" id="id_form23-Dostupni_u_pogodnom_obliku_3" required=""></td>	
+                <td><input type="radio" name="form23-Dostupni_u_pogodnom_obliku" value="Потпуно се слажем" id="id_form23-Dostupni_u_pogodnom_obliku_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Koriscenje izvan podrucja namene</th>
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Уопште се не слажем" id="id_form23-Koriscenje_izvan_podrucja_namene_0" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Не слажем се" id="id_form23-Koriscenje_izvan_podrucja_namene_1" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Неодлучан" id="id_form23-Koriscenje_izvan_podrucja_namene_2" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Слажем се" id="id_form23-Koriscenje_izvan_podrucja_namene_3" required=""></td>	
+                <td><input type="radio" name="form23-Koriscenje_izvan_podrucja_namene" value="Потпуно се слажем" id="id_form23-Koriscenje_izvan_podrucja_namene_4" required=""></td>	
+            </tr>
+            <tr>
+                <th class="bg-primary">Kreirati servis za pronalazenje podataka</th>
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Уопште се не слажем" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_0" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Не слажем се" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_1" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Неодлучан" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_2" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Слажем се" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_3" required=""></td>	
+                <td><input type="radio" name="form23-Kreirati_servis_za_pronalazenje_podataka" value="Потпуно се слажем" id="id_form23-Kreirati_servis_za_pronalazenje_podataka_4" required=""></td>	
+            </tr>
+        </tbody>
+    </table>
+   <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+</form>
+
+</div>
+<script>
+  $('[data-toggle="popover"]').popover();  
+    
+   
+
+
+/*Java Script for adding and deleting forms from formset*/
+function updateElementIndex(el, prefix, ndx){ 
+    var id_regex = new RegExp('(' + prefix + '-\d+)');
+    var replacement = prefix + '-' + ndx;
+    
+    if ($(el).attr("for"))
+        $(el).attr("for",$(el).attr("for").replace($(el).attr("for"), replacement));
+    
+    if (el.id){
+        prefix_for_new_rows = prefix + '-' + $('#id_' + prefix + '-TOTAL_FORMS').val()
+        d = 'id_' + prefix_for_new_rows + el.id.substring(22,el.id.length)
+        el.id = el.id.replace(el.id, replacement);
+
+    }
+        
+    if (el.name){
+        prefix_for_new_rows = prefix+'-'+$('#id_' + prefix + '-TOTAL_FORMS').val()
+        d = prefix_for_new_rows + el.name.substring(19,el.name.length)
+        el.name = d
+
+    }
+  
+      
+       
+}
+
+    function addForm(btn, prefix,cname) {
+        var formCount = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+        
+        //var row = $('.dynamic-form:first').clone(true).get(0);
+        var row = $('.'+cname+':first').clone(true).get(0);
+        
+        
+        //alert(row)
+       // $(row).removeAttr('id').insertAfter($('.dynamic-form:last')).children('.hidden').removeClass('hidden');
+        $(row).removeAttr('id').insertAfter($('.'+cname+':last')).children('.hidden').removeClass('hidden');
+        
+        $(row).children().not(':last').children().each(function() {
+            
+    	    updateElementIndex(this, prefix, formCount);
+            
+           
+    	    $(this).val('');
+        });
+        //$(row).attr('id',prefix+'-'+formCount+'-row')
+        //alert($(row).id)
+        $(row).find('.delete-row').click(function() {
+    	    deleteForm(this, prefix, cname);
+        });
+        $('#id_' + prefix + '-TOTAL_FORMS').val(formCount + 1);
+        return false;
+    }
+
+    /*function addForm(selector, type) {
+    var newElement = $(selector).prev().clone(true);
+    var total = $('#id_' + type + '-TOTAL_FORMS').val();
+    newElement.find(':input').each(function() {
+        var name = $(this).attr('name').replace('-' + (total-1) + '-','-' + total + '-');
+        var id = 'id_' + name;
+        $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
+    });
+    newElement.find('label').each(function() {
+        var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+        $(this).attr('for', newFor);
+    });
+    total++;
+    
+    $('#id_' + type + '-TOTAL_FORMS').val(total);
+    $(selector).after(newElement);
+}*/
+
+    function deleteForm(btn, prefix, cname) {
+        $(btn).parents('.'+cname).remove();
+        var forms = $('.'+cname);
+        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+        for (var i=0, formCount=forms.length; i<formCount; i++) {
+    	    $(forms.get(i)).children().not(':last').children().each(function() {
+    	        updateElementIndex(this, prefix, i);
+    	    });
+        }
+        return false;
+    } 
+
+/***********************************************************************************************************/
+
+//Pitanje2_8Formset form5 
+$('.add-row_pitanje2_8').click(function() {
+    	    return addForm(this, 'pitanje2_8formset','dynamic-form-pitanje2_8');
+});
+$('.delete-row_pitanje2_8').click(function() {
+    	    return deleteForm(this, 'pitanje2_8formset','dynamic-form-pitanje2_8' );
+}) 
+
+//Pitanje2_6Formset form4 
+$('.add-row_pitanje2_6').click(function() {
+    	    return addForm(this, 'pitanje2_6formset','dynamic-form-pitanje2_6');
+});
+$('.delete-row_pitanje2_6').click(function() {
+    	    return deleteForm(this, 'pitanje2_6formset','dynamic-form-pitanje2_6');
+})
+
+//Pitanje2_5Formset form3 
+$('.add-row_pitanje2_5').click(function() {
+    	    return addForm(this, 'pitanje2_5formset','dynamic-form-pitanje2_5');
+});
+$('.delete-row_pitanje2_5').click(function() {
+    	    return deleteForm(this, 'pitanje2_5formset','dynamic-form-pitanje2_5');
+})
+
+//Pitanje3_3Formset form12 
+$('.add-row_pitanje3_3').click(function() {
+    	    return addForm(this, 'pitanje3_3formset','dynamic-form-pitanje3_3');
+});
+$('.delete-row_pitanje3_3').click(function() {
+    	    return deleteForm(this, 'pitanje3_3formset','dynamic-form-pitanje3_3');
+})
+
+//Pitanje3_3Formset form14
+$('.add-row_pitanje3_5').click(function() {
+    	    return addForm(this, 'pitanje3_5formset','dynamic-form-pitanje3_5');
+});
+$('.delete-row_pitanje3_5').click(function() {
+    	    return deleteForm(this, 'pitanje3_5formset','dynamic-form-pitanje3_5');
+})
+
+//Pitanje5_2Formset form19
+$('.add-row_pitanje5_2').click(function() {
+    	    return addForm(this, 'pitanje5_2formset','dynamic-form-pitanje5_2');
+});
+$('.delete-row_pitanje5_2').click(function() {
+    	    return deleteForm(this, 'pitanje5_2formset','dynamic-form-pitanje5_2');
+})
+
+</script>
+{% endblock content %}

@@ -1,0 +1,124 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<h1> Ovo je neki Upitnik Valjda</h1>
+		{% if form1.errors %}
+			<p><strong>{{ form1.errors }}</strong.</p>
+		{% endif %}
+		{% if form2.errors %}
+			<p><strong>{{ form2.errors }}</strong.</p>
+		{% endif %}
+		{% if form3.errors %}
+			<p><strong>{{ form3.errors }}</strong.</p>
+		{% endif %}
+		{% if form4.errors %}
+			<p><strong>{{ form4.errors }}</strong.</p>
+		{% endif %}
+		{% if form5.errors %}
+			<p><strong>{{ form5.errors }}</strong.</p>
+		{% endif %}
+		{% if form6.errors %}
+			<p><strong>{{ form6.errors }}</strong.</p>
+		{% endif %}
+		{% if form7.errors %}
+			<p><strong>{{ form7.errors }}</strong.</p>
+		{% endif %}
+		
+		{% if form111.errors %}
+			<p><strong>{{ form111.errors }}</strong.</p>
+		{% endif %}
+		{% if form12.errors %}
+			<p><strong>{{ form12.errors }}</strong.</p>
+		{% endif %}
+		{% if form13.errors %}
+			<p><strong>{{ form13.errors }}</strong.</p>
+		{% endif %}
+		{% if form14.errors %}
+			<p><strong>{{ form14.errors }}</strong.</p>
+		{% endif %}
+		
+		<form method="POST" action="">
+			{% csrf_token %}
+			<h2> Prva Sekcija </h2>
+				{% crispy form1 %}
+			<hr>
+			<h2> Druga Sekcija </h2>
+				{% crispy form2 %}
+			
+			<hr>
+			<h2> Druga Sekcija Pitanje 2_5</h2>
+				{% crispy form3 %}
+			
+			<hr>
+			<h2> Druga Sekcija Pitanje 2_6</h2>
+				{% crispy form4 %}
+				
+			<hr>
+			<h2> Druga Sekcija Pitanje 2_8</h2>
+				{% crispy form5 %}
+				
+			<hr>
+			<h2> Treca  Sekcija Prosto</h2>
+				{% crispy form6 %}
+			<hr>
+			<h2> Treca  Sekcija Za Pitanje 1 Slozeno</h2>
+				{% crispy form7 %}
+			
+			<hr>
+			<h2> Treca  Sekcija Pitanje3_2</h2>
+				{% crispy form11 %}
+			<hr>
+			<h2> Treca  Sekcija Pitanje3_3</h2>
+				{% crispy form12 %}
+			<hr>
+			<h2> Treca  Sekcija Pitanje3_4</h2>
+				{% crispy form13 %}
+			<hr>
+			<h2> Treca  Sekcija Pitanje3_5</h2>
+				{% crispy form14 %}
+			<hr>
+			<h2> Cetvrta Sekcija Prosta Pitanja</h2>
+				{% crispy form15 %}
+			<hr>
+			<hr>
+			<h2> Cetvrta Sekcija Pitanje4_7</h2>
+				{% crispy form16 %}
+			<hr>
+			<hr>
+			<h2> Peta Sekcija Prosta pitanja</h2>
+				{% crispy form17 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_1</h2>
+				{% crispy form18 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_2</h2>
+				{% crispy form19 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_4</h2>
+				{% crispy form20 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_12</h2>
+				{% crispy form21 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_13</h2>
+				{% crispy form22 %}
+			<hr>
+			<h2> Peta Sekcija Pitanje5_14</h2>
+				{% crispy form23 %}
+			<hr>
+			
+			
+				
+	
+			
+   
+			<button type="submit" class="save btn btn-default"> Submit </button>
+		</form>
+		
+		
+		
+	</div>
+{% endblock content %}

@@ -1,0 +1,65 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load formset_tags %}
+{% load widget_tweaks %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+<form method="post" action="">{% csrf_token %}
+<div id="pitanje2_5formset" data-formset-prefix="{{ pitanje2_5formset.prefix }}">
+    {{ pitanje2_5formset.management_form }}
+
+    <div data-formset-body>
+        <!-- New forms will be inserted in here -->
+            
+        {% for form in pitanje2_5formset %}
+            <div data-formset-form>
+                <div class="col-md-3">
+                    {{ form.Program}}
+                </div>
+                 <div class="col-md-3">
+                {{ form.Namena }}
+                </div>
+                 <div class="col-md-3">
+                {{ form.Ucestalost_Koriscenja }}
+                </div>
+           
+             </div>
+        {% endfor %}
+                    
+          
+                
+  
+        
+    </div>
+
+    <!-- The empty form template. By wrapping this in a <script> tag, the
+    __prefix__ placeholder can easily be replaced in both attributes and
+    any scripts -->
+    <script type="form-template" data-formset-empty-form>
+        {% escapescript %}
+            <div data-formset-form>
+                {{ pitanje2_5formset.empty_form }}
+                <button type="button" data-formset-delete-button>Delete form</button>
+            </div>
+        {% endescapescript %}
+    </script>
+
+    <!-- This button will add a new form when clicked -->
+   
+
+    <script>jQuery(function($) {
+        $("#pitanje2_5formset").formset({
+            animateForms: true
+        });
+    });</script>
+
+</div>
+  <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div> 
+</form>
+
+{% endblock %}

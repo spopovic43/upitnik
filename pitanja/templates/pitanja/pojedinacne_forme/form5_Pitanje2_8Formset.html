@@ -1,0 +1,54 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma5 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+    <!-- Form Pitanje2_8-->
+    <div class="col-md-12">
+        <p class=""><strong>Које се мобилне ГИС апликације користе у вашој организацији?</strong></p>
+    </div>
+    {{ form5.management_form }}
+    <table id="id_forms_table_pitanje2_8" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Програм</th>
+                <th scope="col">Намена</th>
+                <th scope="col">Уклони</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for form in form5.forms %}
+            <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje2_8">
+                <td>
+                    <select name="pitanje2_8formset-0-Program" id="id_pitanje2_8formset-0-Program" class="form-control">
+                        <option value="ArcPAD">ArcPAD</option>
+                        <option value="Leica Zeno">Leica Zeno</option>
+                        <option value="Интерно креиране апликације">Интерно креиране апликације</option>
+                        <option value="Остало">Остало</option>
+                    </select>
+                </td>
+                <td>
+                    <select multiple="multiple" name="pitanje2_8formset-0-Namena" id="id_pitanje2_8formset-0-Namena" class="form-control">
+                        <option value="Прикупљање података са терена">Прикупљање података са терена</option>
+                        <option value="Праћење возила">Праћење возила</option>
+                        <option value="Остало">Остало</option>
+                    </select>
+                </td>
+
+                <td {% if forloop.first %} class="hidden" {% endif %}>
+                    <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje2_8"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje2_8"><span class="glyphicon glyphicon-plus"></span></a></td>
+            </tr>
+        </tbody>
+    </table>
+</form> 
+</div>
+
+{% endblock content %}

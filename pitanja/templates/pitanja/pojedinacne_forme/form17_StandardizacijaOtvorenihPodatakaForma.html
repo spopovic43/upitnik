@@ -1,0 +1,160 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma17 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+   <div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Стандардизација и концепт отворених података </h1>
+    </div>
+
+    <!-- Metode_koriscenja_i_zastite -->
+    <div id="div_id_form17-Metode_koriscenja_i_zastite" class="form-group">
+        <label for="id_form17-Metode_koriscenja_i_zastite" class="control-label col-md-12 requiredField">
+            Које од метода коришћења и заштите просторних података користите? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Metode_koriscenja_i_zastite" id="id_form17-Metode_koriscenja_i_zastite" required="" class="select form-control">
+            <option value="copyright">Ауторско право</option>
+            <option value="ауторизација приступа">Ауторизација приступа</option>
+            <option value="бекап">Бекап</option>
+            <option value="ограничена права приступа ">ограничена права приступа </option>
+            <option value="GеоDRM">GеоDRM – Digital Right Management</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka -->
+    <div id="div_id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" class="form-group">
+        <label for="id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" class="control-label col-md-12 requiredField">
+            Да ли подржавате прикупљање референтних скупова података према концепту отворених података? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" id="id_form17-Da_li_podrzavate_prikupljanje_geopodataka_prema_konceptu_otvorenih_podataka" required="" class="select form-control">
+            <option value="Да ">Да </option>
+            <option value="Не">Не</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Da_li_ste_upoznati_sa_nekim_od_postojecih_portala -->
+    <div id="div_id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" class="form-group">
+        <label for="id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" class="control-label col-md-12 requiredField">
+            Да ли сте упознати са неким од постојећих портала за приступ отвореним подацима? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" id="id_form17-Da_li_ste_upoznati_sa_nekim_od_postojecih_portala" required="" class="select form-control">
+            <option value="data.gov.rs">Национални OpenData портал (data.gov.rs) </option>
+            <option value="data.poverenik.rs">Портал отворених података Повереника за информације од јавног значаја и заштиту података о личности (data.poverenik.rs)</option>
+            <option value="SHARE">Платформа SHARE фондације</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Da_li_ste_koristili_besplatne_setove_podataka -->
+    <div id="div_id_form17-Da_li_ste_koristili_besplatne_setove_podataka" class="form-group">
+        <label for="id_form17-Da_li_ste_koristili_besplatne_setove_podataka" class="control-label col-md-12 requiredField">
+            Да ли сте користили неки сет података који је јавно доступан према концепту отворених података? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Da_li_ste_koristili_besplatne_setove_podataka" id="id_form17-Da_li_ste_koristili_besplatne_setove_podataka" required="" class="select form-control">
+            <option value="OpenData ">Користили смо, преузимањем са националног OpenData портала </option>
+            <option value="Преуѕимање са других портала">Користили смо, преузимањем са других постојећих портала</option>
+            <option value="Стандардни начин">Користили смо, преузимањем на стандардан начин (дигитални медиј, папир, поштом, преко имејла, и сл.)</option>
+            <option value="Нисмо користили">Нисмо користили, планирамо интензивније коришћење отворених података у будућности</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Za_koje_poslove_ste_koristili_podatke -->
+    <div id="div_id_form17-Za_koje_poslove_ste_koristili_podatke" class="form-group">
+        <label for="id_form17-Za_koje_poslove_ste_koristili_podatke" class="control-label col-md-12 requiredField">
+            За које послове сте користили преузете податке? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Za_koje_poslove_ste_koristili_podatke" id="id_form17-Za_koje_poslove_ste_koristili_podatke" required="" class="select form-control">
+            <option value="Креирање web сајта или мобилне апликације ">Креирање web сајта или мобилне апликације </option>
+            <option value="Креирање web сервиса">Креирање web сервиса</option>
+            <option value="Извештаји, радови или презентације">Извештаји, радови или презентације</option>
+            <option value="Интеграција са већ постојећим web сајтовима или мобилним апликацијама">Интеграција са већ постојећим web сајтовима или мобилним апликацијама</option>
+            <option value="Креирање тематских карата или сличних визуелизација отворених података">Креирање тематских карата или сличних визуелизација отворених података</option>
+            <option value="Статистичке анализе">Статистичке анализе</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Format_podataka -->
+    <div id="div_id_form17-Format_podataka" class="form-group">
+        <label for="id_form17-Format_podataka" class="control-label col-md-12 requiredField">
+            У ком формату су били преузети подаци? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Format_podataka" id="id_form17-Format_podataka" required="" class="select form-control">
+            <option value="CSV">Comma Separated Values file format (*.csv) </option>
+            <option value="XLS">Microsoft Excel file format (*.xls)</option>
+            <option value="PDF">Adobe PDF (*.pdf)</option>
+            <option value="TIFF">Tagged Image File Format (*.tif)</option>
+            <option value="CDR">CorelDraw file format (*.cdr)</option>
+            <option value="SHP">ESRI shapefile (*.shp)</option>
+            <option value="XML">Extensible Markup Language (*.xml)</option>
+            <option value="KML">Keyhole Markup Language (*.kml, *.kmz)</option>
+            <option value="DXF">AutoCAD file format (*.dxf)</option>
+            <option value="JSON">JavaScript Object Notation (*.json)</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Koju_vrstu_podataka_ste_koristili -->
+    <div id="div_id_form17-Koju_vrstu_podataka_ste_koristili" class="form-group">
+        <label for="id_form17-Koju_vrstu_podataka_ste_koristili" class="control-label col-md-12 requiredField">
+            Коју врсту података сте користили? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Koju_vrstu_podataka_ste_koristili" id="id_form17-Koju_vrstu_podataka_ste_koristili" required="" class="select form-control">
+            <option value="Геоподаци ">Геоподаци </option>
+            <option value="Финансијски подаци">Финансијски подаци</option>
+            <option value="Статистички подаци">Статистички подаци</option>
+            <option value="Научни подаци">Научни подаци</option>
+            <option value="Подаци о времену">Подаци о времену</option>
+            <option value="Подаци о култури">Подаци о култури</option>
+            <option value="Подаци о животној средини">Подаци о животној средини</option>
+            <option value="Подаци јавног сектора">Подаци јавног сектора</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Opis_projekta_sa_prostornim_podacima -->
+    <div id="div_id_form17-Opis_projekta_sa_prostornim_podacima" class="form-group">
+        <label for="id_form17-Opis_projekta_sa_prostornim_podacima" class="control-label col-md-12 requiredField">
+            39.	Опишите укратко пројекат у којем сте користили отворене податке: <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <textarea name="form17-Opis_projekta_sa_prostornim_podacima" id="id_form17-Opis_projekta_sa_prostornim_podacima" required="" cols="40" rows="10" class="textarea form-control"></textarea>
+        </div>
+    </div>
+
+    <!-- Sufinansiranje_podataka -->
+    <div id="div_id_form17-Sufinansiranje_podataka" class="form-group">
+        <label for="id_form17-Sufinansiranje_podataka" class="control-label col-md-12 requiredField">
+            Ако се у пракси не примени  ‘Open Data’ концепт, да ли сте заинтересовани да заједно са другим институцијама учествујете у суфинансирању референтних података? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form17-Sufinansiranje_podataka" id="id_form17-Sufinansiranje_podataka" required="" class="select form-control">
+            <option value="Да">Да, заинтересовани смо да учествујемо у суфинансирању</option>
+            <option value="Не">Не, нисмо заинтересовани да учествујемо у суфинансирању</option>
+            <option value="Друго">Друго</option>
+        </select>
+        </div>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}

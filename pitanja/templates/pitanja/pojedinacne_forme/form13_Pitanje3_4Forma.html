@@ -1,0 +1,287 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma13 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>  
+    <div class="col-md-12">
+        <p class=""><strong>12.	Одредите важност података који су вам потребни од других организација за редовне активности од наведених INSPIRE тема: </strong></p>
+    </div>
+   
+    <!-- Pitanje3_4-->
+    <table class=" table table-bordered table-hover">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th>INSPIRE теме</th>
+                <th>Није од значаја</th>
+                <th>Делимично значајно</th>
+                <th>Значајно</th>
+                <th>Oд великог значаја</th>
+                <th>Изузетно значајно</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Координатни референтни системи</th>
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Није од значаја" id="id_form13-Koordinatni_referentni_sistemi_0" required=""></td>
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Делимично значајно" id="id_form13-Koordinatni_referentni_sistemi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Koordinatni_referentni_sistemi" value="Значајно" id="id_form13-Koordinatni_referentni_sistemi_2" required=""></td>
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Од великог значаја" id="id_form13-Koordinatni_referentni_sistemi_3" required=""></td>
+                <td><input type="radio" name="form13-Koordinatni_referentni_sistemi" value="Изузетно значајно" id="id_form13-Koordinatni_referentni_sistemi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Географски мрежни системи</th>
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Није од значаја" id="id_form13-Geografski_mrezni_sistemi_0" required=""></td>
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Делимично значајно" id="id_form13-Geografski_mrezni_sistemi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Geografski_mrezni_sistemi" value="Значајно" id="id_form13-Geografski_mrezni_sistemi_2" required=""></td>
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Од великог значаја" id="id_form13-Geografski_mrezni_sistemi_3" required=""></td>
+                <td><input type="radio" name="form13-Geografski_mrezni_sistemi" value="Изузетно значајно" id="id_form13-Geografski_mrezni_sistemi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Географска имена</th>
+                <td><input type="radio" name="form13-Geografska_imena" value="Није од значаја" id="id_form13-Geografska_imena_0" required=""></td>
+                <td><input type="radio" name="form13-Geografska_imena" value="Делимично значајно" id="id_form13-Geografska_imena_1" required=""></td>
+                <td><input type="radio" checked name="form13-Geografska_imena" value="Значајно" id="id_form13-Geografska_imena_2" required=""></td>
+                <td><input type="radio" name="form13-Geografska_imena" value="Од великог значаја" id="id_form13-Geografska_imena_3" required=""></td>
+                <td><input type="radio" name="form13-Geografska_imena" value="Изузетно значајно" id="id_form13-Geografska_imena_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Административне јединице</th>
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Није од значаја" id="id_form13-Administrativne_jedinice_0" required=""></td>
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Делимично значајно" id="id_form13-Administrativne_jedinice_1" required=""></td>
+                <td><input type="radio" checked name="form13-Administrativne_jedinice" value="Значајно" id="id_form13-Administrativne_jedinice_2" required=""></td>
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Од великог значаја" id="id_form13-Administrativne_jedinice_3" required=""></td>
+                <td><input type="radio" name="form13-Administrativne_jedinice" value="Изузетно значајно" id="id_form13-Administrativne_jedinice_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Адресе</th>
+                <td><input type="radio" name="form13-Adrese" value="Није од значаја" id="id_form13-Adrese_0" required=""></td>
+                <td><input type="radio" name="form13-Adrese" value="Делимично значајно" id="id_form13-Adrese_1" required=""></td>
+                <td><input type="radio" checked name="form13-Adrese" value="Значајно" id="id_form13-Adrese_2" required=""></td>
+                <td><input type="radio" name="form13-Adrese" value="Од великог значаја" id="id_form13-Adrese_3" required=""></td>
+                <td><input type="radio" name="form13-Adrese" value="Изузетно значајно" id="id_form13-Adrese_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Катастарске парцеле</th>
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Није од значаја" id="id_form13-Katastarske_parcele_0" required=""></td>
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Делимично значајно" id="id_form13-Katastarske_parcele_1" required=""></td>
+                <td><input type="radio" checked name="form13-Katastarske_parcele" value="Значајно" id="id_form13-Katastarske_parcele_2" required=""></td>
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Од великог значаја" id="id_form13-Katastarske_parcele_3" required=""></td>
+                <td><input type="radio" name="form13-Katastarske_parcele" value="Изузетно значајно" id="id_form13-Katastarske_parcele_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Транспортне мреже</th>
+                <td><input type="radio" name="form13-Transportne_mreze" value="Није од значаја" id="id_form13-Transportne_mreze_0" required=""></td>
+                <td><input type="radio" name="form13-Transportne_mreze" value="Делимично значајно" id="id_form13-Transportne_mreze_1" required=""></td>
+                <td><input type="radio" checked name="form13-Transportne_mreze" value="Значајно" id="id_form13-Transportne_mreze_2" required=""></td>
+                <td><input type="radio" name="form13-Transportne_mreze" value="Од великог значаја" id="id_form13-Transportne_mreze_3" required=""></td>
+                <td><input type="radio" name="form13-Transportne_mreze" value="Изузетно значајно" id="id_form13-Transportne_mreze_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Хидрографија</th>
+                <td><input type="radio" name="form13-Hidrografija" value="Није од значаја" id="id_form13-Hidrografija_0" required=""></td>
+                <td><input type="radio" name="form13-Hidrografija" value="Делимично значајно" id="id_form13-Hidrografija_1" required=""></td>
+                <td><input type="radio" checked name="form13-Hidrografija" value="Значајно" id="id_form13-Hidrografija_2" required=""></td>
+                <td><input type="radio" name="form13-Hidrografija" value="Од великог значаја" id="id_form13-Hidrografija_3" required=""></td>
+                <td><input type="radio" name="form13-Hidrografija" value="Изузетно значајно" id="id_form13-Hidrografija_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Заштићена подручја</th>
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Није од значаја" id="id_form13-Zasticena_podrucja_0" required=""></td>
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Делимично значајно" id="id_form13-Zasticena_podrucja_1" required=""></td>
+                <td><input type="radio" checked name="form13-Zasticena_podrucja" value="Значајно" id="id_form13-Zasticena_podrucja_2" required=""></td>
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Од великог значаја" id="id_form13-Zasticena_podrucja_3" required=""></td>
+                <td><input type="radio" name="form13-Zasticena_podrucja" value="Изузетно значајно" id="id_form13-Zasticena_podrucja_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Висине</th>
+                <td><input type="radio" name="form13-Visine" value="Није од значаја" id="id_form13-Visine_0" required=""></td>
+                <td><input type="radio" name="form13-Visine" value="Делимично значајно" id="id_form13-Visine_1" required=""></td>
+                <td><input type="radio" checked name="form13-Visine" value="Значајно" id="id_form13-Visine_2" required=""></td>
+                <td><input type="radio" name="form13-Visine" value="Од великог значаја" id="id_form13-Visine_3" required=""></td>
+                <td><input type="radio" name="form13-Visine" value="Изузетно значајно" id="id_form13-Visine_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Земљишни покривач</th>
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Није од значаја" id="id_form13-Zemljisni_pokrivac_0" required=""></td>
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Делимично значајно" id="id_form13-Zemljisni_pokrivac_1" required=""></td>
+                <td><input type="radio" checked name="form13-Zemljisni_pokrivac" value="Значајно" id="id_form13-Zemljisni_pokrivac_2" required=""></td>
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Од великог значаја" id="id_form13-Zemljisni_pokrivac_3" required=""></td>
+                <td><input type="radio" name="form13-Zemljisni_pokrivac" value="Изузетно значајно" id="id_form13-Zemljisni_pokrivac_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Ортофото</th>
+                <td><input type="radio" name="form13-Ortofoto" value="Није од значаја" id="id_form13-Ortofoto_0" required=""></td>
+                <td><input type="radio" name="form13-Ortofoto" value="Делимично значајно" id="id_form13-Ortofoto_1" required=""></td>
+                <td><input type="radio" checked name="form13-Ortofoto" value="Значајно" id="id_form13-Ortofoto_2" required=""></td>
+                <td><input type="radio" name="form13-Ortofoto" value="Од великог значаја" id="id_form13-Ortofoto_3" required=""></td>
+                <td><input type="radio" name="form13-Ortofoto" value="Изузетно значајно" id="id_form13-Ortofoto_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Геологија</th>
+                <td><input type="radio" name="form13-Geologija" value="Није од значаја" id="id_form13-Geologija_0" required=""></td>
+                <td><input type="radio" name="form13-Geologija" value="Делимично значајно" id="id_form13-Geologija_1" required=""></td>
+                <td><input type="radio" checked name="form13-Geologija" value="Значајно" id="id_form13-Geologija_2" required=""></td>
+                <td><input type="radio" name="form13-Geologija" value="Од великог значаја" id="id_form13-Geologija_3" required=""></td>
+                <td><input type="radio" name="form13-Geologija" value="Изузетно значајно" id="id_form13-Geologija_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Статистичке јединице</th>
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Није од значаја" id="id_form13-Statisticke_jedinice_0" required=""></td>
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Делимично значајно" id="id_form13-Statisticke_jedinice_1" required=""></td>
+                <td><input type="radio" checked name="form13-Statisticke_jedinice" value="Значајно" id="id_form13-Statisticke_jedinice_2" required=""></td>
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Од великог значаја" id="id_form13-Statisticke_jedinice_3" required=""></td>
+                <td><input type="radio" name="form13-Statisticke_jedinice" value="Изузетно значајно" id="id_form13-Statisticke_jedinice_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Зграде</th>
+                <td><input type="radio" name="form13-Zgrade" value="Није од значаја" id="id_form13-Zgrade_0" required=""></td>
+                <td><input type="radio" name="form13-Zgrade" value="Делимично значајно" id="id_form13-Zgrade_1" required=""></td>
+                <td><input type="radio" checked name="form13-Zgrade" value="Значајно" id="id_form13-Zgrade_2" required=""></td>
+                <td><input type="radio" name="form13-Zgrade" value="Од великог значаја" id="id_form13-Zgrade_3" required=""></td>
+                <td><input type="radio" name="form13-Zgrade" value="Изузетно значајно" id="id_form13-Zgrade_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Тло</th>
+                <td><input type="radio" name="form13-Tlo" value="Није од значаја" id="id_form13-Tlo_0" required=""></td>
+                <td><input type="radio" name="form13-Tlo" value="Делимично значајно" id="id_form13-Tlo_1" required=""></td>
+                <td><input type="radio" checked name="form13-Tlo" value="Значајно" id="id_form13-Tlo_2" required=""></td>
+                <td><input type="radio" name="form13-Tlo" value="Од великог значаја" id="id_form13-Tlo_3" required=""></td>
+                <td><input type="radio" name="form13-Tlo" value="Изузетно значајно" id="id_form13-Tlo_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Коришћење земљишта</th>
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Није од значаја" id="id_form13-Koriscenje_zemljista_0" required=""></td>
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Делимично значајно" id="id_form13-Koriscenje_zemljista_1" required=""></td>
+                <td><input type="radio" checked name="form13-Koriscenje_zemljista" value="Значајно" id="id_form13-Koriscenje_zemljista_2" required=""></td>
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Од великог значаја" id="id_form13-Koriscenje_zemljista_3" required=""></td>
+                <td><input type="radio" name="form13-Koriscenje_zemljista" value="Изузетно значајно" id="id_form13-Koriscenje_zemljista_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Здравље људи и безбедност</th>
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Није од значаја" id="id_form13-Zdravlje_ljudi_I_bezbednost_0" required=""></td>
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Делимично значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_1" required=""></td>
+                <td><input type="radio" checked name="form13-Zdravlje_ljudi_I_bezbednost" value="Значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_2" required=""></td>
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Од великог значаја" id="id_form13-Zdravlje_ljudi_I_bezbednost_3" required=""></td>
+                <td><input type="radio" name="form13-Zdravlje_ljudi_I_bezbednost" value="Изузетно значајно" id="id_form13-Zdravlje_ljudi_I_bezbednost_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Водови и јавни сервиси</th>
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Није од значаја" id="id_form13-Vodovi_i_javni_servisi_0" required=""></td>
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Делимично значајно" id="id_form13-Vodovi_i_javni_servisi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Vodovi_i_javni_servisi" value="Значајно" id="id_form13-Vodovi_i_javni_servisi_2" required=""></td>
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Од великог значаја" id="id_form13-Vodovi_i_javni_servisi_3" required=""></td>
+                <td><input type="radio" name="form13-Vodovi_i_javni_servisi" value="Изузетно значајно" id="id_form13-Vodovi_i_javni_servisi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Системи за праћење квалитета животне средине</th>
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Није од значаја" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_0" required=""></td>
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Делимично значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_1" required=""></td>
+                <td><input type="radio" checked name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_2" required=""></td>
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Од великог значаја" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_3" required=""></td>
+                <td><input type="radio" name="form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine" value="Изузетно значајно" id="id_form13-Sistemi_za_pracenje_kvaliteta_zivotne_sredine_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Производни и индустријски системи</th>
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Није од значаја" id="id_form13-Proizvodni_i_industrijski_sistemi_0" required=""></td>
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Делимично значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Proizvodni_i_industrijski_sistemi" value="Значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_2" required=""></td>
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Од великог значаја" id="id_form13-Proizvodni_i_industrijski_sistemi_3" required=""></td>
+                <td><input type="radio" name="form13-Proizvodni_i_industrijski_sistemi" value="Изузетно значајно" id="id_form13-Proizvodni_i_industrijski_sistemi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Системи за пољопривреду и аквакултуру</th>
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Није од значаја" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_0" required=""></td>
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Делимично значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_1" required=""></td>
+                <td> <input type="radio" checked name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_2" required=""></td>
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Од великог значаја" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_3" required=""></td>
+                <td> <input type="radio" name="form13-Sistemi_za_poljoprivredu_i_akvakulturu" value="Изузетно значајно" id="id_form13-Sistemi_za_poljoprivredu_i_akvakulturu_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Распрострањеност становништва и демографија</th>
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Није од значаја" id="id_form13-Rasprostranjenost_stanovnistva_demografija_0" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Делимично значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_1" required=""></td>
+                <td><input type="radio" checked name="form13-Rasprostranjenost_stanovnistva_demografija" value="Значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_2" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Од великог значаја" id="id_form13-Rasprostranjenost_stanovnistva_demografija_3" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_stanovnistva_demografija" value="Изузетно значајно" id="id_form13-Rasprostranjenost_stanovnistva_demografija_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Област управљања</th>
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Није од значаја" id="id_form13-Oblast_upravljanja_0" required=""></td>
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Делимично значајно" id="id_form13-Oblast_upravljanja_1" required=""></td>
+                <td><input type="radio" checked name="form13-Oblast_upravljanja" value="Значајно" id="id_form13-Oblast_upravljanja_2" required=""></td>
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Од великог значаја" id="id_form13-Oblast_upravljanja_3" required=""></td>
+                <td><input type="radio" name="form13-Oblast_upravljanja" value="Изузетно значајно" id="id_form13-Oblast_upravljanja_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Зоне природног ризика</th>
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Није од значаја" id="id_form13-Zone_prirodnog_rizika_0" required=""></td>
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Делимично значајно" id="id_form13-Zone_prirodnog_rizika_1" required=""></td>
+                <td><input type="radio" checked name="form13-Zone_prirodnog_rizika" value="Значајно" id="id_form13-Zone_prirodnog_rizika_2" required=""></td>
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Од великог значаја" id="id_form13-Zone_prirodnog_rizika_3" required=""></td>
+                <td><input type="radio" name="form13-Zone_prirodnog_rizika" value="Изузетно значајно" id="id_form13-Zone_prirodnog_rizika_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Атмосферски услови</th>
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Није од значаја" id="id_form13-Atmosferski_uslovi_0" required=""></td>
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Делимично значајно" id="id_form13-Atmosferski_uslovi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Atmosferski_uslovi" value="Значајно" id="id_form13-Atmosferski_uslovi_2" required=""></td>
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Од великог значаја" id="id_form13-Atmosferski_uslovi_3" required=""></td>
+                <td><input type="radio" name="form13-Atmosferski_uslovi" value="Изузетно значајно" id="id_form13-Atmosferski_uslovi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Метеоролошко географске карактеристике</th>
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Није од значаја" id="id_form13-Meteorolosko_geografske_karakteristike_0" required=""></td>
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Делимично значајно" id="id_form13-Meteorolosko_geografske_karakteristike_1" required=""></td>
+                <td><input type="radio" checked name="form13-Meteorolosko_geografske_karakteristike" value="Значајно" id="id_form13-Meteorolosko_geografske_karakteristike_2" required=""></td>
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Од великог значаја" id="id_form13-Meteorolosko_geografske_karakteristike_3" required=""></td>
+                <td><input type="radio" name="form13-Meteorolosko_geografske_karakteristike" value="Изузетно значајно" id="id_form13-Meteorolosko_geografske_karakteristike_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Биогеографски региони</th>
+
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Није од значаја" id="id_form13-Biogeografski_Regioni_0" required=""></td>
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Делимично значајно" id="id_form13-Biogeografski_Regioni_1" required=""></td>
+                <td><input type="radio" checked name="form13-Biogeografski_Regioni" value="Значајно" id="id_form13-Biogeografski_Regioni_2" required=""></td>
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Од великог значаја" id="id_form13-Biogeografski_Regioni_3" required=""></td>
+                <td><input type="radio" name="form13-Biogeografski_Regioni" value="Изузетно значајно" id="id_form13-Biogeografski_Regioni_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Станишта и биотопи</th>
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Није од значаја" id="id_form13-Stanista_i_biotopi_0" required=""></td>
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Делимично значајно" id="id_form13-Stanista_i_biotopi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Stanista_i_biotopi" value="Значајно" id="id_form13-Stanista_i_biotopi_2" required=""></td>
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Од великог значаја" id="id_form13-Stanista_i_biotopi_3" required=""></td>
+                <td><input type="radio" name="form13-Stanista_i_biotopi" value="Изузетно значајно" id="id_form13-Stanista_i_biotopi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Распрострањеност врста</th>
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Није од значаја" id="id_form13-Rasprostranjenost_vrsta_0" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Делимично значајно" id="id_form13-Rasprostranjenost_vrsta_1" required=""></td>
+                <td><input type="radio" checked name="form13-Rasprostranjenost_vrsta" value="Значајно" id="id_form13-Rasprostranjenost_vrsta_2" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Од великог значаја" id="id_form13-Rasprostranjenost_vrsta_3" required=""></td>
+                <td><input type="radio" name="form13-Rasprostranjenost_vrsta" value="Изузетно значајно" id="id_form13-Rasprostranjenost_vrsta_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Енергетски ресурси</th>
+                <td><input type="radio" name="form13-Energetski_resursi" value="Није од значаја" id="id_form13-Energetski_resursi_0" required=""></td>
+                <td><input type="radio" name="form13-Energetski_resursi" value="Делимично значајно" id="id_form13-Energetski_resursi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Energetski_resursi" value="Значајно" id="id_form13-Energetski_resursi_2" required=""></td>
+                <td><input type="radio" name="form13-Energetski_resursi" value="Од великог значаја" id="id_form13-Energetski_resursi_3" required=""></td>
+                <td><input type="radio" name="form13-Energetski_resursi" value="Изузетно значајно" id="id_form13-Energetski_resursi_4" required=""></td>
+            </tr>
+            <tr>
+                <th class="bg-primary">Минерални ресурси</th>
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Није од значаја" id="id_form13-Mineralni_resursi_0" required=""></td>
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Делимично значајно" id="id_form13-Mineralni_resursi_1" required=""></td>
+                <td><input type="radio" checked name="form13-Mineralni_resursi" value="Значајно" id="id_form13-Mineralni_resursi_2" required=""></td>
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Од великог значаја" id="id_form13-Mineralni_resursi_3" required=""></td>
+                <td><input type="radio" name="form13-Mineralni_resursi" value="Изузетно значајно" id="id_form13-Mineralni_resursi_4" required=""></td>
+            </tr>
+        </tbody>
+    </table>
+</form> 
+</div>
+
+{% endblock content %}

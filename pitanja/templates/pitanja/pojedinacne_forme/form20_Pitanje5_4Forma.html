@@ -1,0 +1,38 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma20 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+  <!-- Pitanje5_4 -->
+    <div class="col-md-12">
+        <p class=""><strong>Да ли су права коришћења и заштите уређени посебним прописима?</strong></p>
+    </div>
+
+    <!-- Da_ne-->
+    <div id="div_id_form20-Da_ne" class="form-group">
+        <label for="id_form20-Da_ne" class="control-label col-md-4">
+            ( Да / Не )
+    </label>
+        <div class="controls col-md-6">
+            <select name="form20-Da_ne" id="id_form20-Da_ne" class="select form-control multiselect">
+            <option value="Da">Да</option>
+            <option value="Ne">Не</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Naziv_akta -->
+    <div id="div_id_form20-Naziv_akta" class="form-group">
+        <label for="id_form20-Naziv_akta" class="control-label col-md-4 requiredField">
+            Назив акта<span class="asteriskField">*</span>
+    </label>
+        <div class="controls col-md-6">
+            <input type="text" name="form20-Naziv_akta" id="id_form20-Naziv_akta" required="" maxlength="100" class="textinput textInput form-control">
+        </div>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}

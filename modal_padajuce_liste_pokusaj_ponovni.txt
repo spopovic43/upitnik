@@ -1,0 +1,453 @@
+   //Nacin skladistenja modal
+    $('.modal-body #id_form11-Nacin_skladistenja_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Nacin_skladistenja_modal  option:selected');
+
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+
+                    $('.modal-body #div_id_form11-Nacin_skladistenjа_ostalo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Nacin_skladistenjа_ostalo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Nacin_skladistenjа_ostalo_modal').css('display', 'none');
+
+                }
+
+                selected.push([$(this).val()]);
+            });
+            if (brands.length == 0)
+                $('.modal-body #div_id_form11-Nacin_skladistenjа_ostalo_modal').css('display', 'none');
+
+            console.log(selected);
+        },
+
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+
+    });
+
+
+    //Format distribucije modal
+    $('.modal-body #id_form11-Format_Distribucije_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Format_Distribucije_modal  option:selected');
+
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+
+                    $('.modal-body #div_id_form11-Format_Distribucije_ostalo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Format_Distribucije_ostalo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Format_Distribucije_ostalo_modal').css('display', 'none');
+
+                }
+
+                selected.push([$(this).val()]);
+            });
+            if (brands.length == 0)
+                $('.modal-body #div_id_form11-Format_Distribucije_ostalo_modal').css('display', 'none');
+
+            console.log(selected);
+        },
+
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+
+    });
+
+
+
+    //Nacin distribucije modal
+    $('.modal-body #id_form11-Nacin_Distribucije_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Nacin_Distribucije_modal  option:selected');
+
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+
+                    $('.modal-body #div_id_form11-Nacin_Distribucije_ostalo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Nacin_Distribucije_ostalo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Nacin_Distribucije_ostalo_modal').css('display', 'none');
+
+                }
+
+                selected.push([$(this).val()]);
+            });
+            if (brands.length == 0)
+                $('.modal-body #div_id_form11-Nacin_Distribucije_ostalo_modal').css('display', 'none');
+
+            console.log(selected);
+        },
+
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+
+    });
+
+
+
+    //Koordinatni sistem modal
+    $('.modal-body #id_form11-Koordinatni_Sistem_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Koordinatni_Sistem_modal  option:selected');
+
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+
+                    $('.modal-body #div_id_form11-Koordinatni_Sistem_ostalo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Koordinatni_Sistem_ostalo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Koordinatni_Sistem_ostalo_modal').css('display', 'none');
+
+                }
+
+                selected.push([$(this).val()]);
+            });
+            if (brands.length == 0)
+                $('.modal-body #div_id_form11-Koordinatni_Sistem_ostalo_modal').css('display', 'none');
+
+            console.log(selected);
+        },
+
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+
+    });
+
+
+    //Period azuriranja modal
+    $('.modal-body #id_form11-Period_Azuriranja_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Period_Azuriranja_modal  option:selected');
+
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+
+                    $('.modal-body #div_id_form11-Period_Azuriranja_ostalo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Period_Azuriranja_ostalo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Period_Azuriranja_ostalo_modal').css('display', 'none');
+
+                }
+
+                selected.push([$(this).val()]);
+            });
+            if (brands.length == 0)
+                $('.modal-body #div_id_form11-Period_Azuriranja_ostalo_modal').css('display', 'none');
+
+            console.log(selected);
+        },
+
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+
+    });
+
+/////Dostupost
+    $('.modal-body #id_form11-Dostupnost_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Dostupnost_modal option:selected');
+            alert('Brands');
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+                    $('.modal-body #div_#id_form11-Dostupnost_drugo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Dostupnost_drugo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_#id_form11-Dostupnost_drugo_modal').css('display', 'none');
+                }
+
+                selected.push([$(this).val()]);
+            });
+
+            console.log(selected);
+        },
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+    });
+
+
+    //Web servis
+    $('.modal-body #id_form11-Web_Servis_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Web_Servis_modal option:selected');
+            alert('Brands');
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+                    $('.modal-body #div_id_form11-Web_Servis_drugo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Web_Servis_drugo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Web_Servis_drugo_modal').css('display', 'none');
+                }
+
+                selected.push([$(this).val()]);
+            });
+
+            console.log(selected);
+        },
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+    });
+
+
+    //Prava pristupa
+    $('.modal-body #id_form11-Prava_Pristupa_modal').multiselect({
+        enableClickableOptGroups: true,
+        buttonClass: 'btn btn-default',
+        enableClickableOptGroups: true,
+        buttonWidth: '540px',
+        buttonText: function(options, select) {
+            if (options.length === 0) {
+                return 'Ништа од понуђеног није селектовано';
+            } else if (options.length == 1) {
+                return 'Селектовали сте ' + options.length + " одговор";
+            } else if (options.length > 1) {
+                return 'Селектовали сте ' + options.length + " одговора";
+            }
+
+        },
+        onChange: function(element, checked) {
+            var brands = $('.modal-body #id_form11-Prava_Pristupa_modal option:selected');
+            alert('Brands');
+            var selected = [];
+            $(brands).each(function(index, brand) {
+                if ($(this).val() == "Остало") {
+                    $('.modal-body #div_id_form11-Prava_Pristupa_drugo_modal').css('display', 'block');
+                    $('.modal-body #id_form11-Prava_Pristupa_drugo_modal')
+                        .css('border', '1px solid green')
+                        .parent()
+                        .prev().css('color', 'green');
+                } else {
+                    $('.modal-body #div_id_form11-Prava_Pristupa_drugo_modal').css('display', 'none');
+                }
+
+                selected.push([$(this).val()]);
+            });
+
+            console.log(selected);
+        },
+        onDropdownShow: function(event) {
+            /*alert($(event.target).width());
+            console.log(event);*/
+
+            var butParent = event.target.style.width;
+            var childs = event.target.childNodes
+            var child = childs[1];
+            //alert($(child).width());
+            $(child).width($(event.target).width());
+            //alert('Client width');
+            //alert($(child).width($(event.target).width()));
+
+
+        }
+    });

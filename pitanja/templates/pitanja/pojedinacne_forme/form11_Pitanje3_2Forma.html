@@ -1,0 +1,324 @@
+<!-- *********************************************** Modal *************************************-->
+
+      <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              
+              <p class="modal-title"><strong>Унети податке о скупу просторних података које Ваша организација производи, а односе се на INSPIRE теме: </strong></p>
+          
+            </div>
+            <div class="modal-body">
+             <div class="container col-md-12">
+      <form action="{% url 'pitanja:Pitanje3_2Forma'%}" method="POST" id="modalForm">
+          {% csrf_token %}
+          <div class="col-md-12">
+              <p class=""><strong>15. Унети податке о скупу просторних података које Ваша организација производи, а односе се на INSPIRE теме: </strong></p>
+          </div>
+         <p style="display:none">{{ form11.Jedinstveni }}</p>
+
+
+
+          <!-- Naziv_Proizvoda -->
+        <div id="div_id_form11-Naziv_Proizvoda" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Koordinatni_Sistem.errors %}<strong class="errors">{{ form11.Koordinatni_Sistem.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Naziv_Proizvoda" class="control-label col-md-4 requiredField">
+                Назив производа <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+               
+                <input value="{{ form11.Naziv_Proizvoda.value|default_if_none:'' }}" type="text" name="form11-Naziv_Proizvoda" maxlength="100" class="textinput textInput form-control" id="id_form11-Naziv_Proizvoda" required="">
+            </div>
+        </div>
+      
+          <!-- Opis_Proizvoda -->
+        <div id="div_id_form11-Opis_Proizvoda" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Opis_Proizvoda.errors %}<strong class="errors">{{ form11.Opis_Proizvoda.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Opis_Proizvoda" class="control-label col-md-4 requiredField">
+                Опис производа <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input value="{{ form11.Opis_Proizvoda.value|default_if_none:'' }}" type="text" name="form11-Opis_Proizvoda" maxlength="100" class="textinput textInput form-control" id="id_form11-Opis_Proizvoda" required="">
+            </div>
+        </div>
+      
+        <!-- Digitalni_Format Uraditi Ponovo-->
+        <div class="form-group forICheck">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Digitalni_Format" class="checkbox">
+                    <label for="id_form11-Digitalni_Format" class="">
+                        <input {% if form11.Digitalni_Format.value == True %} checked="checked" {% endif %} type="checkbox" name="form11-Digitalni_Format" class="checkboxinput" id="id_form11-Digitalni_Format">
+                    Дигитални формат
+                    </label>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Nacin_skladistenja -->
+        <div id="div_id_form11-Nacin_skladistenja" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Nacin_skladistenja.errors %}<strong class="errors">{{ form11.Nacin_skladistenja.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Nacin_skladistenja" class="control-label col-md-4 requiredField">
+                Начин складиштења <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select multiple="multiple" name="form11-Nacin_skladistenja" class="select form-control multiple" id="id_form11-Nacin_skladistenja" required="">
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "gdb" %}selected="selected"{% endif %}{% endfor %}  value="gdb">ESRI file geodatabase (*.gdb)</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "mdb" %}selected="selected"{% endif %}{% endfor %}  value="mdb">ESRI personal geodatabase (*.mdb)</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "MS Access" %}selected="selected"{% endif %}{% endfor %}  value="MS Access">MS Access</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "Oracle " %}selected="selected"{% endif %}{% endfor %}  value="Oracle ">Oracle</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "PostgreSQL" %}selected="selected"{% endif %}{% endfor %}  value="PostgreSQL">PostgreSQL</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "MicrosoftSQL" %}selected="selected"{% endif %}{% endfor %}  value="MicrosoftSQL">MicrosoftSQL</option>
+                    <option {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "Фолдерска структура на серверима" %}selected="selected"{% endif %}{% endfor %}  value="Фолдерска структура на серверима">Фолдерска структура на серверима</option>
+                    <option  {% for choice in form11.Nacin_skladistenja.value %}{% if choice == "Остало" %}selected="selected"{% endif %}{% endfor %} value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Nacin skladistenja ostalo-->
+        <div style="display:none" id="div_id_form11-Nacin_skladistenjа_ostalo" class="form-group"> 
+            <label for="id_form11-Nacin_skladistenjа_ostalo" class="control-label col-md-4">
+                    Начин складиштења остало
+            </label>
+            <div class="controls col-md-8">
+                <input 	value="{{ form11.Nacin_skladistenjа_ostalo.value|default_if_none:'' }}"  type="text" name="form11-Nacin_skladistenjа_ostalo" maxlength="100" class="textinput textInput form-control" id="id_form11-Nacin_skladistenjа_ostalo">
+            </div>
+        </div>
+      
+        <!-- Format_Distribucije -->
+        <div id="div_id_form11-Format_Distribucije" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Format_Distribucije.errors %}<strong class="errors">{{ form11.Format_Distribucije.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Format_Distribucije" class="control-label col-md-4 requiredField">
+                Формат дистрибуције <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  multiple="multiple" name="form11-Format_Distribucije" class="select form-control multiple" id="id_form11-Format_Distribucije" required="">
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "Adobe PDF" %}selected="selected"{% endif %}{% endfor %} value="Adobe PDF">Adobe PDF (*.pdf)</option>
+                    <option value="ASCII gridded">ASCII gridded data format (*.xyz)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "ASCII gridded" %}selected="selected"{% endif %}{% endfor %} value="GeoTIFF">GeoTIFF (*.tif)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "TIFF" %}selected="selected"{% endif %}{% endfor %} value="TIFF">TIFF (*.tif)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "CorelDraw" %}selected="selected"{% endif %}{% endfor %}  value="CorelDraw">CorelDraw file format (*.cdr)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "TIFF" %}selected="selected"{% endif %}{% endfor %} value="TIFF">TIFF (*.tif), TFW (*.tfw)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "ECW" %}selected="selected"{% endif %}{% endfor %} value="ECW">ECW Image file format (*.ecw)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "MrSID" %}selected="selected"{% endif %}{% endfor %} value="MrSID">MrSID file format (*.sid)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "ESRI" %}selected="selected"{% endif %}{% endfor %} value="ESRI">ESRI shapefile (*.shp)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "MapInfo " %}selected="selected"{% endif %}{% endfor %} value="MapInfo ">MapInfo TAB format (*.tab)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "KML" %}selected="selected"{% endif %}{% endfor %} value="KML">KML file format (*.kml, *.kmz)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "IMG" %}selected="selected"{% endif %}{% endfor %} value="IMG ">IMG file format (*.img)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "NTF" %}selected="selected"{% endif %}{% endfor %} value="NTF">NTF Image file format (*.ntf)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "AutoCAD DXF" %}selected="selected"{% endif %}{% endfor %} value="AutoCAD DXF">AutoCAD DXF (*.dxf)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "ESRI file" %}selected="selected"{% endif %}{% endfor %} value="ESRI file">ESRI file geodatabase (*.gdb)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "ESRI personal" %}selected="selected"{% endif %}{% endfor %} value="ESRI personal">ESRI personal geodatabase (*.mdb)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "JPG" %}selected="selected"{% endif %}{% endfor %} value="JPG">JPG file format (*.jpg)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "Microsoft Excel" %}selected="selected"{% endif %}{% endfor %} value="Microsoft Excel">Microsoft Excel file format (*.xls)</option>
+                    <option {% for choice in form11.Format_Distribucije.value %}{% if choice == "Остало" %}selected="selected"{% endif %}{% endfor %} value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Format Distribucije Ostalo-->
+        <div style="display:none" id="div_id_form11-Format_Distribucije_ostalo" class="form-group">
+            <label for="id_form11-Format_Distribucije_ostalo" class="control-label col-md-4">
+                Формат Дистрибуције остало
+            </label>
+            <div class="controls col-md-8">
+                <input 	value="{{ form11.Format_Distribucije_ostalo.value|default_if_none:'' }}"  type="text" name="form11-Format_Distribucije_ostalo" class="textinput textInput form-control" maxlength="100" id="id_form11-Format_Distribucije_ostalo">
+            </div>
+        </div>
+      
+        <!-- Nacin_Distribucije -->
+        <div id="div_id_form11-Nacin_Distribucije" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Nacin_Distribucije.errors %}<strong class="errors">{{ form11.Nacin_Distribucije.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Nacin_Distribucije" class="control-label col-md-4 requiredField">
+                Начин дистрибуције <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  multiple="multiple" name="form11-Nacin_Distribucije" class="select form-control multiple" id="id_form11-Nacin_Distribucije" required="">
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Поштом" %}selected="selected"{% endif %}{% endfor %} value="Поштом">Поштом</option>
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Преко имејла" %}selected="selected"{% endif %}{% endfor %} value="Преко имејла">Преко имејла</option>
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Директно преузимање " %}selected="selected"{% endif %}{% endfor %} value="Директно преузимање ">Директно преузимање (дигитални медиј, папир)</option>
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Преузимање преко интернета" %}selected="selected"{% endif %}{% endfor %} value="Преузимање преко интернета">Преузимање преко интернета (download: HTTP и FTP )</option>
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Web сервиси" %}selected="selected"{% endif %}{% endfor %} value="Web сервиси">Web сервиси</option>
+                    <option {% for choice in form11.Nacin_Distribucije.value %}{% if choice == "Остало" %}selected="selected"{% endif %}{% endfor %} value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Nacin Distribucije Ostalo-->
+        <div style="display:none" id="div_id_form11-Nacin_Distribucije_ostalo" class="form-group">
+            <label for="id_form11-Nacin_Distribucije_ostalo" class="control-label col-md-4">
+                Начин Дистрибуције остало
+            </label>
+            <div class="controls col-md-8">
+                <input 	value="{{ form11.Nacin_Distribucije_ostalo.value|default_if_none:'' }}"  type="text" name="form11-Nacin_Distribucije_ostalo" class="textinput textInput form-control" maxlength="100" id="id_form11-Nacin_Distribucije_ostalo">
+            </div>
+        </div>
+      
+        <!-- Tacnost -->
+        <div id="div_id_form11-Tacnost" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Tacnost.errors %}<strong class="errors">{{ form11.Tacnost.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Tacnost" class="control-label col-md-4 requiredField">
+                Тачност <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input value="{{ form11.Tacnost.value|default_if_none:'' }}" type="text" name="form11-Tacnost" maxlength="100" class="textinput textInput form-control" id="id_form11-Tacnost" required="">
+            </div>
+        </div>
+      
+        <!-- Koordinatni_Sistem -->
+        <div id="div_id_form11-Koordinatni_Sistem" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Koordinatni_Sistem.errors %}<strong class="errors">{{ form11.Koordinatni_Sistem.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Koordinatni_Sistem" class="control-label col-md-4 requiredField">
+                Координатни систем <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  multiple="multiple" name="form11-Koordinatni_Sistem" class="select form-control multiple" id="id_form11-Koordinatni_Sistem" required="">
+                    <option {% for choice in form11.Koordinatni_Sistem.value %}{% if choice == "Гаус-Кригер" %}selected="selected"{% endif %}{% endfor %} value="Гаус-Кригер">Гаус-Кригер</option>
+                    <option {% for choice in form11.Koordinatni_Sistem.value %}{% if choice == "ETRS89/UTM" %}selected="selected"{% endif %}{% endfor %} value="ETRS89/UTM">ETRS89/UTM</option>
+                    <option {% for choice in form11.Koordinatni_Sistem.value %}{% if choice == "Географски координатни систем" %}selected="selected"{% endif %}{% endfor %} value="Географски координатни систем">Географски координатни систем</option>
+                    <option {% for choice in form11.Koordinatni_Sistem.value %}{% if choice == "Подаци нису просторно одређени" %}selected="selected"{% endif %}{% endfor %} value="Подаци нису просторно одређени">Подаци нису просторно одређени - геореференцирани</option>
+                    <option  {% for choice in form11.Koordinatni_Sistem.value %}{% if choice == "Остало" %}selected="selected"{% endif %}{% endfor %} value="Остало">Остало</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Koordinatni Sistem Ostalo -->
+        <div style="display:none" id="div_id_form11-Koordinatni_Sistem_ostalo" class="form-group">
+            <label for="id_form11-Koordinatni_Sistem_ostalo" class="control-label col-md-4">
+                Координатни систем остало
+            </label>
+            <div class="controls col-md-8">
+                <input 	value="{{ form11.Koordinatni_Sistem_ostalo.value|default_if_none:'' }}"  type="text" name="form11-Koordinatni_Sistem_ostalo" class="textinput textInput form-control" id="id_form11-Koordinatni_Sistem_ostalo" maxlength="100">
+            </div>
+        </div>
+      
+        <!-- Obuhvaceno_Podrucje -->
+        <div id="div_id_form11-Obuhvaceno_Podrucje" class="form-group">
+            <div class="col-md-12 col-md-offset-4">
+                {% if form11.Obuhvaceno_Podrucje.errors %}<strong class="errors">{{ form11.Obuhvaceno_Podrucje.errors }}</strong>{% endif %}
+            </div>
+            <label for="id_form11-Obuhvaceno_Podrucje" class="control-label col-md-4 requiredField">
+                Обухваћено подручје <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <input value="{{ form11.Obuhvaceno_Podrucje.value|default_if_none:'' }}" type="text" name="form11-Obuhvaceno_Podrucje" maxlength="100" class="textinput textInput form-control" id="id_form11-Obuhvaceno_Podrucje" required="">
+            </div>
+        </div>
+      
+        <!-- Period_Azuriranja nije dobro ponovo uradi-->
+        <div id="div_id_form11-Period_Azuriranja" class="form-group">
+            <label for="id_form11-Period_Azuriranja" class="control-label col-md-4 requiredField">
+                Период ажурирања <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select name="form11-Period_Azuriranja" class="select form-control multiple" id="id_form11-Period_Azuriranja" required="">
+                    <option  {% if form11.is_bound %}{% if form11.Period_Azuriranja.value == "У континуитету" %} selected="selected" {% endif %}{% else %}selected="selected"{% endif%} value="У континуитету">У континуитету</option>
+                    <option  {% if form11.is_bound %}{% if form11.Period_Azuriranja.value == "По потреби" %} selected="selected" {% endif %}{% endif%} value="По потреби">По потреби</option>
+                    <option  {% if form11.is_bound %}{% if form11.Period_Azuriranja.value == "Периодично" %} selected="selected" {% endif %}{% endif %} value="Периодично">Периодично – на сваких XXX дана</option>
+                    <option  {% if form11.is_bound %}{% if form11.Period_Azuriranja.value == "Према прописима" %} selected="selected"  {% endif %}{% endif %} value="Према прописима">Према прописима</option>
+                    <option  {% if form11.is_bound %}{% if form11.Period_Azuriranja.value == "Преиспитивање плана"%} selected="selected"  {% endif %}{% endif %} value="Преиспитивање плана">Преиспитивање плана</option>
+                    <option   value="Остало">Остало</option>
+                </select>
+            </div>
+        </div> 
+      
+        <!-- Period Azuriranja ostalo -->
+        <div style="display:none" id="div_id_form11-Period_Azuriranja_ostalo" class="form-group">
+            <label for="id_form11-Period_Azuriranja_ostalo" class="control-label col-md-4">
+                Период ажурирања остало
+            </label>
+            <div class="controls col-md-8">
+                <input type="text" name="form11-Period_Azuriranja_ostalo" maxlength="100" id="id_form11-Period_Azuriranja_ostalo" class="textinput textInput form-control">
+            </div>
+        </div>
+
+        <!-- Metapodaci-->
+        <div class="form-group forICheck">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Metapodaci" class="checkbox">
+                    <label for="id_form11-Metapodaci" class="">
+                        <input {% if form11.Metapodaci.value == True %} checked="checked" {% endif %} type="checkbox" name="form11-Metapodaci" class="checkboxinput" id="id_form11-Metapodaci">
+                        Метаподаци
+                    </label>
+                </div>
+            </div>
+        </div>
+      
+        <!-- Dostupnost -->
+        <div id="div_id_form11-Dostupnost" class="form-group">
+            <label for="id_form11-Dostupnost" class="control-label col-md-4 requiredField">
+                Доступност <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  name="form11-Dostupnost" class="select form-control single_multiple" id="id_form11-Dostupnost" required="">
+                    <option {% if form11.is_bound %}{% if form11.Dostupnost.value == "интерно" %} selected="selected" {% endif %}{% else %}selected="selected"{% endif%} value="интерно">Интерно</option>
+                    <option {% if form11.is_bound %}{% if form11.Dostupnost.value == "доступно свима" %} selected="selected" {% endif %}{% endif%} value="доступно свима">Доступно свима</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Web_Servis -->
+        <div id="div_id_form11-Web_Servis" class="form-group">
+            <label for="id_form11-Web_Servis" class="control-label col-md-4 requiredField">
+                Web сервис <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  name="form11-Web_Servis" class="select form-control single_multiple" id="id_form11-Web_Servis" required="">
+                    <option {% if form11.is_bound %}{% if form11.Web_Servis.value == "интерно" %} selected="selected" {% endif %}{% else %}selected="selected"{% endif%} value="интерно">Интерно</option>
+                    <option {% if form11.is_bound %}{% if form11.Web_Servis.value == "доступно свима" %} selected="selected" {% endif %}{% endif%} value="доступно свима">Доступно свима</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Prava_Pristupa  -->
+        <div id="div_id_form11-Prava_Pristupa" class="form-group">
+            <label for="id_form11-Prava_Pristupa" class="control-label col-md-4 requiredField">
+                Права приступа <span class="asteriskField">*</span>
+            </label>
+            <div class="controls col-md-8">
+                <select  name="form11-Prava_Pristupa" class="select form-control single_multiple" id="id_form11-Prava_Pristupa" required="">
+                    <option {% if form11.is_bound %}{% if form11.Prava_Pristupa.value == "интерно" %} selected="selected" {% endif %}{% else %}selected="selected"{% endif%} value="интерно">Интерно</option>
+                    <option {% if form11.is_bound %}{% if form11.Prava_Pristupa.value == "доступно свима" %} selected="selected" {% endif %}{% endif%} value="доступно свима">Доступно свима</option>
+                </select>
+            </div>
+        </div>
+      
+        <!-- Naknada uradi ponovo -->
+        <div class="form-group forICheck">
+            <div class="controls col-md-offset-4 col-md-8">
+                <div id="div_id_form11-Naknada" class="checkbox">
+                    <label for="id_form11-Naknada" class="">
+                        <input {% if form11.Naknada.value == True %} checked="checked" {% endif %} type="checkbox" name="form11-Naknada" class="checkboxinput" id="id_form11-Naknada">
+                        Накнада
+                    </label>
+                </div>
+            </div>
+        </div>
+          <input type="submit" value="submit" id="sub1" class="btn btn-default">
+      </form> 
+      </div>
+            </div>
+            <div class="modal-footer">
+                <p style="margin-top:20px;margin-right:20px;" id="numForms">Тренутно је попуњено <strong><span id="nf"></span></strong> форми.</p>
+                <button style="z-index:5;position:relative;margin-top:-130px;margin-right:20px;" type="button" class="btn btn-danger" data-dismiss="modal">Затвори</button>
+             
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+      
+<!-- *********************************************** endmodal **********************************-->

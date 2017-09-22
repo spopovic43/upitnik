@@ -1,0 +1,23 @@
+{% extends 'pitanja/template.html' %}
+
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<h1> Ovo je neki Upitnik Valjda</h1>
+		
+		<form method="POST" action="">
+			{% csrf_token %}
+			{{ form1.as_ul}}
+			<hr>
+			{{ form2.as_ul}}
+			
+			
+   
+			<button type="submit" class="save btn btn-default"> Submit </button>
+		</form>
+		
+		
+		
+	</div>
+{% endblock content %}

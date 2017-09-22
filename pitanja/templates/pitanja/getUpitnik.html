@@ -1,0 +1,22 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="col-md-12">
+        <h1 class="bg-primary" class="naslovi" id="naslovNSDI"> NSDI Upitnik </h1>
+    </div>
+    {% for up in upitnik %} 
+        {{ up.Prva_Sekcija.Naziv_organizacije}}
+        {{ up.Prva_Sekcija.Adresa}}
+         {{ up.Prva_Sekcija.Glavna_strucna_oblast_vase_organizacije}}
+        
+        <p> {{ up.Druga_sekcija }}</p>
+        <br>
+    {% endfor %}
+
+</div>
+
+
+{% endblock %}

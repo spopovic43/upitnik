@@ -1,0 +1,157 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma7 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+ <div class="col-md-12">
+        <p class=""><strong>Означити за које од наведених INSPIRE тема производите просторне податке у вашој организацији.</strong></p>
+    </div>
+
+    <!-- Pitanje3_1 -->
+    <table class="table table-bordered ">
+        <thead class="thead-inverse bg-primary">
+            <tr>
+                <th>Избор</th>
+                <th>Опис</th>
+                <th>Избор</th>
+                <th>Опис</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Координатни референтни системи" id="id_form7-Aneks1_polje_1"></td>
+                <td> Координатни референтни системи <span class="glyphicon glyphicon-info-sign" data-trigger="hover" data-toggle="popover" title="Координатни референтни системи" data-content="Системи за јединствено одређивање просторних информација у простору као скупа координата (x, y, z) и/или географске ширине и географске дужине и висине, на основу геодетског хоризонталног и вертикалног датума."
+                        data-placement="right"></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Коришћење земљишта" id="id_form7-Aneks1_polje_2"></td>
+                <td> Коришћење земљишта <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Коришћење земљишта" data-content="Територија описана у складу с постојећом и будућом планираном функционалном димензијом или друштвено-економском намена (нпр. стамбена, индустријска. комерцијална, пољопривредна, шумска, рекреативна)"></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Географски мрежни системи" id="id_form7-Aneks1_polje_3"></td>
+                <td> Географски мрежни системи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Географски мрежни системи" data-content="Хармонизована мрежа вишеструке резолуције са заједничком почетном тачком и стандардизованом локацијом и величином мрежних ћелија."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Здравље људи и безбедност" id="id_form7-Aneks1_polje_4"></td>
+                <td> Здравље људи и безбедност <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Здравље људи и безбедност" data-content="Информације о географској дистрибуцији доминантних патологија (алергије, канцери, болести дисајних органа итд.), које указују на утицај на здравље (биомаркери, смањење плодности, епидемије) или добробит људи (замор, стрес итд.) у директној (загађивање ваздуха, хемикалије, смањење озонског омотача, бука итд.) или индиректној вези (храна, генетски модификовани организми итд.) с квалитетом животне средине."></span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Географска имена" id="id_form7-Aneks1_polje_5"></td>
+                <td> Географска имена <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Географска имена" data-content="Имена подручја, региона, локалитета, градова, предграђа, градова или насеља, или било који географски или топографски објекат од јавног или историјског интереса."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Водови и јавни сервиси" id="id_form7-Aneks1_polje_6"></td>
+                <td>Водови и јавни сервиси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" data-trigger="hover" title="Водови и јавни сервиси " data-content="Подразумева водове као што су канализација, управљање отпадом, снабдевање енергијом и водом, административне и државне социјалне службе као што су државна администрација, локације цивилне заштите, школе и болнице."></span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Административне јединице" id="id_form7-Aneks1_polje_7"></td>
+                <td> Административне јединице <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Административне јединице" data-content="Административне јединице, које раздвајају подручја на којима државе чланице имају и/или остварују права у вези са надлежношћу, за локалну, регионалну и националну управу, и која су одвојена административним границама."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Системи за праћење квалитета животне средине" id="id_form7-Aneks1_polje_8"></td>
+                <td> Системи за праћење квалитета животне средине <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Системи за праћење квалитета животне средине" data-content="Локација и функцијасистема за праћење животне средине укључујући посматрање и мерење емисије загађујућих материја, стања животне средине и других параметара екосистема (биодиверзитета, еколошких услова вегетације итд.) од стране или у име органа јавне власти."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Адресе" id="id_form7-Aneks1_polje_9"></td>
+                <td> Адресе <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Адресе" data-content="Локација непокретности на основу адресних идентификатора, обично имена улице, кућног броја, поштанског броја."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Производни и индустријски системи" id="id_form7-Aneks1_polje_10"></td>
+                <td> Производни и индустријски системи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Производни и индустријски системи" data-content="Локације индустријске производње, укључујући инсталације за спречавање и контролу загађења, црпна постројења за воду, руднике, складишта и сл."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Катастарске парцеле" id="id_form7-Aneks1_polje_11"></td>
+                <td> Катастарске парцеле <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Катастарске парцеле" data-content="Подручја одређена катастарским регистрима или њиховим еквивалентима."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Системи за пољопривреду и аквакултуру" id="id_form7-Aneks1_polje_12"></td>
+                <td> Системи за пољопривреду и аквакултуру <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Системи за пољопривреду и аквакултуру" data-content="Пољопривредна опрема и објекти за производњу (укључујући системе за наводњавање, стакленици и штале)."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Транспортне мреже" id="id_form7-Aneks1_polje_13"></td>
+                <td> Транспортне мреже <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Транспортне мреже" data-content="Друмске, железничке, ваздушне и водне транспортне мреже и припадајућа."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Распрострањеност становништва – демографија" id="id_form7-Aneks1_polje_14"></td>
+                <td> Распрострањеност становништва – демографија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Распрострањеност становништва – демографија" data-content="Географска распрострањеност људи, укључујући инфраструктура, и карактеристике становништва и нивое активности, разврстаних по мрежи, региону, административној јединици или другој аналитичкој јединици."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Хидрографија" id="id_form7-Aneks1_polje_15"></td>
+                <td> Хидрографија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Хидрографија" data-content="Хидрографски елементи, укључујући морска подручја и сва друга водена тела и припадајуће делове, укључујући речне сливове и подсливове."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Област управљања" id="id_form7-Aneks1_polje_16"></td>
+                <td> Област управљања <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Област управљања" data-content="Области којима се управља, које се регулишу или користе за извештавање на међународном, европском, националном, регионалном и локалном нивоу. Укључује депоније, рестриктивне зоне око изворишта пијаће воде, зоне осетљиве на нитрате, уређене пловне путеве на мору или великим унутрашњим водама, области за одлагање отпада, зоне где се ограничава ниво буке, области за које је потребна дозвола за истраживање или рударство, области речних сливова, релевантне јединице извештавања и област управљања обалском зоном."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Заштићена подручја" id="id_form7-Aneks1_polje_17"></td>
+                <td> Заштићена подручја <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Заштићена подручја" data-content="Област која је одређена или којом се управља у оквиру међународног законодавства, законодавства Заједнице и држава чланица, са циљем постизања посебних циљева очувања."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks1_polje" value="Зоне природног ризика" id="id_form7-Aneks1_polje_18"></td>
+                <td> Зоне природног ризика <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Зоне природног ризика" data-content="Осетљива подручја која се описују према природним хазардима (све атмосферске, хидролошке, сеизмичке, вулканске појаве и пожари, а који, због своје локације, озбиљности и учесталости имају потенцијал да озбиљно угрозе друштво), нпр. поплаве, одрони и улегнућа, лавине, шумски пожари, земљотреси, вулканске ерупције."></span></td>
+            </tr>
+
+            <tr>
+                <!-- Aneks 2 -->
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Атмосферски услови" id="id_form7-Aneks2_polje_1"></td>
+                <td> Атмосферски услови <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Атмосферски услови" data-content="Укључују просторне податке засноване на мерењима, моделима или њиховој комбинацији и укључују локације за мерење."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Висине" id="id_form7-Aneks2_polje_2"></td>
+                <td>Висине <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Висине" data-content="Дигитални  модели висина за површину копна, леда и океана. Укључује висину терена, батиметрију и линију обале."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Метеоролошко-географске карактеристике" id="id_form7-Aneks2_polje_3"></td>
+                <td> Метеоролошко-географске карактеристике <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Метеоролошко-географске карактеристике" data-content="Временски услови и њихове мерења; падавине, температура, испаравање, брзина и смер ветра."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Земљишни покривач" id="id_form7-Aneks2_polje_4"></td>
+                <td> Земљишни покривач <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Земљишни покривач" data-content="Физичка и биолошка покривеност земљине површине укључујући вештачке површине, пољопривредне области, шуме, (полу)природне области, влажна земљишта, водна тела."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Биогеографски региони" id="id_form7-Aneks2_polje_5"></td>
+                <td> Биогеографски региони <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Биогеографски региони" data-content="Области релативно хомогених еколошких услова са заједничким карактеристикама."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Ортофото" id="id_form7-Aneks2_polje_6"></td>
+                <td> Ортофото <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Ортофото" data-content="Геореференцирани снимци Земљине површине, прикупљени сателитским или аеро сензорима."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Станишта и биотопи" id="id_form7-Aneks2_polje_7"></td>
+                <td>Станишта и биотопи <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Станишта и биотопи" data-content="Географске области које карактеришу специфични еколошки услови, процеси, структура и функције (за одржавање живота) које физички омогућавају организмима да ту живе. Укључује копнене и водене површине које се разликују својим географским, абиотским и биотским карактеристикама, потпуно природним или полуприродним."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks2_polje" value="Геологија" id="id_form7-Aneks2_polje_8"></td>
+                <td>Геологија <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Геологија" data-content="Геологија описана према саставу и структури. Укључује стеновито тло, водоносне слојеве и геоморфологију."></span></td>
+            </tr>
+            <!-- Aneks 3-->
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Распрострањеност врста" id="id_form7-Aneks3_polje_1"></td>
+                <td>Распрострањеност врста <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Распрострањеност врста" data-content="Географска распрострањеност животињских и биљних врста, разврстаних по мрежи, региону, административној јединици или другој аналитичкој јединици."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Статистичке јединице" id="id_form7-Aneks3_polje_2"></td>
+                <td>Статистичке јединице <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Статистичке јединице" data-content="Јединице за дистрибуцију или коришћење статистичких података."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Енергетски ресурси" id="id_form7-Aneks3_polje_3"></td>
+                <td>Енергетски ресурси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Енергетски ресурси" data-content="Енергетски ресурси укључујући угљоводонике, енергију воде, биоенергију, соларну енергију, енергију ветра итд. а по потреби и информације о дубини/висини које се односе на величину ресурса."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Зграде" id="id_form7-Aneks3_polje_4"></td>
+                <td>Зграде <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Зграде" data-content="Географска локација зграда."></span></td>
+            </tr>
+
+            <tr>
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Минерални ресурси" id="id_form7-Aneks3_polje_5"></td>
+                <td>Минерални ресурси <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Минерални ресурси " data-content="Минерални ресурси укључују руде метала, индустријске минерале итд. а по потреби и информације о дубини/висини  које се односе на величину ресурса."></span></td>
+
+                <td><input type="checkbox" name="form7-Aneks3_polje" value="Тло" id="id_form7-Aneks3_polje_6">
+                </td>
+                <td>Тло <span class="glyphicon glyphicon-info-sign" data-toggle="popover" data-trigger="hover" title="Тло" data-content="Тло и слојеви тла испод површине описани према дубини, текстури, структури и садржају честица и органског материјала, каменитости, ерозији, а по потреби просечног нагиба и предвиђени капацитет за чување воде."></span></td>
+            </tr>
+        </tbody>
+    </table>
+</form> 
+</div>
+
+{% endblock content %}

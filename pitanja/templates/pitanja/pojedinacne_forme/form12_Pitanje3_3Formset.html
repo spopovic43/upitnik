@@ -1,0 +1,77 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma12 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+    <div class="col-md-12">
+        <p class=""><strong>Које просторне податке набављате од других организација за редовне активности и од кога? </strong></p>
+    </div>
+    <div>
+        {{ form12.management_form }}
+        <table id="id_forms_table" border="0" cellpadding="0" cellspacing="5" class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Производ</th>
+                    <th scope="col">Произвођач</th>
+                    <th scope="col">Просторни обухват</th>
+                    <th scope="col">Уклони</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for form in form12.forms %}
+                <tr id="{{ form.prefix }}-row" class="dynamic-form-pitanje3_3">
+
+                    <td>
+                        <select name="pitanje3_3formset-0-Proizvod" id="id_pitanje3_3formset-0-Proizvod" class="form-control">
+                    <option value="Катастарске парцеле и објекти">Катастарске парцеле и објекти</option>
+                    <option value="Подаци катастра непокретности">Подаци катастра непокретности</option>
+                    <option value="Ортофото">Ортофото</option>
+                    <option value="Адресе">Адресе</option>
+                    <option value="Топографске карте">Топографске карте (1:20 000 и ситније размере)</option>
+                    <option value="Основна државна карта">Основна државна карта (1:5000; 1:10 000)</option>
+                    <option value="Просторни планови">Просторни планови</option>
+                    <option value="Друго">Друго</option>
+                </select>
+                    </td>
+
+                    <td>
+                        <select name="pitanje3_3formset-0-Proizvodjac" id="id_pitanje3_3formset-0-Proizvodjac" class="form-control">
+                    <option value="РГЗ">Републички геодетски завод</option>
+                    <option value="ВГИ">Војногеографски институт</option>
+                    <option value="Завод за заштиту природе Србије">Завод за заштиту природе Србије</option>
+                    <option value="Републички завод за статистику">Републички завод за статистику</option>
+                    <option value="Републичка дирекција за воде">Републичка дирекција за воде</option>
+                    <option value="Републички хидрометролошки завод">Републички хидрометролошки завод</option>
+                    <option value="Завод за заштиту споменика културе">Завод за заштиту споменика културе</option>
+                    <option value="ЈП Пошта Србије">ЈП Пошта Србије</option>
+                    <option value="ЈП Путеви Србије">ЈП Путеви Србије</option>
+                    <option value="European Environment Agency">European Environment Agency (EEA)</option>
+                    <option value="Друго">Друго</option>
+                </select>
+                    </td>
+
+                    <td>
+                        <select name="pitanje3_3formset-0-Prostorni_Obuhvat" id="id_pitanje3_3formset-0-Prostorni_Obuhvat" class="form-control">
+                    <option value="Територија Републике Србије">Територија Републике Србије</option>
+                    <option value="Територија административне надлежности организације">Територија административне надлежности организације</option>
+                    <option value="Друго">Друго</option>
+                </select>
+                    </td>
+                    <td {% if forloop.first %} class="hidden" {% endif %}>
+                        <a id="remove-{{ form.prefix }}-row" href="javascript:void(0)" class="delete-row_pitanje3_3"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="4"><a href="javascript:void(0)" class="add-row_pitanje3_3"><span class="glyphicon glyphicon-plus"></span></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</form> 
+</div>
+
+{% endblock content %}

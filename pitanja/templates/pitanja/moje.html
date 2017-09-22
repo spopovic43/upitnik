@@ -1,0 +1,32 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} moje {% endblock title %}
+{% block content %}
+<div class="container">
+    {% for i in all %}
+        
+        
+            {{i.Prva_sekcija.Na_kom_teritorijalnom_nivu_vasa_organizacija_obavlja_delatnost }}<br>
+
+            {{i.Cetvrta_sekcija.Uloga_nacionalnog_geoportala}}<br>
+            
+       
+    
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+{% endblock content %}

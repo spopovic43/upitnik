@@ -1,0 +1,86 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %} Forma6 {% endblock title %}
+{% block content %}
+<div class="container">
+<form>
+   <div class="col-md-12">
+        <h1 class="bg-primary naslovi"> Просторни подаци </h1>
+    </div>
+
+    <!-- Da_li_imate_potrebu_za_razmenm_prostornih_podataka -->
+    <div id="div_id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="form-group">
+        <label for="id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="control-label col-md-12 requiredField">
+            14.	Да ли имате искуства и потребу за разменом просторних података путем web сервиса (WMS, WFS, WCS, CSW, и сл.)? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" required="" id="id_form6-Da_li_imate_potrebu_za_razmenm_prostornih_podataka" class="select form-control">
+                <option value="Немамо искуства и потребе">Немамо искуства и потребе</option>
+                <option value="Немамо искуства, имамо потребе">Немамо искуства, имамо потребе</option>
+                <option value="Имамо искуства и потребе">Имамо искуства и потребе</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Da_li_imate_kapaciteta_za_izradu_servisa -->
+    <div id="div_id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="form-group">
+        <label for="id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="control-label col-md-12 requiredField">
+           Да ли имате капацитета за израду web сервиса за просторне податке? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form6-Da_li_imate_kapaciteta_za_izradu_servisa" required="" id="id_form6-Da_li_imate_kapaciteta_za_izradu_servisa" class="select form-control">
+                <option value="Немамо капацитета, није у плану изградња капацитета">Немамо капацитета, није у плану изградња капацитета</option>
+                <option value="Немамо капацитета, у плану је изградња капацитета">Немамо капацитета, у плану је изградња капацитета</option>
+                <option value="Имамо капацитета, још увек не постоје креирани сервиси">Имамо капацитета, још увек не постоје креирани сервиси</option>
+                <option value="Имамо капацитета, постоје креирани сервиси">Имамо капацитета, постоје креирани сервиси</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Dodatno_obrazovanje_u_okviru_organizacije -->
+    <div id="div_id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="form-group">
+        <label for="id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="control-label col-md-12 requiredField">
+            У ком домену имате потребу за додатним образовањем у оквиру ваше организације? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form6-Dodatno_obrazovanje_u_okviru_organizacije" required="" id="id_form6-Dodatno_obrazovanje_u_okviru_organizacije" class="select form-control">
+                <option value="Стандардизација геопроизвода и сервиса">Стандардизација геопроизвода и сервиса</option>
+                <option value="Дефинисање техничке спецификације за геоподатке">Дефинисање техничке спецификације за геоподатке</option>
+                <option value="Метаподаци">Метаподаци (креирање, стандардизације, израда каталога и сервиса)</option>
+                <option value="Израда web сервиса за геоподатке">Израда web сервиса за геоподатке</option>
+                <option value="Развој техничке инфраструктуре">Развој техничке инфраструктуре</option>
+                <option value="Креирања тематских речника">Креирања тематских речника</option>
+                <option value="Дефинисање политике размене, приступа и безбедности података">Дефинисање политике размене, приступа и безбедности података</option>
+                <option value="Друго">Друго</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Nacin_razmene_podataka_sa_drugima -->
+    <div id="div_id_form6-Nacin_razmene_podataka_sa_drugima" class="form-group">
+        <label for="id_form6-Nacin_razmene_podataka_sa_drugima" class="control-label col-md-12 requiredField">
+            На који начин тежите да размењујете податке са другима? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <select name="form6-Nacin_razmene_podataka_sa_drugima" required="" id="id_form6-Nacin_razmene_podataka_sa_drugima" class="select form-control">
+                <option value="Директно преузимање">Директно преузимање (дигитални медиј, папир)</option>
+                <option value="Преузимање преко интернета">Преузимање преко интернета (download: HTTP и FTP )</option>
+                <option value="Web сервиси">Web сервиси</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Stav_o_razmeni_podataka -->
+    <div id="div_id_form6-Stav_o_razmeni_podataka" class="form-group">
+        <label for="id_form6-Stav_o_razmeni_podataka" class="control-label col-md-12 requiredField">
+            Какав је ваш став о размени података преко web сервиса? <span class="asteriskField">*</span>
+        </label>
+        <div class="controls col-md-6">
+            <textarea name="form6-Stav_o_razmeni_podataka" rows="10" cols="40" id="id_form6-Stav_o_razmeni_podataka" required="" class="textarea form-control"></textarea>
+        </div>
+    </div>
+</form>
+</div>
+
+{% endblock content %}

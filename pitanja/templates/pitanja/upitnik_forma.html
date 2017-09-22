@@ -1,0 +1,83 @@
+{% extends 'pitanja/template.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %} Upitnik Forma {% endblock title %}
+
+{% block content %}
+	<div class="container">
+		<h1> Ovo je neki Upitnik Valjda</h1>
+		
+		<form method="POST" action="">
+			{% csrf_token %}
+			<h2> Prva Sekcija </h2>
+				{{ form1|crispy }}
+			<h2> Druga Sekcija 5 </h2>
+			<hr>
+			{{ form2.as_ul }}
+			<h2> Druga Sekcija 6 </h2>
+			<hr>
+			{{ form3.as_ul }}	
+			<h2> Druga Sekcija 8 </h2>
+			<hr>
+			{{ form4.as_ul }}
+			
+			<h2> Treca Sekcija Slozena Forma Bas Slozena </h2>
+			<hr>
+			{{ form5.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Aneks1 </h2>
+			<hr>
+			{{ form6.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Aneks2 </h2>
+			<hr>
+			{{ form7.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Aneks3 </h2>
+			<hr>
+			{{ form8.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Pitanje3_2 </h2>
+			<hr>
+			{{ form9.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Pitanje3_3 </h2>
+			<hr>
+			{{ form10.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Pitanje3_4 </h2>
+			<hr>
+			{{ form11.as_ul }}
+			<h2> Treca Sekcija Slozena Forma Pitanje3_5 </h2>
+			<hr>
+			{{ form12.as_ul }}
+			<h2> Cetvrta Sekcija Slozena Forma </h2>
+			<hr>
+			{{ form13.as_ul }}
+			<h2> Cetvrta Sekcija Slozena Forma  Pitanje 4_7</h2>
+			<hr>
+			{{ form14.as_ul }}
+			<h2> Peta Sekcija Slozena Forma </h2>
+			<hr>
+			{{ form15.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_1</h2>
+			<hr>
+			{{ form16.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_2</h2>
+			<hr>
+			{{ form17.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_4</h2>
+			<hr>
+			{{ form18.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_12</h2>
+			<hr>
+			{{ form19.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_13</h2>
+			<hr>
+			{{ form20.as_ul }}
+			<h2> Peta Sekcija Slozena Forma Pitanje 5_14</h2>
+			<hr>
+			{{ form21.as_ul }}
+			
+   
+			<button type="submit" class="save btn btn-default"> Submit </button>
+		</form>
+		
+		
+		
+	</div>
+{% endblock content %}
